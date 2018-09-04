@@ -1,0 +1,523 @@
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Algoritmos de ordenação - O famoso Bubble Sort</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=86747d928f">
+
+    <meta name="description" content="A cada passagem do vetor o elemento com menor valor deve ser flutuado para o topo, este conceito originou o nome Bubble Sort, o o algoritmo de ordenação.">
+    <link rel="shortcut icon" href="../favicon.png" type="image/png">
+    <link rel="canonical" href="http://www.coisadeprogramador.com.br/algoritmos-ordenacao-bubble-sort/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="http://www.coisadeprogramador.com.br/algoritmos-ordenacao-bubble-sort/amp/">
+    
+    <meta property="og:site_name" content="Coisa de Programador">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Algoritmos de ordenação - O famoso Bubble Sort">
+    <meta property="og:description" content="A cada passagem do vetor o elemento com menor valor deve ser flutuado para o topo, este conceito originou o nome Bubble Sort, o o algoritmo de ordenação.">
+    <meta property="og:url" content="http://www.coisadeprogramador.com.br/algoritmos-ordenacao-bubble-sort/">
+    <meta property="og:image" content="http://www.coisadeprogramador.com.br/content/images/2017/09/bubble_sort-2.png">
+    <meta property="article:published_time" content="2017-09-22T12:46:50.000Z">
+    <meta property="article:modified_time" content="2017-09-22T12:51:46.000Z">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/coisadeprogramador/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Algoritmos de ordenação - O famoso Bubble Sort">
+    <meta name="twitter:description" content="A cada passagem do vetor o elemento com menor valor deve ser flutuado para o topo, este conceito originou o nome Bubble Sort, o o algoritmo de ordenação.">
+    <meta name="twitter:url" content="http://www.coisadeprogramador.com.br/algoritmos-ordenacao-bubble-sort/">
+    <meta name="twitter:image" content="http://www.coisadeprogramador.com.br/content/images/2017/09/bubble_sort-2.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="William Sena">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="">
+    <meta property="og:image:width" content="1199">
+    <meta property="og:image:height" content="628">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Coisa de Programador",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://www.coisadeprogramador.com.br/content/images/2018/09/logo_600.png",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "William Sena",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://www.coisadeprogramador.com.br/content/images/2017/05/willsena_ss0510_1.jpg",
+            "width": 2189,
+            "height": 2354
+        },
+        "url": "http://www.coisadeprogramador.com.br/author/will/",
+        "sameAs": []
+    },
+    "headline": "Algoritmos de ordenação - O famoso Bubble Sort",
+    "url": "http://www.coisadeprogramador.com.br/algoritmos-ordenacao-bubble-sort/",
+    "datePublished": "2017-09-22T12:46:50.000Z",
+    "dateModified": "2017-09-22T12:51:46.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://www.coisadeprogramador.com.br/content/images/2017/09/bubble_sort-2.png",
+        "width": 1199,
+        "height": 628
+    },
+    "description": "A cada passagem do vetor o elemento com menor valor deve ser flutuado para o topo, este conceito originou o nome Bubble Sort, o o algoritmo de ordenação.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.coisadeprogramador.com.br/"
+    }
+}
+    </script>
+
+    <script src="../public/ghost-sdk.min.js?v=86747d928f"></script>
+<script>
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "5068eef47be9"
+});
+</script>
+    <meta name="generator" content="Ghost 2.1">
+    <link rel="alternate" type="application/rss+xml" title="Coisa de Programador" href="http://www.coisadeprogramador.com.br/rss/">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+<style>
+    .site-description {
+    	font-family: 'Indie Flower', cursive;
+        font-size: 5.4rem;
+        font-weight: 700;
+        text-shadow:
+            3px 3px 0 #000,
+            -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+    }
+    .nav li a {
+        font-weight: 700
+    }
+    
+    @media (min-width: 900px) {
+     	.site-logo {
+        	max-height: 100px;
+        }
+    }
+    
+    .site-header {
+        background-color: #fff;
+    }
+    h3.site-description {
+        font-size: 3rem;
+    }
+</style>
+
+</head>
+<body class="post-template tag-algoritmo tag-python">
+
+    <div class="site-wrapper">
+
+        
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+                <a class="site-nav-logo" href="http://www.coisadeprogramador.com.br"><img src="../content/images/2018/09/logo_600.png" alt="Coisa de Programador"></a>
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="http://localhost:2369">Home</a></li>
+    <li class="nav-sobre" role="menuitem"><a href="http://localhost:2369/sobre">Sobre</a></li>
+    <li class="nav-projetos" role="menuitem"><a href="http://localhost:2369/projetos">Projetos</a></li>
+    <li class="nav-contato" role="menuitem"><a href="http://localhost:2369/contato">Contato</a></li>
+</ul>
+
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+                <a class="social-link social-link-fb" href="https://www.facebook.com/coisadeprogramador/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
+</a>
+        </div>
+            <a class="rss-button" href="https://feedly.com/i/subscription/feed/http://www.coisadeprogramador.com.br/rss/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"></circle><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"></path></svg>
+</a>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post tag-algoritmo tag-python ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2017-09-22">22 setembro 2017</time>
+                </section>
+                <h1 class="post-full-title">Algoritmos de ordenação - O famoso Bubble Sort</h1>
+            </header>
+
+            <figure class="post-full-image" style="background-image: url(../content/images/2017/09/bubble_sort-2.png)">
+            </figure>
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <p><img src="../content/images/2017/09/bubble_sort-2.png" alt="Banner - Bubble Sort"></p>
+<h2 id="introduo">Introdução</h2>
+<p>Você que já cursou ou está em algum curso que envolve lógica de programação, provavelmente já passou por esta implementação.</p>
+<p>Dependendo do momento em que esta aula foi cursada, você provavelmente se questionou a necessidade de aprender isso, se a maioria das linguagens possui um método <code>sort</code> pronto para atender esta demanda.</p>
+<p><img src="../content/images/2017/09/pensar.png" alt="Vamos pensar um pouco - Telecurso 2000"></p>
+<p>Primeiramente algoritmos são ótimos para treinar o raciocínio lógico e existem alguns cenários que você provavelmente precisaria de uma implementação de ordenação, por exemplo:</p>
+<ul>
+<li>
+<p><em>Desenvolvimento de jogos</em> - Jogos precisam de alta performance e em alguns cenários de baixo nível, simplesmente o método <code>sort</code> do <code>array</code>  pode não existir ou não ser performático. Neste caso é importante que você conheça algoritmos de ordenação;</p>
+</li>
+<li>
+<p><em>Banco de dados</em> - Imagine que você subiu de nível e está criando um banco de dados, o JoãoDB, com grandes poderes grandes responsabilidades, a ordenação é sua responsabilidade.</p>
+</li>
+<li>
+<p><em>Machine learning</em> - Um assunto que está no <em>hype</em>, não precisamos comentar que é imprescindível dominar algoritmos.</p>
+</li>
+</ul>
+<center>
+<iframe src="https://giphy.com/embed/vEgtLzJo8n7qg" width="480" height="270" frameborder="0" class="giphy-embed" allowfullscreen></iframe><p><a href="https://giphy.com/gifs/mrw-everyone-vEgtLzJo8n7qg">via GIPHY</a></p>
+</center>
+<h2 id="algoritmosdeordenao">Algoritmos de Ordenação</h2>
+<p>Existem diversos algoritmos de ordenação desde os mais simples como:</p>
+<ul>
+<li>Bubble sort</li>
+<li>Insertion sort</li>
+<li>Selection sort</li>
+<li>Comb sort</li>
+</ul>
+<p>Até os algoritmos mais sofisticados:</p>
+<ul>
+<li>Merge sort</li>
+<li>Heapsort</li>
+<li>Shell sort</li>
+<li>Radix sort</li>
+<li>Gnome sort</li>
+<li>Counting sort</li>
+<li>Bucket sort</li>
+<li>Cocktail sort</li>
+<li>Timsort</li>
+</ul>
+<h2 id="obubblesort">O Bubble Sort</h2>
+<p>É um dos mais simples e fáceis de ser explicado, por este motivo é um dos algoritmos com menor performance. A lógica do algoritmo é simples, a cada passagem do vetor o elemento com menor valor de acordo do tipo ordenação, deve ser flutuado para o topo, este processo originou o nome <code>Bubble Sort</code>.</p>
+<p><img src="../content/images/2017/09/bubble_sort.png" alt="Exemplo de ordenação Bubble Sort"></p>
+<p>(***) <em>Veja que os números da direita com menor valor são flutuados para esquerda</em></p>
+<h2 id="implementao">Implementação</h2>
+<p>Segue uma implementação em <code>Python</code> de uma classe de vetor ordenável <code>ArraySortable</code></p>
+<pre><code class="language-language-javascript">class ArraySortable(object):
+        
+    def __init__(self, array):
+        self.array = array
+        self.length = len(self.array)
+
+    def bubble_sort(self, asc=True):
+        n = self.length
+        
+        while n &gt; 0:            
+            newn = 0
+            
+            # Loop do primeiro registro até N, N é o tamanho do vetor, alterado por newn a cada troca.
+            for i in range(1, n):
+                # Caso True executa a troca e altera o valor de N
+                if self.__swap(i-1, i, asc):
+                    newn = i
+                    
+            n = newn
+               
+
+    def __swap(self, left, right, asc):
+        swap = None
+        ascending = asc and self.array[right] &lt; self.array[left]
+        descending = not asc and self.array[right] &gt; self.array[left]
+                
+        if ascending or descending:
+            # O elemento é flutuado para o topo            
+            swap = self.array[left]
+            self.array[left] = self.array[right]
+            self.array[right] = swap
+        
+        return swap != None
+    
+
+    def to_output(self):
+        return [self.array[i] for i in range(foo.length)]
+    
+foo = ArraySortable([5, 4, 2, 1, 3])
+print('Input: ', foo.to_output())
+
+foo.bubble_sort()
+print('Sort asc: ', foo.to_output())
+
+foo.bubble_sort(False)
+print('Sort desc: ', foo.to_output())
+</code></pre>
+<p>O método <code>bubble_sort</code> executa dois loop, um atende a condição <code>n&gt;0</code>, <code>n</code> é a igual última posição do vetor trocada <code>newn</code>, caso não ocorra a troca de elementos <code>n</code> será zero e o vetor já está ordenado, fim da ordenação.</p>
+<p>Caso contrário ordena da posição inicial até a última troca <code>n</code>, o parâmetro <code>asc</code> define se a ordenação será crescente ou decrescente, caso <code>asc=True</code> e o elemento da esquerda é maior que o elemento da direta, o elemento da direita é flutuado para esquerda através do método <code>__swap</code>, caso <code>asc=False</code> os elementos com maior valor são flutuados.</p>
+<p>Desta forma a cada iteração, ocorre a comparação da posição inicial é até a última troca encontrada.</p>
+<h2 id="qualoproblemadobubblesort">Qual o problema do BubbleSort?</h2>
+<p>No melhor cenário, o algoritmo retorna <code>n</code> de operações, <code>n</code> é igual ao tamanho do vetor, porém no pior cenário ele pode retornar <code>n²</code>, ou seja, para uma lista pequena não seria um problema para o processamento, mas vamos imaginar uma lista com mil, dez mil, milhões, realmente o tempo de processamento seria absurdo.</p>
+<p>Por este motivo existem diversos algoritmos para ordenação complexos porém performáticos.</p>
+<h2 id="finalizando">Finalizando</h2>
+<p>Este foi um exemplo prático de implementação do algoritmo <strong>Bubble Sort</strong>, até a próxima.</p>
+<center>
+<iframe src="https://giphy.com/embed/3o8doT9BL7dgtolp7O" width="480" height="317" frameborder="0" class="giphy-embed" allowfullscreen></iframe><p><a href="https://giphy.com/gifs/foxinternational-reaction-simpsons-carl-3o8doT9BL7dgtolp7O">via GIPHY</a></p>
+</center>
+                </div>
+            </section>
+
+
+            <footer class="post-full-footer">
+
+
+                    
+<section class="author-card">
+        <img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena">
+    <section class="author-card-content">
+        <h4 class="author-card-name"><a href="../author/will/">William Sena</a></h4>
+            <p>Read <a href="../author/will/">more posts</a> by this author.</p>
+    </section>
+</section>
+<div class="post-full-footer-right">
+    <a class="author-card-button" href="../author/will/">Read More</a>
+</div>
+
+
+            </footer>
+
+
+        </article>
+
+    </div>
+</main>
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+
+                <article class="post-card post tag-algoritmo tag-python">
+        <a class="post-card-image-link" href="../implementacoes-algoritmo-linked-list/">
+            <div class="post-card-image" style="background-image: url(../content/images/2017/09/linkedlist.png)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="../implementacoes-algoritmo-linked-list/">
+            <header class="post-card-header">
+                <h2 class="post-card-title">Implementações do algoritmo Linked List</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>O que é? É uma coleção linear de elementos de dados, na qual a ordem linear não é dada pela sua alocação física na memória. Definições Singly LinkedList lista implementada onde cada item</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        William Sena
+                    </div>
+
+                        <a href="../author/will/" class="static-avatar"><img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena"></a>
+                </li>
+            </ul>
+
+            <span class="reading-time">4 min read</span>
+
+        </footer>
+    </div>
+</article>
+
+                <article class="post-card post tag-hospedagem">
+        <a class="post-card-image-link" href="../dez-cloud-host-para-iniciar-seus-projetos-startup/">
+            <div class="post-card-image" style="background-image: url(../content/images/2017/07/cloud-host-thumb.png)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="../dez-cloud-host-para-iniciar-seus-projetos-startup/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">hospedagem</span>
+                <h2 class="post-card-title">10 cloud hosts indicados para você iniciar seus estudos, projetos ou startup</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>Cloud Server? Atualmente existem diversos players e tive a oportunidade de testar alguns como Amanzon AWS, Azure, Digital Ocean, RedHat OpenShift e o Vultr. Confesso que muita coisa mudou, antigamente eu costumava adquirir</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        William Sena
+                    </div>
+
+                        <a href="../author/will/" class="static-avatar"><img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena"></a>
+                </li>
+            </ul>
+
+            <span class="reading-time">6 min read</span>
+
+        </footer>
+    </div>
+</article>
+
+        </div>
+    </div>
+</aside>
+
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="http://www.coisadeprogramador.com.br">
+                <img src="../content/images/2018/09/logo_60.png" alt="Coisa de Programador icon">
+            <span>Coisa de Programador</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">—</span>
+    <div class="floating-header-title">Algoritmos de ordenação - O famoso Bubble Sort</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"></path>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Algoritmos%20de%20ordena%C3%A7%C3%A3o%20-%20O%20famoso%20Bubble%20Sort&amp;url=http://www.coisadeprogramador.com.br/algoritmos-ordenacao-bubble-sort/" onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg>
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=http://www.coisadeprogramador.com.br/algoritmos-ordenacao-bubble-sort/" onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
+        </a>
+    </div>
+    <progress id="reading-progress" class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="http://www.coisadeprogramador.com.br">Coisa de Programador</a> © 2018</section>
+                <nav class="site-footer-nav">
+                    <a href="http://www.coisadeprogramador.com.br">Latest Posts</a>
+                    <a href="https://www.facebook.com/coisadeprogramador/" target="_blank" rel="noopener">Facebook</a>
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script>
+        var images = document.querySelectorAll('.kg-gallery-image img');
+        images.forEach(function (image) {
+            var container = image.closest('.kg-gallery-image');
+            var width = image.attributes.width.value;
+            var height = image.attributes.height.value;
+            var ratio = width / height;
+            container.style.flex = ratio + ' 1 0%';
+        })
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=86747d928f"></script>
+
+
+    <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('#reading-progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+
+});
+</script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-65105725-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script async="true" type="text/javascript" src="http://carnage1301.spider.ad/?id=50019"></script>
+<script type="text/javascript"> var infolinks_pid = 2988682; var infolinks_wsid = 0; </script> <script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
+
+</body>

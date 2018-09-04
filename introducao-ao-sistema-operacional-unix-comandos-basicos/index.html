@@ -1,0 +1,666 @@
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Introdução ao sistema operacional unix - comandos básicos</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=86747d928f">
+
+    <meta name="description" content="Este guia aborda os comandos básicos unix/linux, os comandos básicos envolvem man, ls, cat, more, cd, pwd, chmod, chown, rm, mv, rmdir, mkdir, touch e df">
+    <link rel="shortcut icon" href="../favicon.png" type="image/png">
+    <link rel="canonical" href="http://www.coisadeprogramador.com.br/introducao-ao-sistema-operacional-unix-comandos-basicos/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="http://www.coisadeprogramador.com.br/introducao-ao-sistema-operacional-unix-comandos-basicos/amp/">
+    
+    <meta property="og:site_name" content="Coisa de Programador">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Introdução ao sistema operacional unix - comandos básicos">
+    <meta property="og:description" content="Este guia aborda os comandos básicos unix/linux, os comandos básicos envolvem man, ls, cat, more, cd, pwd, chmod, chown, rm, mv, rmdir, mkdir, touch e df">
+    <meta property="og:url" content="http://www.coisadeprogramador.com.br/introducao-ao-sistema-operacional-unix-comandos-basicos/">
+    <meta property="og:image" content="http://www.coisadeprogramador.com.br/content/images/2016/09/comandos-unix-thumb-3.png">
+    <meta property="article:published_time" content="2016-09-18T01:58:41.000Z">
+    <meta property="article:modified_time" content="2016-09-18T02:03:22.000Z">
+    <meta property="article:publisher" content="https://www.facebook.com/coisadeprogramador/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Introdução ao sistema operacional unix - comandos básicos">
+    <meta name="twitter:description" content="Este guia aborda os comandos básicos unix/linux, os comandos básicos envolvem man, ls, cat, more, cd, pwd, chmod, chown, rm, mv, rmdir, mkdir, touch e df">
+    <meta name="twitter:url" content="http://www.coisadeprogramador.com.br/introducao-ao-sistema-operacional-unix-comandos-basicos/">
+    <meta name="twitter:image" content="http://www.coisadeprogramador.com.br/content/images/2016/09/comandos-unix-thumb-3.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="William Sena">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Coisa de Programador",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://www.coisadeprogramador.com.br/content/images/2018/09/logo_600.png",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "William Sena",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://www.coisadeprogramador.com.br/content/images/2017/05/willsena_ss0510_1.jpg",
+            "width": 2189,
+            "height": 2354
+        },
+        "url": "http://www.coisadeprogramador.com.br/author/will/",
+        "sameAs": []
+    },
+    "headline": "Introdução ao sistema operacional unix - comandos básicos",
+    "url": "http://www.coisadeprogramador.com.br/introducao-ao-sistema-operacional-unix-comandos-basicos/",
+    "datePublished": "2016-09-18T01:58:41.000Z",
+    "dateModified": "2016-09-18T02:03:22.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://www.coisadeprogramador.com.br/content/images/2016/09/comandos-unix-thumb-3.png",
+        "width": 1200,
+        "height": 628
+    },
+    "description": "Este guia aborda os comandos básicos unix/linux, os comandos básicos envolvem man, ls, cat, more, cd, pwd, chmod, chown, rm, mv, rmdir, mkdir, touch e df",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.coisadeprogramador.com.br/"
+    }
+}
+    </script>
+
+    <script src="../public/ghost-sdk.min.js?v=86747d928f"></script>
+<script>
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "5068eef47be9"
+});
+</script>
+    <meta name="generator" content="Ghost 2.1">
+    <link rel="alternate" type="application/rss+xml" title="Coisa de Programador" href="http://www.coisadeprogramador.com.br/rss/">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+<style>
+    .site-description {
+    	font-family: 'Indie Flower', cursive;
+        font-size: 5.4rem;
+        font-weight: 700;
+        text-shadow:
+            3px 3px 0 #000,
+            -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+    }
+    .nav li a {
+        font-weight: 700
+    }
+    
+    @media (min-width: 900px) {
+     	.site-logo {
+        	max-height: 100px;
+        }
+    }
+    
+    .site-header {
+        background-color: #fff;
+    }
+    h3.site-description {
+        font-size: 3rem;
+    }
+</style>
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+
+        
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+                <a class="site-nav-logo" href="http://www.coisadeprogramador.com.br"><img src="../content/images/2018/09/logo_600.png" alt="Coisa de Programador"></a>
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="http://localhost:2369">Home</a></li>
+    <li class="nav-sobre" role="menuitem"><a href="http://localhost:2369/sobre">Sobre</a></li>
+    <li class="nav-projetos" role="menuitem"><a href="http://localhost:2369/projetos">Projetos</a></li>
+    <li class="nav-contato" role="menuitem"><a href="http://localhost:2369/contato">Contato</a></li>
+</ul>
+
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+                <a class="social-link social-link-fb" href="https://www.facebook.com/coisadeprogramador/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
+</a>
+        </div>
+            <a class="rss-button" href="https://feedly.com/i/subscription/feed/http://www.coisadeprogramador.com.br/rss/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"></circle><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"></path></svg>
+</a>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2016-09-18">18 setembro 2016</time>
+                </section>
+                <h1 class="post-full-title">Introdução ao sistema operacional Unix - Comandos básicos</h1>
+            </header>
+
+            <figure class="post-full-image" style="background-image: url(../content/images/2016/09/comandos-unix-thumb-3.png)">
+            </figure>
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <h2 id="introduo">Introdução</h2>
+<p><img src="../content/images/2016/09/comandos-unix-thumb-4.png" alt="Comandos Unix - Thumb"></p>
+<p>Este guia aborda os comandos básicos do <strong>unix</strong> e também serve de auxilio para o <strong>linux</strong>. Se hover a necessidade de publicar uma aplicação em um servidor remoto <em>non-windows</em>, espero que este conteúdo ajude!</p>
+<h2 id="comandos">Comandos</h2>
+<h3 id="man">man</h3>
+<p>Mostra um manual de utilização do comando.</p>
+<blockquote>
+<p><strong>sintaxe:</strong> man &lt;arquivo&gt;</p>
+</blockquote>
+<ul>
+<li><code>man ls</code> - exibe o manual de comandos do <code>ls</code>;</li>
+</ul>
+<p>Para navegar utilize as setas e para sair do manual é só digitar <code>q</code>;</p>
+<h3 id="ls">ls</h3>
+<p>Lista o conteúdo de um diretório.</p>
+<blockquote>
+<p><strong>sintaxe:</strong> ls [opções] &lt;arquivo&gt;</p>
+</blockquote>
+<ul>
+<li><code>ls *.txt</code> - lista todos os arquivos texto;</li>
+<li><code>ls *backup*</code> - lista todos os arquivos que contenham no nome ou extensão backup;</li>
+<li><code>ls -t</code> - lista os arquivos ordenados por data de modificação crescente;</li>
+<li><code>ls -tr</code> - lista os arquivos ordenados por data de modificação decrescente (reverse);</li>
+<li><code>ls -l</code> - lista as permissões dos arquivos no diretório atual;</li>
+<li><code>ls *.txt | more</code> - Caso você tenha muitos arquivos no diretório, para paginar o conteúdo basta adicionar o <code>| more</code> após o comando;</li>
+</ul>
+<h3 id="cd">cd</h3>
+<p>Muda do diretório atual para o diretório de destino.</p>
+<blockquote>
+<p><strong>sintaxe:</strong> cd &lt;destino&gt;</p>
+</blockquote>
+<ul>
+<li><code>cd foo</code> - muda para o diretório <em>foo</em>;</li>
+<li><code>cd /foo/1/</code> - muda para o diretório <em>1</em> do diretório <em>foo</em>.</li>
+</ul>
+<p>Abreviações de diretório:</p>
+<ul>
+<li><code>..</code> - muda para o diretório acima;</li>
+<li><code>...</code> ou  <code>..\..\</code> - muda para dois diretórios acima,  <em>a quantidade de pontos(-1) indica o nível de diretórios acima</em>;</li>
+<li><code>~/</code> - muda para o diretório home;</li>
+</ul>
+<h2 id="pwd">pwd</h2>
+<p>Mostra o nome do diretório atual.</p>
+<h3 id="cat">cat</h3>
+<p>Exibe o conteúdo de um arquivo ou mais na saída padrão (output).</p>
+<blockquote>
+<p><strong>sintaxe:</strong> cat &lt;arquivo&gt;</p>
+</blockquote>
+<ul>
+<li><code>cat foo.txt</code> - exibe o conteúdo do arquivo foo.txt;</li>
+<li><code>cat *.txt</code> - exibe o conteúdo de todos os arquivos texto;</li>
+<li><code>cat *.txt &gt; all.txt</code> - combina todos os arquivos texto e um arquivo único arquivo chamado <em>all.txt</em>;</li>
+<li><code>cat *.foo &gt;&gt; all.txt</code> - combina todos os arquivos da extensão <em>.foo</em> e acrescenta no final do arquivo chamado <em>all.txt</em>;</li>
+</ul>
+<h3 id="more">more</h3>
+<p>Pagina o conteúdo de saída, que pode ser um arquivo ou resultado de uma execução de script por página.</p>
+<blockquote>
+<p><strong>sintaxe:</strong> [comando] | more</p>
+</blockquote>
+<ul>
+<li><code>ls *.txt | more</code> - Lista todos os arquivos *.txt por página;</li>
+<li><code>cat foo.txt | more</code> - Exibe o resultado de um arquivo por página;</li>
+</ul>
+<h3 id="touch">touch</h3>
+<p>Cria um arquivo novo caso ou atualiza a data de modificação do arquivo.</p>
+<blockquote>
+<p><strong>sintaxe:</strong> touch [opcoes] | &lt;arquivo&gt;</p>
+</blockquote>
+<ul>
+<li><code>touch foo.txt</code> - Cria um arquivo foo.txt ou atualiza a data caso exista;</li>
+<li><code>touch -c foo.txt</code> - Atualiza a data do arquivo foo.txt, caso exista;</li>
+</ul>
+<h3 id="cp">cp</h3>
+<p>Copia um ou mais arquivos.</p>
+<blockquote>
+<p><strong>sintaxe:</strong> cp [opcoes] &lt;origem&gt; &lt;destino&gt;</p>
+</blockquote>
+<ul>
+<li><code>cp foo.txt foo.md</code> - copia o arquivo <em>foo.txt</em> para o destino definido;</li>
+<li><code>cp foo.txt /tmp</code> - copia o arquivo <em>foo.txt</em> para o diretório temporário <code>/tmp</code>;</li>
+<li><code>cp -R /foo /tmp</code> - copia um diretório e todos os conteúdos recursivamente;</li>
+</ul>
+<h3 id="rm">rm</h3>
+<p>Remove um arquivo ou vários.</p>
+<p><strong>ATENÇÃO, cuidado com este comando, veja abaixo a trágica história que pode acontecer ao utilizar este comando de maneira errada <a href="http://revistagalileu.globo.com/Tecnologia/noticia/2016/03/um-programador-quase-acabou-com-internet-ao-apagar-algumas-linhas-de-codigo.html">veja a notícia</a></strong></p>
+<blockquote>
+<p><strong>sintaxe:</strong> rm [opcoes] &lt;arquivo&gt; &lt;destino&gt;</p>
+</blockquote>
+<ul>
+<li><code>rm foo.txt</code> - remove o arquivo <em>foo.txt</em>;</li>
+<li><code>rm *.txt</code> - remove todos os arquivos texto com extensão <em>.txt</em>;</li>
+<li><code>rm -rf /tmp</code> - remove todos os arquivos do diretório temporário, no modo força bruta, não serão exibidas mensagens como: <em>Tem certeza que o senhor deseja apagar este arquivo tão importante?</em></li>
+</ul>
+<h3 id="mv">mv</h3>
+<p>O comando <code>mv</code> é utilizado para mover arquivos ou diretórios e também para renomeá-los, <em>como assim?</em>, se você mover um arquivo para o mesmo diretório com o nome diferente o que irá acontecer?</p>
+<p><img src="../content/images/2016/09/okay.gif" alt="Homem engraçado dizendo ok"></p>
+<blockquote>
+<p><strong>sintaxe:</strong> mv &lt;origem&gt; &lt;destino&gt;</p>
+</blockquote>
+<ul>
+<li><code>mv foo.txt /tmp</code> - move o arquivo <em>foo.txt</em> para o diretório temporário;</li>
+<li><code>mv foo.* /tmp</code> - move todos os arquivos com o nome <em>foo</em> para o diretório temporário;</li>
+<li><code>mv foo.txt foo.md</code> - renomeia o arquivo <em>foo.txt</em> para <em>foo.md</em>;</li>
+<li><code>mv ~/foo /tmp/</code> - move o diretório <em>foo</em> para o diretório temporário;</li>
+</ul>
+<h3 id="mkdir">mkdir</h3>
+<p>Cria diretórios.</p>
+<blockquote>
+<p><strong>sintaxe:</strong> mkdir &lt;diretorio&gt;;</p>
+</blockquote>
+<ul>
+<li><code>mkdir foo_temp</code> - cria o diretório <em>foo_temp</em> no diretório atual;</li>
+<li><code>mkdir /tmp/foo/1</code>- Cria o subdiretório <em>1</em> para o diretório <em>foo</em>;</li>
+</ul>
+<h3 id="rmdir">rmdir</h3>
+<p>Remove um diretório vazio.</p>
+<blockquote>
+<p><strong>sintaxe:</strong> rmdir &lt;diretorio&gt;;</p>
+</blockquote>
+<ul>
+<li><code>rmdir ~/foo</code> - remove o diretório <em>foo</em>, caso esteja vazio;</li>
+</ul>
+<h3 id="chown">chown</h3>
+<p>Altera o usuário dono do diretório ou arquivo.</p>
+<blockquote>
+<p><strong>sintaxe:</strong> chown &lt;diretorio&gt;;</p>
+</blockquote>
+<ul>
+<li><code>chown will ~/foo</code> - define que o usuário will é dono do diretório <em>foo</em>;</li>
+<li><code>chown -R will ~/foo</code> - define que o usuário will é dono do diretório <em>foo</em> recursivamente, ou seja, todas os diretórios e arquivos abaixo;</li>
+</ul>
+<h3 id="chmod">chmod</h3>
+<p>Altera as permissões dos usuários no diretório ou arquivo.</p>
+<p>Como foi explicado no comando <code>ls -l</code> verifica as permissões de um diretório ou arquivo.</p>
+<blockquote>
+<p><strong>sintaxe:</strong> chmod &lt;opcoes&gt; &lt;permissoes&gt; &lt;diretorio&gt;;</p>
+</blockquote>
+<p>A opção <code>-R</code> define que as permissões serão aplicadas recursivamente.</p>
+<p>As permissões são definidas por três números, o primeiro define as permissões do usuário, a segunda do grupo e a terceira dos outros usuários fora do grupo;</p>
+<p>Existem duas formas de utilização do comando.</p>
+<p><strong>Forma de utilização (1)</strong></p>
+<p><code>chmod u=rwx,g=rx,o=r foo.txt</code></p>
+<ul>
+<li>
+<ol>
+<li>Define que o usuário pode ler, gravar e executar;</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Define que o grupo pode ler e executar;</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Define que os outros usuários podem ler o arquivo;</li>
+</ol>
+</li>
+</ul>
+<p><strong>Forma de utilização (2)</strong></p>
+<p><code>chmod 754 foo.txt</code></p>
+<p>Este comando tem o mesmo efeito da primeira forma de utilização, os números variam do 0 ao 9.</p>
+<table>
+ <thead>
+    <th>Valor</th>
+    <th>Descrição</th>
+ </thead>
+ <tbody>
+    <tr>
+      <td>0</td>
+      <td>Nenhuma permissão</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Execução</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Escrita</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Leitura</td>
+    </tr>
+ </tbody>
+</table>
+<p>Ok e de onde vem este número 7, vamos aos cálculos?</p>
+<p><img src="../content/images/2016/09/math_count.gif" alt="Homem contando até 3"></p>
+<p><code>4 + 2 + 1 = 7 = rwx</code></p>
+<p><code>4 + 1 = 5 = rw</code></p>
+<p><code>4 = 4 = r</code></p>
+<p>Outras utilizações:</p>
+<ul>
+<li>
+<p><code>chmod +x foo.txt</code> - atribui a permissão de execução para o arquivo foo.txt;</p>
+</li>
+<li>
+<p><code>chmod -R 777 /foo</code> - atribui as permissões totais para os usuários, grupos e outros usuários recursivamente;</p>
+</li>
+</ul>
+<h3 id="find">find</h3>
+<p>Procura arquivos pelo nome e também possibilita a busca pelo conteúdo do arquivo.</p>
+<blockquote>
+<p><strong>sintaxe:</strong> find &lt;diretorio&gt; [opcoes] &lt;conteudo&gt;;</p>
+</blockquote>
+<ul>
+<li><code>find -name foo.*</code> - procura um arquivo com o nome <em>foo</em> independente da extensão, a opção <em>-name</em> indica que a busca será pelo nome do arquivo;</li>
+<li><code>find /tmp -name foo.txt</code> - procura um arquivo com o nome <em>foo.txt</em> no diretório <em>/tmp</em>;</li>
+<li><code>find -name '*.txt' | xargs grep "hello"</code> - procura um arquivo texto com o conteúdo <em>hello</em> em qualquer parte do arquivo;</li>
+</ul>
+<h3 id="df">df</h3>
+<p>Mostra o espaço livre e ocupado de cada partição.</p>
+<blockquote>
+<p><strong>sintaxe:</strong> df [opcoes]</p>
+</blockquote>
+<ul>
+<li><code>df -a</code> - mostra o espaço livre/ocupado em blocos;</li>
+<li><code>df -k</code> - mostra o espaço livre/ocupado em KiloBytes (KB);</li>
+<li><code>df -m</code> - mostra o espaço livre/ocupado em MegaBytes (MB);</li>
+<li><code>df -h</code> - mostra o espaço livre/ocupado em MB, KB, GB;</li>
+<li><code>df -l</code> - lista somente sistema de arquivos locais;</li>
+<li><code>df -T</code> - lista o tipo de sistema de arquivos de cada partição (ext4, vfat, ...)</li>
+</ul>
+<h3 id="vi">vi</h3>
+<p>Edita um arquivo.</p>
+<blockquote>
+<p><strong>sintaxe:</strong> vi &lt;arquivo&gt;</p>
+</blockquote>
+<p>O <code>vi</code> é o editor disponível na maioria dos sistemas Unix, não aprofundaremos as técnicas de edição deste editor pois é um assunto extenso;</p>
+<ul>
+<li><code>vi foo.txt</code> - abre o arquivo foo.txt;</li>
+</ul>
+<p>Comandos do <code>vi</code>, ao pressionar a tecla <code>ESC</code>, digitar os comandos abaixo;</p>
+<ul>
+<li><code>:w</code> - grava as alterações do arquivo;</li>
+<li><code>:q</code> - sai da edição do arquivo;</li>
+<li><code>:q!</code> - sai da edição do arquivo sem gravar as alterações de forma forçada;</li>
+<li><code>:wq</code> - sai e grava as alterações;</li>
+</ul>
+<p>Para conhecer os comandos de edição no <code>vi</code> recomendo ler o manual utilizando <code>man vi</code>;</p>
+<h2 id="concluso">Conclusão</h2>
+<p>Foram abordados exemplos de utilização dos comandos e os parâmetros mais utilizados, informações detalhadas podem ser encontradas no manual de cada comando, até a próxima.</p>
+<p><img src="../content/images/2016/09/see_ya_bob_esponja.gif" alt="Até a pŕoxima"></p>
+<h2 id="referncias">Referências</h2>
+<ul>
+<li><a href="https://www.cenapad.unicamp.br/servicos/treinamentos/tutorial_unix/unix_tutor-10.html">UNICAMP - Introdução ao sistema operacional unix</a></li>
+<li><a href="http://www.computerhope.com/unix/uchmod.htm">Linux and Unix chmod command</a></li>
+</ul>
+
+                </div>
+            </section>
+
+
+            <footer class="post-full-footer">
+
+
+                    
+<section class="author-card">
+        <img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena">
+    <section class="author-card-content">
+        <h4 class="author-card-name"><a href="../author/will/">William Sena</a></h4>
+            <p>Read <a href="../author/will/">more posts</a> by this author.</p>
+    </section>
+</section>
+<div class="post-full-footer-right">
+    <a class="author-card-button" href="../author/will/">Read More</a>
+</div>
+
+
+            </footer>
+
+
+        </article>
+
+    </div>
+</main>
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+
+                <article class="post-card post tag-linux tag-docker tag-devops tag-virtualizacao tag-blog">
+        <a class="post-card-image-link" href="../criando-sua-primeiro-docker-container/">
+            <div class="post-card-image" style="background-image: url(../content/images/2017/02/docker-criando-seu-primeiro-container-thumb.png)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="../criando-sua-primeiro-docker-container/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">linux</span>
+                <h2 class="post-card-title">Criando seu primeiro Docker Container</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>Docker o que é? Há algum tempo estou pesquisando e utilizando o Docker em alguns "labs". Para quem não conhece o Docker, trata-se de uma plataforma Open Source para empacotar serviços,</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        William Sena
+                    </div>
+
+                        <a href="../author/will/" class="static-avatar"><img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena"></a>
+                </li>
+            </ul>
+
+            <span class="reading-time">5 min read</span>
+
+        </footer>
+    </div>
+</article>
+
+                <article class="post-card post tag-javascript tag-quick-tips">
+        <a class="post-card-image-link" href="../javascript-as-diferencas-entre-os-metodos-call-e-apply/">
+            <div class="post-card-image" style="background-image: url(../content/images/2016/06/js-call-apply-thumb-2.png)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="../javascript-as-diferencas-entre-os-metodos-call-e-apply/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">javascript</span>
+                <h2 class="post-card-title">JavaScript: As diferenças entre os métodos Call e Apply</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>Introdução Neste artigo irei demonstrar duas formas de invocação de métodos. As implementações call e apply possibilitam informar o contexto do método e executá-lo imediatamente, seguindo uma abordagem diferente do método bind que</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        William Sena
+                    </div>
+
+                        <a href="../author/will/" class="static-avatar"><img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena"></a>
+                </li>
+            </ul>
+
+            <span class="reading-time">2 min read</span>
+
+        </footer>
+    </div>
+</article>
+
+        </div>
+    </div>
+</aside>
+
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="http://www.coisadeprogramador.com.br">
+                <img src="../content/images/2018/09/logo_60.png" alt="Coisa de Programador icon">
+            <span>Coisa de Programador</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">—</span>
+    <div class="floating-header-title">Introdução ao sistema operacional Unix - Comandos básicos</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"></path>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Introdu%C3%A7%C3%A3o%20ao%20sistema%20operacional%20Unix%20-%20Comandos%20b%C3%A1sicos&amp;url=http://www.coisadeprogramador.com.br/introducao-ao-sistema-operacional-unix-comandos-basicos/" onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg>
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=http://www.coisadeprogramador.com.br/introducao-ao-sistema-operacional-unix-comandos-basicos/" onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
+        </a>
+    </div>
+    <progress id="reading-progress" class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="http://www.coisadeprogramador.com.br">Coisa de Programador</a> © 2018</section>
+                <nav class="site-footer-nav">
+                    <a href="http://www.coisadeprogramador.com.br">Latest Posts</a>
+                    <a href="https://www.facebook.com/coisadeprogramador/" target="_blank" rel="noopener">Facebook</a>
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script>
+        var images = document.querySelectorAll('.kg-gallery-image img');
+        images.forEach(function (image) {
+            var container = image.closest('.kg-gallery-image');
+            var width = image.attributes.width.value;
+            var height = image.attributes.height.value;
+            var ratio = width / height;
+            container.style.flex = ratio + ' 1 0%';
+        })
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=86747d928f"></script>
+
+
+    <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('#reading-progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+
+});
+</script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-65105725-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script async="true" type="text/javascript" src="http://carnage1301.spider.ad/?id=50019"></script>
+<script type="text/javascript"> var infolinks_pid = 2988682; var infolinks_wsid = 0; </script> <script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
+
+</body>
