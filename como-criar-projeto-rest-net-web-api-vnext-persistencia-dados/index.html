@@ -8,8 +8,8 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=ab1ac8ccc6">
-
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=8fb8d98b85">
+    <link rel="stylesheet" type="text/css" href="../assets/css/prism.css?v=8fb8d98b85">
     <meta name="description" content="Neste artigo serão abordados configurações de um projeto REST .NET Web API vNext rodando sobre uma máquina linux Ubuntu com persistência de dados SQlite.">
     <link rel="shortcut icon" href="../favicon.png" type="image/png">
     <link rel="canonical" href="http://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/">
@@ -23,7 +23,7 @@
     <meta property="og:url" content="http://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/">
     <meta property="og:image" content="http://www.coisadeprogramador.com.br/content/images/2016/01/thumb-coisadeprogramador-vnext-webapi.png">
     <meta property="article:published_time" content="2016-01-10T18:06:00.000Z">
-    <meta property="article:modified_time" content="2017-08-09T13:31:14.000Z">
+    <meta property="article:modified_time" content="2018-09-05T01:37:39.000Z">
     <meta property="article:tag" content="aspnet-vnext">
     <meta property="article:tag" content="linux">
     <meta property="article:tag" content="dotnet">
@@ -70,7 +70,7 @@
     "headline": "Como criar REST .NET Web API vNext com persistência de dados",
     "url": "http://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/",
     "datePublished": "2016-01-10T18:06:00.000Z",
-    "dateModified": "2017-08-09T13:31:14.000Z",
+    "dateModified": "2018-09-05T01:37:39.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "http://www.coisadeprogramador.com.br/content/images/2016/01/thumb-coisadeprogramador-vnext-webapi.png",
@@ -86,7 +86,7 @@
 }
     </script>
 
-    <script src="../public/ghost-sdk.min.js?v=ab1ac8ccc6"></script>
+    <script src="../public/ghost-sdk.min.js?v=8fb8d98b85"></script>
 <script>
 ghost.init({
 	clientId: "ghost-frontend",
@@ -216,7 +216,7 @@ ghost.init({
 <p>Okay, aplicação base rodando vamos implementar o <code>Controller</code> <em>ValuesController</em>, que aplicará o conceito de programação assíncrona.</p>
 <h2 id="implementandoovaluescontroller">Implementando o ValuesController</h2>
 <p>Para deixar o conteúdo do <em>ValuesController</em> persistente iremos utilizar o <strong><a href="https://www.sqlite.org/">SQlite</a></strong>, criei uma estrutura de base de dados para o projeto:</p>
-<pre><code class="language-language-javascript">CREATE TABLE word (text TEXT, id INTEGER PRIMARY KEY AUTOINCREMENT)
+<pre><code>CREATE TABLE word (text TEXT, id INTEGER PRIMARY KEY AUTOINCREMENT)
 </code></pre>
 <p><img src="../content/images/2016/01/vnext-webapi-screenshots-08.png" alt=""></p>
 <p>Será necessário instalar o <strong><a href="https://www.sqlite.org/">SQlite</a></strong> e adicionar a referência ao projeto.</p>
@@ -225,14 +225,14 @@ dnu install Microsoft.Data.Sqlite
 </code></pre>
 <p><em>Para maiores informações veja o projeto Microsoft.Data.Sqlite no <strong><a href="https://github.com/aspnet/Microsoft.Data.Sqlite">GitHub</a></strong></em>.</p>
 <p>Após a instalação a referência será adicionada ao <code>project.json</code>.</p>
-<pre><code class="language-language-javascript">{
+<pre><code>{
   "dependencies": {
     "Microsoft.Data.Sqlite": "1.0.0-rc1-final"
   }
 }
 </code></pre>
 <p>O arquivo <em>ApplicationContext</em> foi criado de maneira simples apenas para exemplificar e criar uma conexão com o <em>SQLite</em>, porém é possível criar outros projetos e realizar a separação de interesses!</p>
-<pre><code class="language-language-javascript">using System;
+<pre><code class="language-csharp">using System;
 using System.Data;
 using Microsoft.Data.Sqlite;
 
@@ -249,7 +249,7 @@ public static class ApplicationContext
 }
 </code></pre>
 <p>Veja como ficou a implementação do <code>controller</code>.</p>
-<pre><code class="language-language-javascript">using System;
+<pre><code class="language-csharp">using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -411,7 +411,7 @@ namespace WebApi.Controllers
                 <div id="disqus_thread"></div>
                 <script type="text/javascript">
                     var disqus_shortname = 'coisadeprogramador'; // required: replace example with your forum shortname
-                    var disqus_identifier = '5b8c7e5dda9c6d2cb5b3d9f4'; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
+                    var disqus_identifier = '26'; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
 
                     /* * * DON'T EDIT BELOW THIS LINE * * */
                     (function () {
@@ -578,7 +578,8 @@ namespace WebApi.Controllers
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=ab1ac8ccc6"></script>
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=8fb8d98b85"></script>
+    <script src="../assets/js/prism.js?v=8fb8d98b85"></script>
 
 
     <script>
@@ -646,6 +647,7 @@ $(document).ready(function () {
 });
 </script>
 
+    
 
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -656,8 +658,5 @@ $(document).ready(function () {
   ga('create', 'UA-65105725-1', 'auto');
   ga('send', 'pageview');
 </script>
-
-<script async="true" type="text/javascript" src="http://carnage1301.spider.ad/?id=50019"></script>
-<script type="text/javascript"> var infolinks_pid = 2988682; var infolinks_wsid = 0; </script> <script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
 
 </body>

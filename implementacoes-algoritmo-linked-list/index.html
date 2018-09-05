@@ -8,8 +8,8 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=ab1ac8ccc6">
-
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=8fb8d98b85">
+    <link rel="stylesheet" type="text/css" href="../assets/css/prism.css?v=8fb8d98b85">
     <meta name="description" content="É uma coleção linear de elementos de dados, na qual a ordem linear não é dada pela sua alocação física na memória. Variações Singly LinkedList e Doubly">
     <link rel="shortcut icon" href="../favicon.png" type="image/png">
     <link rel="canonical" href="http://www.coisadeprogramador.com.br/implementacoes-algoritmo-linked-list/">
@@ -23,7 +23,7 @@
     <meta property="og:url" content="http://www.coisadeprogramador.com.br/implementacoes-algoritmo-linked-list/">
     <meta property="og:image" content="http://www.coisadeprogramador.com.br/content/images/2017/09/linkedlist.png">
     <meta property="article:published_time" content="2017-09-27T15:02:58.000Z">
-    <meta property="article:modified_time" content="2018-09-03T02:06:47.000Z">
+    <meta property="article:modified_time" content="2018-09-05T01:38:22.000Z">
     
     <meta property="article:publisher" content="https://www.facebook.com/coisadeprogramador/">
     <meta name="twitter:card" content="summary_large_image">
@@ -67,7 +67,7 @@
     "headline": "Implementações do algoritmo Linked List",
     "url": "http://www.coisadeprogramador.com.br/implementacoes-algoritmo-linked-list/",
     "datePublished": "2017-09-27T15:02:58.000Z",
-    "dateModified": "2018-09-03T02:06:47.000Z",
+    "dateModified": "2018-09-05T01:38:22.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "http://www.coisadeprogramador.com.br/content/images/2017/09/linkedlist.png",
@@ -82,7 +82,7 @@
 }
     </script>
 
-    <script src="../public/ghost-sdk.min.js?v=ab1ac8ccc6"></script>
+    <script src="../public/ghost-sdk.min.js?v=8fb8d98b85"></script>
 <script>
 ghost.init({
 	clientId: "ghost-frontend",
@@ -191,7 +191,7 @@ ghost.init({
 <p>Em ambos algoritmos na primeira exibição da lista contém os valores iniciais <code>[1, 3, 5, 7, 11]</code>, na segunda exibição ocorre a exclusão dos itens 1 e 5.</p>
 <h2 id="singlylinkedlist">Singly LinkedList</h2>
 <p><img src="../content/images/2017/09/linkedlist_1-2.jpeg" alt="Números utilizados no LinkedList"></p>
-<pre><code class="language-language-javascript">from random import randint
+<pre><code class="language-python">from random import randint
         
 class Node(object):
     def __init__(self, value, next_node = None):
@@ -276,7 +276,7 @@ Removing...
 <p>As propriedades <code>head</code> e <code>tail</code> definem o começo e o fim da lista, sendo assim podemos percorrer em ambos sentidos.</p>
 <h2 id="doublylinkedlist">Doubly LinkedList</h2>
 <p><img src="../content/images/2017/09/linkedlist_2-2.jpeg" alt="Números Doubly LinkedList"></p>
-<pre><code class="language-language-javascript">from random import randint
+<pre><code class="language-python">from random import randint
         
 class Node(object):
     def __init__(self, value, prev_node = None, next_node = None):
@@ -416,7 +416,7 @@ Removing...
                 <div id="disqus_thread"></div>
                 <script type="text/javascript">
                     var disqus_shortname = 'coisadeprogramador'; // required: replace example with your forum shortname
-                    var disqus_identifier = '5b8c7e5dda9c6d2cb5b3da05'; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
+                    var disqus_identifier = '43'; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
 
                     /* * * DON'T EDIT BELOW THIS LINE * * */
                     (function () {
@@ -566,7 +566,8 @@ Removing...
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=ab1ac8ccc6"></script>
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=8fb8d98b85"></script>
+    <script src="../assets/js/prism.js?v=8fb8d98b85"></script>
 
 
     <script>
@@ -634,6 +635,7 @@ $(document).ready(function () {
 });
 </script>
 
+    
 
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -644,8 +646,5 @@ $(document).ready(function () {
   ga('create', 'UA-65105725-1', 'auto');
   ga('send', 'pageview');
 </script>
-
-<script async="true" type="text/javascript" src="http://carnage1301.spider.ad/?id=50019"></script>
-<script type="text/javascript"> var infolinks_pid = 2988682; var infolinks_wsid = 0; </script> <script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
 
 </body>

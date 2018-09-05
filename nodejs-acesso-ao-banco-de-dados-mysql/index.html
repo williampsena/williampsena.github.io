@@ -8,8 +8,8 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=ab1ac8ccc6">
-
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=8fb8d98b85">
+    <link rel="stylesheet" type="text/css" href="../assets/css/prism.css?v=8fb8d98b85">
     <link rel="shortcut icon" href="../favicon.png" type="image/png">
     <link rel="canonical" href="http://www.coisadeprogramador.com.br/nodejs-acesso-ao-banco-de-dados-mysql/">
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -22,7 +22,7 @@
     <meta property="og:url" content="http://www.coisadeprogramador.com.br/nodejs-acesso-ao-banco-de-dados-mysql/">
     <meta property="og:image" content="http://www.coisadeprogramador.com.br/content/images/2015/07/nodejs-mysql.png">
     <meta property="article:published_time" content="2015-07-29T01:42:00.000Z">
-    <meta property="article:modified_time" content="2015-07-30T01:13:42.000Z">
+    <meta property="article:modified_time" content="2018-09-05T01:30:01.000Z">
     <meta property="article:publisher" content="https://www.facebook.com/coisadeprogramador/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Nodejs - Acessando o MySQL">
@@ -63,7 +63,7 @@
     "headline": "Nodejs - Acessando o MySQL",
     "url": "http://www.coisadeprogramador.com.br/nodejs-acesso-ao-banco-de-dados-mysql/",
     "datePublished": "2015-07-29T01:42:00.000Z",
-    "dateModified": "2015-07-30T01:13:42.000Z",
+    "dateModified": "2018-09-05T01:30:01.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "http://www.coisadeprogramador.com.br/content/images/2015/07/nodejs-mysql.png",
@@ -78,7 +78,7 @@
 }
     </script>
 
-    <script src="../public/ghost-sdk.min.js?v=ab1ac8ccc6"></script>
+    <script src="../public/ghost-sdk.min.js?v=8fb8d98b85"></script>
 <script>
 ghost.init({
 	clientId: "ghost-frontend",
@@ -189,7 +189,7 @@ PRIMARY KEY (`id`));
 </code></pre>
 <h3 id="ccreate">(C) Create</h3>
 <p>Representa a criação de um registro na tabela, o comando INSERT do SQL realiza esta operação.</p>
-<pre><code class="language-language-javascript">var mysql      = require('mysql');
+<pre><code class="language-javascript">var mysql      = require('mysql');
 var connection = mysql.createConnection({});
 
 connection.connect();
@@ -201,7 +201,7 @@ connection.query('INSERT INTO `test`.`message` (id, text) VALUES (1, \'Hello\')'
 </code></pre>
 <h3 id="rread">(R) Read</h3>
 <p>Representa o retorno de dados, o comando SELECT do SQL realiza esta operação.</p>
-<pre><code class="language-language-javascript">var mysql      = require('mysql');
+<pre><code class="language-javascript">var mysql      = require('mysql');
 var connection = mysql.createConnection({});
 
 connection.connect();
@@ -213,7 +213,7 @@ connection.query('SELECT id, text from `test`.`message`', function(err, rows, fi
 </code></pre>
 <h3 id="uupdate">(U) Update</h3>
 <p>Representa a atualização de dados, o comando UPDATE do SQL, realiza esta operação.</p>
-<pre><code class="language-language-javascript">var mysql      = require('mysql');
+<pre><code class="language-javascript">var mysql      = require('mysql');
 var connection = mysql.createConnection({});
 
 connection.connect();
@@ -225,7 +225,7 @@ connection.query('UPDATE `test`.`message` set text = text \'123\' where id = 1',
 </code></pre>
 <h3 id="ddelete">(D) Delete</h3>
 <p>Representa a exclusão de dados, o comando DELETE do SQL, realiza esta operação.</p>
-<pre><code class="language-language-javascript">var mysql      = require('mysql');
+<pre><code class="language-javascript">var mysql      = require('mysql');
 var connection = mysql.createConnection({});
 
 connection.connect();
@@ -237,7 +237,7 @@ connection.query('DELETE FROM `test`.`message` where id = 1', function(err, rows
 </code></pre>
 <h3 id="implementaofinal">Implementação (Final)</h3>
 <p><em><strong>connection.js</strong></em></p>
-<pre><code class="language-language-javascript">var util      = require('util');
+<pre><code class="language-javascript">var util      = require('util');
 var mysql      = require('mysql');
 
 var connection = mysql.createConnection({
@@ -325,7 +325,7 @@ module.exports = {
 };
 </code></pre>
 <p><em><strong>index.js</strong></em></p>
-<pre><code class="language-language-javascript">var util = require('util');
+<pre><code class="language-javascript">var util = require('util');
 
 var connection = require('./connection');
 var model = {
@@ -394,7 +394,7 @@ Até a próxima.</p>
                 <div id="disqus_thread"></div>
                 <script type="text/javascript">
                     var disqus_shortname = 'coisadeprogramador'; // required: replace example with your forum shortname
-                    var disqus_identifier = '5b8c7e5dda9c6d2cb5b3d9e4'; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
+                    var disqus_identifier = '5'; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
 
                     /* * * DON'T EDIT BELOW THIS LINE * * */
                     (function () {
@@ -545,7 +545,8 @@ Até a próxima.</p>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=ab1ac8ccc6"></script>
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=8fb8d98b85"></script>
+    <script src="../assets/js/prism.js?v=8fb8d98b85"></script>
 
 
     <script>
@@ -613,6 +614,7 @@ $(document).ready(function () {
 });
 </script>
 
+    
 
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -623,8 +625,5 @@ $(document).ready(function () {
   ga('create', 'UA-65105725-1', 'auto');
   ga('send', 'pageview');
 </script>
-
-<script async="true" type="text/javascript" src="http://carnage1301.spider.ad/?id=50019"></script>
-<script type="text/javascript"> var infolinks_pid = 2988682; var infolinks_wsid = 0; </script> <script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
 
 </body>

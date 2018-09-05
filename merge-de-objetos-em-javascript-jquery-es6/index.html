@@ -8,8 +8,8 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=ab1ac8ccc6">
-
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=8fb8d98b85">
+    <link rel="stylesheet" type="text/css" href="../assets/css/prism.css?v=8fb8d98b85">
     <meta name="description" content="Este artigo aborda o merge ou concatenação de objetos em JavaScript. Esta técnica pode ser aplicada com o jQuery ($.extend) ou ES6 (Object.Assign).">
     <link rel="shortcut icon" href="../favicon.png" type="image/png">
     <link rel="canonical" href="http://www.coisadeprogramador.com.br/merge-de-objetos-em-javascript-jquery-es6/">
@@ -23,7 +23,7 @@
     <meta property="og:url" content="http://www.coisadeprogramador.com.br/merge-de-objetos-em-javascript-jquery-es6/">
     <meta property="og:image" content="http://www.coisadeprogramador.com.br/content/images/2017/05/js-merge-objetos-1.png">
     <meta property="article:published_time" content="2017-05-24T23:52:00.000Z">
-    <meta property="article:modified_time" content="2018-09-03T02:07:42.000Z">
+    <meta property="article:modified_time" content="2018-09-05T01:39:24.000Z">
     <meta property="article:tag" content="javascript">
     
     <meta property="article:publisher" content="https://www.facebook.com/coisadeprogramador/">
@@ -68,7 +68,7 @@
     "headline": "Merge / concatenação de objetos em javascript com jQuery e ES6",
     "url": "http://www.coisadeprogramador.com.br/merge-de-objetos-em-javascript-jquery-es6/",
     "datePublished": "2017-05-24T23:52:00.000Z",
-    "dateModified": "2018-09-03T02:07:42.000Z",
+    "dateModified": "2018-09-05T01:39:24.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "http://www.coisadeprogramador.com.br/content/images/2017/05/js-merge-objetos-1.png",
@@ -84,7 +84,7 @@
 }
     </script>
 
-    <script src="../public/ghost-sdk.min.js?v=ab1ac8ccc6"></script>
+    <script src="../public/ghost-sdk.min.js?v=8fb8d98b85"></script>
 <script>
 ghost.init({
 	clientId: "ghost-frontend",
@@ -182,7 +182,7 @@ ghost.init({
 <p>Além do <em>jQuery</em> proporcionar recursos de manipulação do DOM, existem recursos que são úteis para manipulação de objetos por ex: <strong>$.each</strong> é o <strong>$.extend</strong>.</p>
 <p>O método <strong>$.extend</strong> possui duas sobrecargas possíveis veja no link de referências.</p>
 <p>Segue um exemplo de implementação realizando o merge de prototypes:</p>
-<pre><code class="language-language-javascript">var Animal = function Animal(){};
+<pre><code class="language-javascript">var Animal = function Animal(){};
 Animal.prototype = {
   setResult: function setResult(message){
    var result = document.createElement('p');
@@ -250,7 +250,7 @@ var lionFalcon = new LionFalcon();
 <ul>
 <li><em>Este exemplo ficaria melhor se fosse escrito totalmente em ES6, com class, lambdas e etc.., porém o foco é demonstrar a utilização do Object.assign!</em></li>
 </ul>
-<pre><code class="language-language-javascript">var Animal = function Animal(){};
+<pre><code class="language-javascript">var Animal = function Animal(){};
 Animal.prototype = {
   setResult: function setResult(message){
    var result = document.createElement('p');
@@ -351,7 +351,7 @@ var lionFalcon = new LionFalcon();
                 <div id="disqus_thread"></div>
                 <script type="text/javascript">
                     var disqus_shortname = 'coisadeprogramador'; // required: replace example with your forum shortname
-                    var disqus_identifier = '5b8c7e5dda9c6d2cb5b3da00'; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
+                    var disqus_identifier = '38'; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
 
                     /* * * DON'T EDIT BELOW THIS LINE * * */
                     (function () {
@@ -520,7 +520,8 @@ var lionFalcon = new LionFalcon();
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=ab1ac8ccc6"></script>
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=8fb8d98b85"></script>
+    <script src="../assets/js/prism.js?v=8fb8d98b85"></script>
 
 
     <script>
@@ -588,6 +589,7 @@ $(document).ready(function () {
 });
 </script>
 
+    
 
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -598,8 +600,5 @@ $(document).ready(function () {
   ga('create', 'UA-65105725-1', 'auto');
   ga('send', 'pageview');
 </script>
-
-<script async="true" type="text/javascript" src="http://carnage1301.spider.ad/?id=50019"></script>
-<script type="text/javascript"> var infolinks_pid = 2988682; var infolinks_wsid = 0; </script> <script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
 
 </body>

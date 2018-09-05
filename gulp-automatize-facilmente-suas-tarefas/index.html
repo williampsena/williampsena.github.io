@@ -8,8 +8,8 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=ab1ac8ccc6">
-
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=8fb8d98b85">
+    <link rel="stylesheet" type="text/css" href="../assets/css/prism.css?v=8fb8d98b85">
     <meta name="description" content='Gulp é um automatizador de tarefas "refinado" do NodeJs, que surgiu após o sucesso do Grunt, porém com um foco em eficiência e simplicidade.'>
     <link rel="shortcut icon" href="../favicon.png" type="image/png">
     <link rel="canonical" href="http://www.coisadeprogramador.com.br/gulp-automatize-facilmente-suas-tarefas/">
@@ -23,7 +23,7 @@
     <meta property="og:url" content="http://www.coisadeprogramador.com.br/gulp-automatize-facilmente-suas-tarefas/">
     <meta property="og:image" content="http://www.coisadeprogramador.com.br/content/images/2015/08/thumb-coisadeprogramador-2.png">
     <meta property="article:published_time" content="2015-08-16T23:32:16.000Z">
-    <meta property="article:modified_time" content="2015-08-18T03:48:33.000Z">
+    <meta property="article:modified_time" content="2018-09-05T01:30:57.000Z">
     <meta property="article:tag" content="NodeJs">
     <meta property="article:tag" content="NodeJs-Intermediate">
     <meta property="article:tag" content="Automatizador-Tarefas">
@@ -70,7 +70,7 @@
     "headline": "Gulp Automatizando tarefas recorrentes e essenciais para o projeto",
     "url": "http://www.coisadeprogramador.com.br/gulp-automatize-facilmente-suas-tarefas/",
     "datePublished": "2015-08-16T23:32:16.000Z",
-    "dateModified": "2015-08-18T03:48:33.000Z",
+    "dateModified": "2018-09-05T01:30:57.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "http://www.coisadeprogramador.com.br/content/images/2015/08/thumb-coisadeprogramador-2.png",
@@ -86,7 +86,7 @@
 }
     </script>
 
-    <script src="../public/ghost-sdk.min.js?v=ab1ac8ccc6"></script>
+    <script src="../public/ghost-sdk.min.js?v=8fb8d98b85"></script>
 <script>
 ghost.init({
 	clientId: "ghost-frontend",
@@ -229,7 +229,7 @@ npm install --save-dev gulp-jsdoc
 <ul>
 <li><em>helloWorld.js</em></li>
 </ul>
-<pre><code class="language-language-javascript">/**
+<pre><code class="language-javascript">/**
  * Represents a hello world function ;).
  * @public
  * @class
@@ -270,7 +270,7 @@ helloWorld.prototype.printToConsole = function sayHello(message){
 <ul>
 <li><strong>gulpfile.js</strong></li>
 </ul>
-<pre><code class="language-language-javascript">var gulp = require('gulp'),
+<pre><code class="language-javascript">var gulp = require('gulp'),
     jsdoc = require("gulp-jsdoc");
  
 gulp.task('jsdoc-now', function(){
@@ -294,7 +294,7 @@ gulp.task('jsdoc-now', function(){
 <p><strong>index.js</strong></p>
 </li>
 </ul>
-<pre><code class="language-language-javascript">var fs = require('fs'),
+<pre><code class="language-javascript">var fs = require('fs'),
 	gulp = require('gulp'),
 	gulpFile = require('./gulpfile');
 
@@ -350,7 +350,7 @@ gulp.start('jsdoc-now', function (done){
                 <div id="disqus_thread"></div>
                 <script type="text/javascript">
                     var disqus_shortname = 'coisadeprogramador'; // required: replace example with your forum shortname
-                    var disqus_identifier = '5b8c7e5dda9c6d2cb5b3d9e8'; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
+                    var disqus_identifier = '10'; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
 
                     /* * * DON'T EDIT BELOW THIS LINE * * */
                     (function () {
@@ -519,7 +519,8 @@ gulp.start('jsdoc-now', function (done){
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=ab1ac8ccc6"></script>
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=8fb8d98b85"></script>
+    <script src="../assets/js/prism.js?v=8fb8d98b85"></script>
 
 
     <script>
@@ -587,6 +588,7 @@ $(document).ready(function () {
 });
 </script>
 
+    
 
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -597,8 +599,5 @@ $(document).ready(function () {
   ga('create', 'UA-65105725-1', 'auto');
   ga('send', 'pageview');
 </script>
-
-<script async="true" type="text/javascript" src="http://carnage1301.spider.ad/?id=50019"></script>
-<script type="text/javascript"> var infolinks_pid = 2988682; var infolinks_wsid = 0; </script> <script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
 
 </body>
