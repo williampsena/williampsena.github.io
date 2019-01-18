@@ -8,7 +8,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=42670f6313">
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=fca976e73d">
 
     <meta name="description" content="Este artigo aborda o merge ou concatenação de objetos em JavaScript. Esta técnica pode ser aplicada com o jQuery ($.extend) ou ES6 (Object.Assign).">
     <link rel="shortcut icon" href="../favicon.png" type="image/png">
@@ -19,7 +19,16 @@
     <meta property="og:site_name" content="Coisa de Programador">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Merge / concatenação de objetos em javascript com jQuery e ES6">
-    <meta property="og:description" content="Este artigo aborda o merge ou concatenação de objetos em JavaScript. Esta técnica pode ser aplicada com o jQuery ($.extend) ou ES6 (Object.Assign).">
+    <meta property="og:description" content='Merge?
+O recurso de merge de objetos é muito utilizado em construtores e métodos de
+configuração. Provavelmente você já deve ter usado algum plugin jQuery  que
+aceita parâmetros opcionais. Falando a nossa lingua você pode "mergear"  objetos
+utilizando o próprio jQuery ou recursos do ES6, claro nem todo IE, ops!
+navegador, aceita o ES6, porém estamos na era da "transpilação"  onde quase tudo
+é possível.
+
+Merge com jQuery.
+Além do jQuery  proporcionar recursos de manipulação do DOM, existem recurs'>
     <meta property="og:url" content="https://www.coisadeprogramador.com.br/merge-de-objetos-em-javascript-jquery-es6/">
     <meta property="og:image" content="https://www.coisadeprogramador.com.br/content/images/2017/05/js-merge-objetos-1.png">
     <meta property="article:published_time" content="2017-05-24T23:52:00.000Z">
@@ -29,7 +38,16 @@
     <meta property="article:publisher" content="https://www.facebook.com/coisadeprogramador/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Merge / concatenação de objetos em javascript com jQuery e ES6">
-    <meta name="twitter:description" content="Este artigo aborda o merge ou concatenação de objetos em JavaScript. Esta técnica pode ser aplicada com o jQuery ($.extend) ou ES6 (Object.Assign).">
+    <meta name="twitter:description" content='Merge?
+O recurso de merge de objetos é muito utilizado em construtores e métodos de
+configuração. Provavelmente você já deve ter usado algum plugin jQuery  que
+aceita parâmetros opcionais. Falando a nossa lingua você pode "mergear"  objetos
+utilizando o próprio jQuery ou recursos do ES6, claro nem todo IE, ops!
+navegador, aceita o ES6, porém estamos na era da "transpilação"  onde quase tudo
+é possível.
+
+Merge com jQuery.
+Além do jQuery  proporcionar recursos de manipulação do DOM, existem recurs'>
     <meta name="twitter:url" content="https://www.coisadeprogramador.com.br/merge-de-objetos-em-javascript-jquery-es6/">
     <meta name="twitter:image" content="https://www.coisadeprogramador.com.br/content/images/2017/05/js-merge-objetos-1.png">
     <meta name="twitter:label1" content="Written by">
@@ -76,7 +94,7 @@
         "height": 628
     },
     "keywords": "javascript",
-    "description": "Este artigo aborda o merge ou concatenação de objetos em JavaScript. Esta técnica pode ser aplicada com o jQuery ($.extend) ou ES6 (Object.Assign).",
+    "description": "Merge?\nO recurso de merge de objetos é muito utilizado em construtores e métodos de\nconfiguração. Provavelmente você já deve ter usado algum plugin jQuery  que\naceita parâmetros opcionais. Falando a nossa lingua você pode &quot;mergear&quot;  objetos\nutilizando o próprio jQuery ou recursos do ES6, claro nem todo IE, ops!\nnavegador, aceita o ES6, porém estamos na era da &quot;transpilação&quot;  onde quase tudo\né possível.\n\nMerge com jQuery.\nAlém do jQuery  proporcionar recursos de manipulação do DOM, existem recurs",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.coisadeprogramador.com.br/"
@@ -84,14 +102,14 @@
 }
     </script>
 
-    <script src="../public/ghost-sdk.js?v=42670f6313"></script>
+    <script src="../public/ghost-sdk.js?v=fca976e73d"></script>
 <script>
 ghost.init({
 	clientId: "ghost-frontend",
 	clientSecret: "5068eef47be9"
 });
 </script>
-    <meta name="generator" content="Ghost 2.7">
+    <meta name="generator" content="Ghost 2.11">
     <link rel="alternate" type="application/rss+xml" title="Coisa de Programador" href="https://www.coisadeprogramador.com.br/rss/">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
@@ -171,7 +189,13 @@ ghost.init({
                 <h1 class="post-full-title">Merge de objetos em javascript com jQuery e ES6</h1>
             </header>
 
-            <figure class="post-full-image" style="background-image: url(../content/images/2017/05/js-merge-objetos-1.png)">
+            <figure class="post-full-image">
+                <img srcset="https://www.coisadeprogramador.com.br/content/images/size/w300/2017/05/js-merge-objetos-1.png 300w,
+                            https://www.coisadeprogramador.com.br/content/images/size/w600/2017/05/js-merge-objetos-1.png 600w,
+                            https://www.coisadeprogramador.com.br/content/images/size/w1000/2017/05/js-merge-objetos-1.png 1000w,
+                            https://www.coisadeprogramador.com.br/content/images/size/w2000/2017/05/js-merge-objetos-1.png 2000w" sizes="(max-width: 800px) 400px,
+                            (max-width: 1170px) 700px,
+                            1400px" src="https://www.coisadeprogramador.com.br/content/images/size/w2000/2017/05/js-merge-objetos-1.png" alt="Merge de objetos em javascript com jQuery e ES6">
             </figure>
 
             <section class="post-full-content">
@@ -333,7 +357,7 @@ var lionFalcon = new LionFalcon();
 
                     
 <section class="author-card">
-        <img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena">
+        <img class="author-profile-image" src="https://www.coisadeprogramador.com.br/content/images/size/w100/2017/05/willsena_ss0510_1.jpg" alt="William Sena">
     <section class="author-card-content">
         <h4 class="author-card-name"><a href="../author/will/">William Sena</a></h4>
             <p>Read <a href="../author/will/">more posts</a> by this author.</p>
@@ -347,30 +371,6 @@ var lionFalcon = new LionFalcon();
             </footer>
 
 
-            <section class="post-full-comments">
-                <div id="disqus_thread"></div>
-                <script>
-
-                /**
-                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                /*
-                var disqus_config = function () {
-                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-                */
-                (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = 'https://coisadeprogramador.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            </section>
-
-
         </article>
 
     </div>
@@ -379,7 +379,7 @@ var lionFalcon = new LionFalcon();
 <aside class="read-next outer">
     <div class="inner">
         <div class="read-next-feed">
-                <article class="read-next-card" style="background-image: url(../content/images/2018/09/alex-jones-2394-unsplash.jpg)">
+                <article class="read-next-card" style="background-image: url(../content/images/size/w600/2018/09/alex-jones-2394-unsplash.jpg)">
                     <header class="read-next-card-header">
                         <small class="read-next-card-header-sitetitle">— Coisa de Programador —</small>
                         <h3 class="read-next-card-header-title"><a href="../tag/javascript/">javascript</a></h3>
@@ -398,71 +398,7 @@ var lionFalcon = new LionFalcon();
                     </footer>
                 </article>
 
-                <article class="post-card post tag-hospedagem">
-        <a class="post-card-image-link" href="../dez-cloud-host-para-iniciar-seus-projetos-startup/">
-            <div class="post-card-image" style="background-image: url(../content/images/2017/07/cloud-host-thumb.png)"></div>
-        </a>
-    <div class="post-card-content">
-        <a class="post-card-content-link" href="../dez-cloud-host-para-iniciar-seus-projetos-startup/">
-            <header class="post-card-header">
-                    <span class="post-card-tags">hospedagem</span>
-                <h2 class="post-card-title">10 cloud hosts indicados para você iniciar seus estudos, projetos ou startup</h2>
-            </header>
-            <section class="post-card-excerpt">
-                <p>Cloud Server? Atualmente existem diversos players e tive a oportunidade de testar alguns como Amanzon AWS, Azure, Digital Ocean, RedHat OpenShift e o Vultr. Confesso que muita coisa mudou, antigamente eu costumava adquirir</p>
-            </section>
-        </a>
-        <footer class="post-card-meta">
 
-            <ul class="author-list">
-                <li class="author-list-item">
-
-                    <div class="author-name-tooltip">
-                        William Sena
-                    </div>
-
-                        <a href="../author/will/" class="static-avatar"><img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena"></a>
-                </li>
-            </ul>
-
-            <span class="reading-time">6 min read</span>
-
-        </footer>
-    </div>
-</article>
-
-                <article class="post-card post tag-docker tag-dotnet">
-        <a class="post-card-image-link" href="../executando-o-asp-net-core-em-um-docker-container/">
-            <div class="post-card-image" style="background-image: url(../content/images/2017/05/docker-dotnet-core.png)"></div>
-        </a>
-    <div class="post-card-content">
-        <a class="post-card-content-link" href="../executando-o-asp-net-core-em-um-docker-container/">
-            <header class="post-card-header">
-                    <span class="post-card-tags">docker</span>
-                <h2 class="post-card-title">Executando o ASP.NET Core em um Docker Container</h2>
-            </header>
-            <section class="post-card-excerpt">
-                <p>Docker no windows? Tenho acompanhado artigos relacionados ao Windows no mundo Docker, anteriormente não tive sucesso tentando utilizar o boot2docker no Windows 8.1, acabei encontrando uma certa dificuldade que não encontrei no</p>
-            </section>
-        </a>
-        <footer class="post-card-meta">
-
-            <ul class="author-list">
-                <li class="author-list-item">
-
-                    <div class="author-name-tooltip">
-                        William Sena
-                    </div>
-
-                        <a href="../author/will/" class="static-avatar"><img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena"></a>
-                </li>
-            </ul>
-
-            <span class="reading-time">2 min read</span>
-
-        </footer>
-    </div>
-</article>
 
         </div>
     </div>
@@ -471,7 +407,7 @@ var lionFalcon = new LionFalcon();
 <div class="floating-header">
     <div class="floating-header-logo">
         <a href="https://www.coisadeprogramador.com.br">
-                <img src="../content/images/2018/09/logo_60.png" alt="Coisa de Programador icon">
+                <img src="../content/images/size/w30/2018/09/logo_60.png" alt="Coisa de Programador icon">
             <span>Coisa de Programador</span>
         </a>
     </div>
@@ -501,7 +437,7 @@ var lionFalcon = new LionFalcon();
 
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a> © 2018</section>
+                <section class="copyright"><a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a> © 2019</section>
                 <nav class="site-footer-nav">
                     <a href="https://www.coisadeprogramador.com.br">Latest Posts</a>
                     <a href="https://www.facebook.com/coisadeprogramador/" target="_blank" rel="noopener">Facebook</a>
@@ -528,7 +464,7 @@ var lionFalcon = new LionFalcon();
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="../assets/built/jquery.fitvids.js?v=42670f6313"></script>
+    <script type="text/javascript" src="../assets/built/jquery.fitvids.js?v=fca976e73d"></script>
 
 
     <script>

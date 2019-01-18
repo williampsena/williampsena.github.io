@@ -8,7 +8,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=42670f6313">
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=fca976e73d">
 
     <meta name="description" content="Desenvolver aplicações usando todo o poder do ES6 ou TypeScript, folhas de estilo Sass ou Less, HTML com Jade ou Mustache, o webpack resolve este problema.">
     <link rel="shortcut icon" href="../favicon.png" type="image/png">
@@ -19,7 +19,16 @@
     <meta property="og:site_name" content="Coisa de Programador">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Introdução ao webpack o flexível module bundler com TypeScript">
-    <meta property="og:description" content="Desenvolver aplicações usando todo o poder do ES6 ou TypeScript, folhas de estilo Sass ou Less, HTML com Jade ou Mustache, o webpack resolve este problema.">
+    <meta property="og:description" content="O que é ?
+O webpack  é um module bundler  semelhante ao browserify
+[http://browserify.org/]  que disponibiliza conteúdos estáticos por módulos e
+dependências, abraçando o conceito de code-splitting
+[http://webpack.github.io/docs/code-splitting.html]. Simplesmente agrupar a
+codificação em um único arquivo é uma prática ineficiente para grandes
+aplicações, especialmente quando você tem uma codificação que será utilizada em
+ponto específico, este problema pode ser resolvido com o module bundler.
+
+M">
     <meta property="og:url" content="https://www.coisadeprogramador.com.br/introducao-ao-webpack-o-flexivel-module-bundler-typescript/">
     <meta property="og:image" content="https://www.coisadeprogramador.com.br/content/images/2016/01/thumb-coisadeprogramador-webpack.png">
     <meta property="article:published_time" content="2016-01-25T16:28:00.000Z">
@@ -31,7 +40,16 @@
     <meta property="article:publisher" content="https://www.facebook.com/coisadeprogramador/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Introdução ao webpack o flexível module bundler com TypeScript">
-    <meta name="twitter:description" content="Desenvolver aplicações usando todo o poder do ES6 ou TypeScript, folhas de estilo Sass ou Less, HTML com Jade ou Mustache, o webpack resolve este problema.">
+    <meta name="twitter:description" content="O que é ?
+O webpack  é um module bundler  semelhante ao browserify
+[http://browserify.org/]  que disponibiliza conteúdos estáticos por módulos e
+dependências, abraçando o conceito de code-splitting
+[http://webpack.github.io/docs/code-splitting.html]. Simplesmente agrupar a
+codificação em um único arquivo é uma prática ineficiente para grandes
+aplicações, especialmente quando você tem uma codificação que será utilizada em
+ponto específico, este problema pode ser resolvido com o module bundler.
+
+M">
     <meta name="twitter:url" content="https://www.coisadeprogramador.com.br/introducao-ao-webpack-o-flexivel-module-bundler-typescript/">
     <meta name="twitter:image" content="https://www.coisadeprogramador.com.br/content/images/2016/01/thumb-coisadeprogramador-webpack.png">
     <meta name="twitter:label1" content="Written by">
@@ -78,7 +96,7 @@
         "height": 628
     },
     "keywords": "NodeJs, javascript, typescript",
-    "description": "Desenvolver aplicações usando todo o poder do ES6 ou TypeScript, folhas de estilo Sass ou Less, HTML com Jade ou Mustache, o webpack resolve este problema.",
+    "description": "O que é ?\nO webpack  é um module bundler  semelhante ao browserify\n[http://browserify.org/]  que disponibiliza conteúdos estáticos por módulos e\ndependências, abraçando o conceito de code-splitting\n[http://webpack.github.io/docs/code-splitting.html]. Simplesmente agrupar a\ncodificação em um único arquivo é uma prática ineficiente para grandes\naplicações, especialmente quando você tem uma codificação que será utilizada em\nponto específico, este problema pode ser resolvido com o module bundler.\n\nM",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.coisadeprogramador.com.br/"
@@ -86,14 +104,14 @@
 }
     </script>
 
-    <script src="../public/ghost-sdk.js?v=42670f6313"></script>
+    <script src="../public/ghost-sdk.js?v=fca976e73d"></script>
 <script>
 ghost.init({
 	clientId: "ghost-frontend",
 	clientSecret: "5068eef47be9"
 });
 </script>
-    <meta name="generator" content="Ghost 2.7">
+    <meta name="generator" content="Ghost 2.11">
     <link rel="alternate" type="application/rss+xml" title="Coisa de Programador" href="https://www.coisadeprogramador.com.br/rss/">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
@@ -173,12 +191,18 @@ ghost.init({
                 <h1 class="post-full-title">Introdução ao webpack o flexível module bundler com TypeScript</h1>
             </header>
 
-            <figure class="post-full-image" style="background-image: url(../content/images/2016/01/thumb-coisadeprogramador-webpack.png)">
+            <figure class="post-full-image">
+                <img srcset="https://www.coisadeprogramador.com.br/content/images/size/w300/2016/01/thumb-coisadeprogramador-webpack.png 300w,
+                            https://www.coisadeprogramador.com.br/content/images/size/w600/2016/01/thumb-coisadeprogramador-webpack.png 600w,
+                            https://www.coisadeprogramador.com.br/content/images/size/w1000/2016/01/thumb-coisadeprogramador-webpack.png 1000w,
+                            https://www.coisadeprogramador.com.br/content/images/size/w2000/2016/01/thumb-coisadeprogramador-webpack.png 2000w" sizes="(max-width: 800px) 400px,
+                            (max-width: 1170px) 700px,
+                            1400px" src="https://www.coisadeprogramador.com.br/content/images/size/w2000/2016/01/thumb-coisadeprogramador-webpack.png" alt="Introdução ao webpack o flexível module bundler com TypeScript">
             </figure>
 
             <section class="post-full-content">
                 <div class="post-content">
-                    <p><img src="../content/images/2016/01/68747470733a2f2f7765627061636b2e6769746875622e696f2f6173736574732f6c6f676f2e706e67.png" alt=""></p>
+                    <p><img src="https://www.coisadeprogramador.com.br/content/images/2016/01/68747470733a2f2f7765627061636b2e6769746875622e696f2f6173736574732f6c6f676f2e706e67.png" alt=""></p>
 <h2 id="oque">O que é ?</h2>
 <p>O <code>webpack</code> é um <strong>module bundler</strong> semelhante ao <a href="http://browserify.org/">browserify</a> que disponibiliza conteúdos estáticos por módulos e  dependências, abraçando o conceito de <a href="http://webpack.github.io/docs/code-splitting.html">code-splitting</a>. Simplesmente agrupar a codificação em um único arquivo é uma prática ineficiente para grandes aplicações, especialmente quando você tem uma codificação que será utilizada em ponto específico, este problema pode ser resolvido com o <code>module bundler</code>.</p>
 <h2 id="modulebundler">Module Bundler</h2>
@@ -201,7 +225,7 @@ npm install webpack --save-dev
 <p>Que tal desenvolver aplicações usando todo o poder do <a href="http://www.ecma-international.org/ecma-262/6.0/#sec-method-definitions">EcmaScript 6 - ES6</a> ou <a href="http://www.typescriptlang.org/">TypeScript</a>, criar folhas de estilo com <a href="http://sass-lang.com/">Sass</a> ou <a href="http://lesscss.org/">Less</a>, codificar seu HTML com <a href="http://jade-lang.com/">Jade</a> ou <a href="https://mustache.github.io/">Mustache</a>. Este são os tipos de problema que o <code>webpack</code> resolve com diversos loaders, onde você poderá definir quais serão os padrões do seu projeto.</p>
 <h2 id="typescriptnacabea">TypeScript na cabeça</h2>
 <p>O <em>TypeScript</em> possibilita uma escrita de <em>JavaScript</em> fortemente <em>"tipada"</em>, compilando e mantendo a compatibilidade para qualquer navegador ou host compatível com o <em>ES3</em>, isso mesmo <em>NodeJs</em> e aquele seu navegador favorito <em>Internet Explorer 8</em>, rs.</p>
-<p><img src="../content/images/2016/01/ohyeah.gif" alt="Will Dancing"></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2016/01/ohyeah.gif" alt="Will Dancing"></p>
 <p>Primeiramente instale o <em>Typescript</em>.</p>
 <p><strong>Será instalado a versão 1.6.2 por questões de compatibilidade com o loader TypeScript do webpack</strong></p>
 <pre><code>sudo npm install typescript@1.6.2 -g
@@ -230,7 +254,7 @@ npm install webpack --save-dev
 }
 </code></pre>
 <p>Além do <em>intellisense</em>, vamos configurar o <code>tsd</code> que torna qualquer framework JavaScript fortemente "tipado", <em>Yes, TypeScript Rocks</em>!</p>
-<p><img src="../content/images/2016/01/will-dancing.gif" alt=""></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2016/01/will-dancing.gif" alt=""></p>
 <p>Será necessário instalar o <strong><a href="http://definitelytyped.org/tsd/">tsd</a></strong>.</p>
 <pre><code>sudo npm install tsd -g
 </code></pre>
@@ -355,9 +379,9 @@ $(() =&gt; {
 <pre><code>webpack --watch
 </code></pre>
 <p>Este será o resultado da compilação.</p>
-<p><img src="../content/images/2016/01/webpack-compilation.gif" alt="Compilação webpack"></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2016/01/webpack-compilation.gif" alt="Compilação webpack"></p>
 <p>Abra a página index.html gerada na pasta <code>dist</code> e veja a aplicação.</p>
-<p><img src="../content/images/2016/01/webpack-page.gif" alt="Aplicação webpack"></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2016/01/webpack-page.gif" alt="Aplicação webpack"></p>
 <h2 id="concluso">Conclusão</h2>
 <p>Esta breve introdução ao <code>webpack</code> mostrou o poder deste maravilhoso module bundler com automatizador de tarefas, que tem seu espaço reservado para compilação <em>client-side</em>. O <code>webpack</code> não subsistiu o <a href="http://gulpjs.com/">Gulp</a> ou <a href="http://gruntjs.com/">Grunt</a>, você pode até mesmo combiná-los com outros módulos que explicarei futuramente.</p>
 <p>Até a próxima!</p>
@@ -371,7 +395,7 @@ $(() =&gt; {
 
                     
 <section class="author-card">
-        <img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena">
+        <img class="author-profile-image" src="https://www.coisadeprogramador.com.br/content/images/size/w100/2017/05/willsena_ss0510_1.jpg" alt="William Sena">
     <section class="author-card-content">
         <h4 class="author-card-name"><a href="../author/will/">William Sena</a></h4>
             <p>Read <a href="../author/will/">more posts</a> by this author.</p>
@@ -385,30 +409,6 @@ $(() =&gt; {
             </footer>
 
 
-            <section class="post-full-comments">
-                <div id="disqus_thread"></div>
-                <script>
-
-                /**
-                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                /*
-                var disqus_config = function () {
-                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-                */
-                (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = 'https://coisadeprogramador.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            </section>
-
-
         </article>
 
     </div>
@@ -417,7 +417,7 @@ $(() =&gt; {
 <aside class="read-next outer">
     <div class="inner">
         <div class="read-next-feed">
-                <article class="read-next-card" style="background-image: url(../content/images/2018/09/alex-jones-2394-unsplash.jpg)">
+                <article class="read-next-card" style="background-image: url(../content/images/size/w600/2018/09/alex-jones-2394-unsplash.jpg)">
                     <header class="read-next-card-header">
                         <small class="read-next-card-header-sitetitle">— Coisa de Programador —</small>
                         <h3 class="read-next-card-header-title"><a href="../tag/nodejs/">NodeJs</a></h3>
@@ -436,71 +436,7 @@ $(() =&gt; {
                     </footer>
                 </article>
 
-                <article class="post-card post tag-linux tag-sistema-operacional">
-        <a class="post-card-image-link" href="../por-que-utilizar-linux-elementary-os/">
-            <div class="post-card-image" style="background-image: url(../content/images/2016/02/eos-thumb-1.png)"></div>
-        </a>
-    <div class="post-card-content">
-        <a class="post-card-content-link" href="../por-que-utilizar-linux-elementary-os/">
-            <header class="post-card-header">
-                    <span class="post-card-tags">linux</span>
-                <h2 class="post-card-title">Por que utilizar o Linux Elementary OS ?</h2>
-            </header>
-            <section class="post-card-excerpt">
-                <p>Meu linux, minha vida! Durante algum tempo fui um usuário Linux casual e cheguei a utilizar distribuições como Red Hat 5.0, Conectiva, Mandrake e acabei gostando do Slackware, pois foi a única</p>
-            </section>
-        </a>
-        <footer class="post-card-meta">
 
-            <ul class="author-list">
-                <li class="author-list-item">
-
-                    <div class="author-name-tooltip">
-                        William Sena
-                    </div>
-
-                        <a href="../author/will/" class="static-avatar"><img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena"></a>
-                </li>
-            </ul>
-
-            <span class="reading-time">3 min read</span>
-
-        </footer>
-    </div>
-</article>
-
-                <article class="post-card post tag-aspnet-vnext tag-linux tag-dotnet">
-        <a class="post-card-image-link" href="../como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/">
-            <div class="post-card-image" style="background-image: url(../content/images/2016/01/thumb-coisadeprogramador-vnext-webapi.png)"></div>
-        </a>
-    <div class="post-card-content">
-        <a class="post-card-content-link" href="../como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/">
-            <header class="post-card-header">
-                    <span class="post-card-tags">aspnet-vnext</span>
-                <h2 class="post-card-title">Como criar um projeto REST .NET Web API vNext</h2>
-            </header>
-            <section class="post-card-excerpt">
-                <p>O mundo vNext O ano de 2015 foi marcado com grandes mudanças na plataforma .NET que se tornou oficialmente Cross-Platform, digo oficialmente pois desde 2004 apesar do framework Mono não ser da Microsoft,</p>
-            </section>
-        </a>
-        <footer class="post-card-meta">
-
-            <ul class="author-list">
-                <li class="author-list-item">
-
-                    <div class="author-name-tooltip">
-                        William Sena
-                    </div>
-
-                        <a href="../author/will/" class="static-avatar"><img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena"></a>
-                </li>
-            </ul>
-
-            <span class="reading-time">5 min read</span>
-
-        </footer>
-    </div>
-</article>
 
         </div>
     </div>
@@ -509,7 +445,7 @@ $(() =&gt; {
 <div class="floating-header">
     <div class="floating-header-logo">
         <a href="https://www.coisadeprogramador.com.br">
-                <img src="../content/images/2018/09/logo_60.png" alt="Coisa de Programador icon">
+                <img src="../content/images/size/w30/2018/09/logo_60.png" alt="Coisa de Programador icon">
             <span>Coisa de Programador</span>
         </a>
     </div>
@@ -539,7 +475,7 @@ $(() =&gt; {
 
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a> © 2018</section>
+                <section class="copyright"><a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a> © 2019</section>
                 <nav class="site-footer-nav">
                     <a href="https://www.coisadeprogramador.com.br">Latest Posts</a>
                     <a href="https://www.facebook.com/coisadeprogramador/" target="_blank" rel="noopener">Facebook</a>
@@ -566,7 +502,7 @@ $(() =&gt; {
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="../assets/built/jquery.fitvids.js?v=42670f6313"></script>
+    <script type="text/javascript" src="../assets/built/jquery.fitvids.js?v=fca976e73d"></script>
 
 
     <script>

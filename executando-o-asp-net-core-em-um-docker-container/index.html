@@ -8,7 +8,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=42670f6313">
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=fca976e73d">
 
     <meta name="description" content="A execução de uma aplicação MVC em um Docker Container de ASP.NET Core, flexibiliza a publicação de aplicações .NET em qualquer sistema operacional">
     <link rel="shortcut icon" href="../favicon.png" type="image/png">
@@ -19,7 +19,16 @@
     <meta property="og:site_name" content="Coisa de Programador">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Executando o ASP.NET Core em um Docker Container">
-    <meta property="og:description" content="A execução de uma aplicação MVC em um Docker Container de ASP.NET Core, flexibiliza a publicação de aplicações .NET em qualquer sistema operacional">
+    <meta property="og:description" content="Docker no windows?
+Tenho acompanhado artigos relacionados ao Windows no mundo Docker, anteriormente
+não tive sucesso tentando utilizar o boot2docker  no Windows 8.1, acabei
+encontrando uma certa dificuldade que não encontrei no Linux  e desisti.
+
+Pois bem a situação mudou entre o Windows  e Docker, hoje temos containers como
+Windows Server Core, build em ASP.NET Core e até o SQL Server...
+
+Vejam com seus próprios olhos esta grande iniciativa Docker Hub - Microsoft
+Account [https://hub.docker.com">
     <meta property="og:url" content="https://www.coisadeprogramador.com.br/executando-o-asp-net-core-em-um-docker-container/">
     <meta property="og:image" content="https://www.coisadeprogramador.com.br/content/images/2017/05/docker-dotnet-core.png">
     <meta property="article:published_time" content="2017-05-12T02:43:18.000Z">
@@ -30,7 +39,16 @@
     <meta property="article:publisher" content="https://www.facebook.com/coisadeprogramador/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Executando o ASP.NET Core em um Docker Container">
-    <meta name="twitter:description" content="A execução de uma aplicação MVC em um Docker Container de ASP.NET Core, flexibiliza a publicação de aplicações .NET em qualquer sistema operacional">
+    <meta name="twitter:description" content="Docker no windows?
+Tenho acompanhado artigos relacionados ao Windows no mundo Docker, anteriormente
+não tive sucesso tentando utilizar o boot2docker  no Windows 8.1, acabei
+encontrando uma certa dificuldade que não encontrei no Linux  e desisti.
+
+Pois bem a situação mudou entre o Windows  e Docker, hoje temos containers como
+Windows Server Core, build em ASP.NET Core e até o SQL Server...
+
+Vejam com seus próprios olhos esta grande iniciativa Docker Hub - Microsoft
+Account [https://hub.docker.com">
     <meta name="twitter:url" content="https://www.coisadeprogramador.com.br/executando-o-asp-net-core-em-um-docker-container/">
     <meta name="twitter:image" content="https://www.coisadeprogramador.com.br/content/images/2017/05/docker-dotnet-core.png">
     <meta name="twitter:label1" content="Written by">
@@ -77,7 +95,7 @@
         "height": 628
     },
     "keywords": "docker, dotnet",
-    "description": "A execução de uma aplicação MVC em um Docker Container de ASP.NET Core, flexibiliza a publicação de aplicações .NET em qualquer sistema operacional",
+    "description": "Docker no windows?\nTenho acompanhado artigos relacionados ao Windows no mundo Docker, anteriormente\nnão tive sucesso tentando utilizar o boot2docker  no Windows 8.1, acabei\nencontrando uma certa dificuldade que não encontrei no Linux  e desisti.\n\nPois bem a situação mudou entre o Windows  e Docker, hoje temos containers como\nWindows Server Core, build em ASP.NET Core e até o SQL Server...\n\nVejam com seus próprios olhos esta grande iniciativa Docker Hub - Microsoft\nAccount [https://hub.docker.com",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.coisadeprogramador.com.br/"
@@ -85,14 +103,14 @@
 }
     </script>
 
-    <script src="../public/ghost-sdk.js?v=42670f6313"></script>
+    <script src="../public/ghost-sdk.js?v=fca976e73d"></script>
 <script>
 ghost.init({
 	clientId: "ghost-frontend",
 	clientSecret: "5068eef47be9"
 });
 </script>
-    <meta name="generator" content="Ghost 2.7">
+    <meta name="generator" content="Ghost 2.11">
     <link rel="alternate" type="application/rss+xml" title="Coisa de Programador" href="https://www.coisadeprogramador.com.br/rss/">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
@@ -172,7 +190,13 @@ ghost.init({
                 <h1 class="post-full-title">Executando o ASP.NET Core em um Docker Container</h1>
             </header>
 
-            <figure class="post-full-image" style="background-image: url(../content/images/2017/05/docker-dotnet-core.png)">
+            <figure class="post-full-image">
+                <img srcset="https://www.coisadeprogramador.com.br/content/images/size/w300/2017/05/docker-dotnet-core.png 300w,
+                            https://www.coisadeprogramador.com.br/content/images/size/w600/2017/05/docker-dotnet-core.png 600w,
+                            https://www.coisadeprogramador.com.br/content/images/size/w1000/2017/05/docker-dotnet-core.png 1000w,
+                            https://www.coisadeprogramador.com.br/content/images/size/w2000/2017/05/docker-dotnet-core.png 2000w" sizes="(max-width: 800px) 400px,
+                            (max-width: 1170px) 700px,
+                            1400px" src="https://www.coisadeprogramador.com.br/content/images/size/w2000/2017/05/docker-dotnet-core.png" alt="Executando o ASP.NET Core em um Docker Container">
             </figure>
 
             <section class="post-full-content">
@@ -206,7 +230,7 @@ ENTRYPOINT [ "dotnet", "webapp.dll"]
 <p>O <code>dotnet cli</code> proporciona a criação por <em>scaffoldings</em> utilizando o comando <code>new</code>, crie uma pasta chamada <code>webapp</code> e digite o comando abaixo:</p>
 <pre><code>dotnet new mvc
 </code></pre>
-<p><img src="../content/images/2017/05/DotnetCoreDocker-1.png" alt="Console com resultado da execução do comando dotnet new mvc"></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2017/05/DotnetCoreDocker-1.png" alt="Console com resultado da execução do comando dotnet new mvc"></p>
 <h2 id="restaurandoospacotes">Restaurando os pacotes</h2>
 <p>Na pasta do projeto <code>webapp</code> será necessário restaurar os pacotes, que são dependências do projeto para execução:</p>
 <pre><code>dotnet restore
@@ -218,7 +242,7 @@ ENTRYPOINT [ "dotnet", "webapp.dll"]
 <p>Agora podemos executar, será aberto uma aplicação na porta <strong>5000</strong>.</p>
 <pre><code>dotnet run
 </code></pre>
-<p><img src="../content/images/2017/05/DotnetCoreDocker-2.png" alt="Aplicação .net core rodando"></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2017/05/DotnetCoreDocker-2.png" alt="Aplicação .net core rodando"></p>
 <h2 id="publicandoaaplicao">Publicando a aplicação</h2>
 <p>Agora que a aplicação está rodando normalmente, vamos realizar o <em>publish</em>:</p>
 <pre><code>dotnet publish -o ./publish
@@ -228,7 +252,7 @@ ENTRYPOINT [ "dotnet", "webapp.dll"]
 <pre><code>sudo docker build -t aspnet-dev .
 </code></pre>
 <p>Este processo pode demorar um pouco que tal um café?</p>
-<p><img src="../content/images/2017/05/coffee-regular-show-2.gif" alt="Apenas um show - Café"></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2017/05/coffee-regular-show-2.gif" alt="Apenas um show - Café"></p>
 <p>A imagem <em>aspnet-dev</em> será criada e possibilitará a criação do container. Para confirmar se o processo ocorreu com sucesso, digite o comando abaixo para listar as imagens disponíveis:</p>
 <pre><code>sudo docker images
 </code></pre>
@@ -236,7 +260,7 @@ ENTRYPOINT [ "dotnet", "webapp.dll"]
 <p>Execute o comando abaixo para criação e execução do Docker container <code>aspnet-dev</code>:</p>
 <pre><code>sudo docker run --name aspnet-dev -d -p 5000:80 aspnet-dev
 </code></pre>
-<p><img src="../content/images/2017/05/DotnetCoreDocker-3.png" alt=""></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2017/05/DotnetCoreDocker-3.png" alt=""></p>
 <p>Para manter a aplicação rodando na porta 5000, foi feito um <em>Port Forwarding</em> recurso disponível no <em>Docker</em>. A aplicação no modo <em>release</em> abre a porta 80.</p>
 <h2 id="fim">Fim</h2>
 <p>Todos estes procedimentos estão registrados no Github:</p>
@@ -252,7 +276,7 @@ ENTRYPOINT [ "dotnet", "webapp.dll"]
 
                     
 <section class="author-card">
-        <img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena">
+        <img class="author-profile-image" src="https://www.coisadeprogramador.com.br/content/images/size/w100/2017/05/willsena_ss0510_1.jpg" alt="William Sena">
     <section class="author-card-content">
         <h4 class="author-card-name"><a href="../author/will/">William Sena</a></h4>
             <p>Read <a href="../author/will/">more posts</a> by this author.</p>
@@ -266,30 +290,6 @@ ENTRYPOINT [ "dotnet", "webapp.dll"]
             </footer>
 
 
-            <section class="post-full-comments">
-                <div id="disqus_thread"></div>
-                <script>
-
-                /**
-                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                /*
-                var disqus_config = function () {
-                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-                */
-                (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = 'https://coisadeprogramador.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            </section>
-
-
         </article>
 
     </div>
@@ -298,7 +298,7 @@ ENTRYPOINT [ "dotnet", "webapp.dll"]
 <aside class="read-next outer">
     <div class="inner">
         <div class="read-next-feed">
-                <article class="read-next-card" style="background-image: url(../content/images/2018/09/alex-jones-2394-unsplash.jpg)">
+                <article class="read-next-card" style="background-image: url(../content/images/size/w600/2018/09/alex-jones-2394-unsplash.jpg)">
                     <header class="read-next-card-header">
                         <small class="read-next-card-header-sitetitle">— Coisa de Programador —</small>
                         <h3 class="read-next-card-header-title"><a href="../tag/docker/">docker</a></h3>
@@ -316,71 +316,7 @@ ENTRYPOINT [ "dotnet", "webapp.dll"]
                     </footer>
                 </article>
 
-                <article class="post-card post tag-javascript">
-        <a class="post-card-image-link" href="../merge-de-objetos-em-javascript-jquery-es6/">
-            <div class="post-card-image" style="background-image: url(../content/images/2017/05/js-merge-objetos-1.png)"></div>
-        </a>
-    <div class="post-card-content">
-        <a class="post-card-content-link" href="../merge-de-objetos-em-javascript-jquery-es6/">
-            <header class="post-card-header">
-                    <span class="post-card-tags">javascript</span>
-                <h2 class="post-card-title">Merge de objetos em javascript com jQuery e ES6</h2>
-            </header>
-            <section class="post-card-excerpt">
-                <p>Merge? O recurso de merge de objetos é muito utilizado em construtores e métodos de configuração. Provavelmente você já deve ter usado algum plugin jQuery que aceita parâmetros opcionais. Falando a nossa lingua</p>
-            </section>
-        </a>
-        <footer class="post-card-meta">
 
-            <ul class="author-list">
-                <li class="author-list-item">
-
-                    <div class="author-name-tooltip">
-                        William Sena
-                    </div>
-
-                        <a href="../author/will/" class="static-avatar"><img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena"></a>
-                </li>
-            </ul>
-
-            <span class="reading-time">2 min read</span>
-
-        </footer>
-    </div>
-</article>
-
-                <article class="post-card post tag-android">
-        <a class="post-card-image-link" href="../aplicativo-hibrido-nativo-eis-a-questao/">
-            <div class="post-card-image" style="background-image: url(../content/images/2017/04/hibrido-ou-nativo.png)"></div>
-        </a>
-    <div class="post-card-content">
-        <a class="post-card-content-link" href="../aplicativo-hibrido-nativo-eis-a-questao/">
-            <header class="post-card-header">
-                    <span class="post-card-tags">android</span>
-                <h2 class="post-card-title">Aplicativo híbrido ou nativo? Eis a questão</h2>
-            </header>
-            <section class="post-card-excerpt">
-                <p>Esta é a grande dúvida entre os desenvolvedores, recentemente desenvolvi alguns aplicativos e optei por um framework para aplicações híbridas devido a praticidade e o know-how. Para um desenvolvedor JavaScript que conhece o</p>
-            </section>
-        </a>
-        <footer class="post-card-meta">
-
-            <ul class="author-list">
-                <li class="author-list-item">
-
-                    <div class="author-name-tooltip">
-                        William Sena
-                    </div>
-
-                        <a href="../author/will/" class="static-avatar"><img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena"></a>
-                </li>
-            </ul>
-
-            <span class="reading-time">5 min read</span>
-
-        </footer>
-    </div>
-</article>
 
         </div>
     </div>
@@ -389,7 +325,7 @@ ENTRYPOINT [ "dotnet", "webapp.dll"]
 <div class="floating-header">
     <div class="floating-header-logo">
         <a href="https://www.coisadeprogramador.com.br">
-                <img src="../content/images/2018/09/logo_60.png" alt="Coisa de Programador icon">
+                <img src="../content/images/size/w30/2018/09/logo_60.png" alt="Coisa de Programador icon">
             <span>Coisa de Programador</span>
         </a>
     </div>
@@ -419,7 +355,7 @@ ENTRYPOINT [ "dotnet", "webapp.dll"]
 
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a> © 2018</section>
+                <section class="copyright"><a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a> © 2019</section>
                 <nav class="site-footer-nav">
                     <a href="https://www.coisadeprogramador.com.br">Latest Posts</a>
                     <a href="https://www.facebook.com/coisadeprogramador/" target="_blank" rel="noopener">Facebook</a>
@@ -446,7 +382,7 @@ ENTRYPOINT [ "dotnet", "webapp.dll"]
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="../assets/built/jquery.fitvids.js?v=42670f6313"></script>
+    <script type="text/javascript" src="../assets/built/jquery.fitvids.js?v=fca976e73d"></script>
 
 
     <script>

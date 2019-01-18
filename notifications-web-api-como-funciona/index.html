@@ -8,7 +8,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=42670f6313">
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=fca976e73d">
 
     <meta name="description" content="As notificações web estão disponíveis há algum tempo em navegadores. O Chrome e Firefox estão compatíveis com este recurso que facilita a alerta de usuários">
     <link rel="shortcut icon" href="../favicon.png" type="image/png">
@@ -19,7 +19,16 @@
     <meta property="og:site_name" content="Coisa de Programador">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Notifications Web API Como funciona?">
-    <meta property="og:description" content="As notificações web estão disponíveis há algum tempo em navegadores. O Chrome e Firefox estão compatíveis com este recurso que facilita a alerta de usuários">
+    <meta property="og:description" content="É um recurso muito útil para sites que necessitam alertar seus usuários, sobre
+algum conteúdo relevante ou promoção disponível caso seja um e-commerce.
+
+As notificações web estão disponíveis há algum tempo em navegadores modernos que
+estão preocupados em acompanhar os novos recursos do HTML5. Este recurso
+funciona nas versões recentes do Chrome e Firefox, os outros navegadores estão
+implementando este recurso.
+
+A Microsoft divulga o status dos recursos do seu navegador Edge e também exibe o
+stat">
     <meta property="og:url" content="https://www.coisadeprogramador.com.br/notifications-web-api-como-funciona/">
     <meta property="og:image" content="https://www.coisadeprogramador.com.br/content/images/2016/03/notification-web-api-thumb.png">
     <meta property="article:published_time" content="2016-03-28T02:11:00.000Z">
@@ -31,7 +40,16 @@
     <meta property="article:publisher" content="https://www.facebook.com/coisadeprogramador/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Notifications Web API Como funciona?">
-    <meta name="twitter:description" content="As notificações web estão disponíveis há algum tempo em navegadores. O Chrome e Firefox estão compatíveis com este recurso que facilita a alerta de usuários">
+    <meta name="twitter:description" content="É um recurso muito útil para sites que necessitam alertar seus usuários, sobre
+algum conteúdo relevante ou promoção disponível caso seja um e-commerce.
+
+As notificações web estão disponíveis há algum tempo em navegadores modernos que
+estão preocupados em acompanhar os novos recursos do HTML5. Este recurso
+funciona nas versões recentes do Chrome e Firefox, os outros navegadores estão
+implementando este recurso.
+
+A Microsoft divulga o status dos recursos do seu navegador Edge e também exibe o
+stat">
     <meta name="twitter:url" content="https://www.coisadeprogramador.com.br/notifications-web-api-como-funciona/">
     <meta name="twitter:image" content="https://www.coisadeprogramador.com.br/content/images/2016/03/notification-web-api-thumb.png">
     <meta name="twitter:label1" content="Written by">
@@ -78,7 +96,7 @@
         "height": 628
     },
     "keywords": "html, quick-tips, dicas",
-    "description": "As notificações web estão disponíveis há algum tempo em navegadores. O Chrome e Firefox estão compatíveis com este recurso que facilita a alerta de usuários",
+    "description": "É um recurso muito útil para sites que necessitam alertar seus usuários, sobre\nalgum conteúdo relevante ou promoção disponível caso seja um e-commerce.\n\nAs notificações web estão disponíveis há algum tempo em navegadores modernos que\nestão preocupados em acompanhar os novos recursos do HTML5. Este recurso\nfunciona nas versões recentes do Chrome e Firefox, os outros navegadores estão\nimplementando este recurso.\n\nA Microsoft divulga o status dos recursos do seu navegador Edge e também exibe o\nstat",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.coisadeprogramador.com.br/"
@@ -86,14 +104,14 @@
 }
     </script>
 
-    <script src="../public/ghost-sdk.js?v=42670f6313"></script>
+    <script src="../public/ghost-sdk.js?v=fca976e73d"></script>
 <script>
 ghost.init({
 	clientId: "ghost-frontend",
 	clientSecret: "5068eef47be9"
 });
 </script>
-    <meta name="generator" content="Ghost 2.7">
+    <meta name="generator" content="Ghost 2.11">
     <link rel="alternate" type="application/rss+xml" title="Coisa de Programador" href="https://www.coisadeprogramador.com.br/rss/">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
@@ -173,7 +191,13 @@ ghost.init({
                 <h1 class="post-full-title">Notifications Web API Como funciona?</h1>
             </header>
 
-            <figure class="post-full-image" style="background-image: url(../content/images/2016/03/notification-web-api-thumb.png)">
+            <figure class="post-full-image">
+                <img srcset="https://www.coisadeprogramador.com.br/content/images/size/w300/2016/03/notification-web-api-thumb.png 300w,
+                            https://www.coisadeprogramador.com.br/content/images/size/w600/2016/03/notification-web-api-thumb.png 600w,
+                            https://www.coisadeprogramador.com.br/content/images/size/w1000/2016/03/notification-web-api-thumb.png 1000w,
+                            https://www.coisadeprogramador.com.br/content/images/size/w2000/2016/03/notification-web-api-thumb.png 2000w" sizes="(max-width: 800px) 400px,
+                            (max-width: 1170px) 700px,
+                            1400px" src="https://www.coisadeprogramador.com.br/content/images/size/w2000/2016/03/notification-web-api-thumb.png" alt="Notifications Web API Como funciona?">
             </figure>
 
             <section class="post-full-content">
@@ -185,7 +209,7 @@ ghost.init({
 <p><strong><a href="https://dev.windows.com/en-us/microsoft-edge/platform/status/webnotifications">Developer Resources</a></strong></p>
 <p>Você já deve ter percebido que o Facebook utiliza este recurso para exibir notificações sobre a sua conta. Desta forma você pode manter a página do Facebook minimizada ou em outra aba e receber uma notificação que pode  direcionar você para mais uma visualização!</p>
 <p><strong>Nice!</strong></p>
-<p><img src="../content/images/2016/03/nice-giphy.gif" alt=""></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2016/03/nice-giphy.gif" alt=""></p>
 <h2 id="compatibilidade">Compatibilidade</h2>
 <p>Para evitar que ocorram erros de script em seu site, primeiro verifique se existe compatibilidade com a <strong><a href="https://developer.mozilla.org/en-US/docs/Web/API/notification">Web Notifications API</a></strong>, a API de notificação está inserida no contexto <code>window.Notification</code>.</p>
 <script src="https://gist.github.com/williampsena/ea869beeb70f2114b445.js"></script>
@@ -206,7 +230,7 @@ ghost.init({
 <p>Pronto agora vamos preparar um envio de notificações de forma segura evitando os problemas de compatibilidade e permissão.</p>
 <script src="https://gist.github.com/williampsena/b60534ef56e2f6f13661.js"></script>
 <p>Pronto veja como ficou o resultado e notifique com moderação.</p>
-<p><img src="../content/images/2016/03/notification-web-api-example.gif" alt=""></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2016/03/notification-web-api-example.gif" alt=""></p>
 <p><strong><a href="https://jsfiddle.net/willsenabr/4dw65t35/">Veja no JsFiddle</a></strong></p>
 <h2 id="referncias">Referências</h2>
 <ul>
@@ -222,7 +246,7 @@ ghost.init({
 
                     
 <section class="author-card">
-        <img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena">
+        <img class="author-profile-image" src="https://www.coisadeprogramador.com.br/content/images/size/w100/2017/05/willsena_ss0510_1.jpg" alt="William Sena">
     <section class="author-card-content">
         <h4 class="author-card-name"><a href="../author/will/">William Sena</a></h4>
             <p>Read <a href="../author/will/">more posts</a> by this author.</p>
@@ -236,30 +260,6 @@ ghost.init({
             </footer>
 
 
-            <section class="post-full-comments">
-                <div id="disqus_thread"></div>
-                <script>
-
-                /**
-                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                /*
-                var disqus_config = function () {
-                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-                */
-                (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = 'https://coisadeprogramador.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            </section>
-
-
         </article>
 
     </div>
@@ -268,7 +268,7 @@ ghost.init({
 <aside class="read-next outer">
     <div class="inner">
         <div class="read-next-feed">
-                <article class="read-next-card" style="background-image: url(../content/images/2018/09/alex-jones-2394-unsplash.jpg)">
+                <article class="read-next-card" style="background-image: url(../content/images/size/w600/2018/09/alex-jones-2394-unsplash.jpg)">
                     <header class="read-next-card-header">
                         <small class="read-next-card-header-sitetitle">— Coisa de Programador —</small>
                         <h3 class="read-next-card-header-title"><a href="../tag/html/">html</a></h3>
@@ -285,71 +285,7 @@ ghost.init({
                     </footer>
                 </article>
 
-                <article class="post-card post tag-eventos tag-dotnet">
-        <a class="post-card-image-link" href="../evento-microsoft-devops-summit-brasil-2016-eu-estava-la/">
-            <div class="post-card-image" style="background-image: url(../content/images/2016/05/devops-summit-2016-thumb-1.png)"></div>
-        </a>
-    <div class="post-card-content">
-        <a class="post-card-content-link" href="../evento-microsoft-devops-summit-brasil-2016-eu-estava-la/">
-            <header class="post-card-header">
-                    <span class="post-card-tags">eventos</span>
-                <h2 class="post-card-title">DevOps Summit Brasil 2016 - Eu estava lá</h2>
-            </header>
-            <section class="post-card-excerpt">
-                <p>O evento Descrição do evento, retirada do próprio site DevOpsSummitBrasil: O DevOps Summit Brasil é a fusão dos consagrados eventos Azure Summit Brasil e ALM Summit Brasil e vem com uma abordagem interdisciplinar</p>
-            </section>
-        </a>
-        <footer class="post-card-meta">
 
-            <ul class="author-list">
-                <li class="author-list-item">
-
-                    <div class="author-name-tooltip">
-                        William Sena
-                    </div>
-
-                        <a href="../author/will/" class="static-avatar"><img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena"></a>
-                </li>
-            </ul>
-
-            <span class="reading-time">3 min read</span>
-
-        </footer>
-    </div>
-</article>
-
-                <article class="post-card post tag-linux tag-sistema-operacional">
-        <a class="post-card-image-link" href="../por-que-utilizar-linux-elementary-os/">
-            <div class="post-card-image" style="background-image: url(../content/images/2016/02/eos-thumb-1.png)"></div>
-        </a>
-    <div class="post-card-content">
-        <a class="post-card-content-link" href="../por-que-utilizar-linux-elementary-os/">
-            <header class="post-card-header">
-                    <span class="post-card-tags">linux</span>
-                <h2 class="post-card-title">Por que utilizar o Linux Elementary OS ?</h2>
-            </header>
-            <section class="post-card-excerpt">
-                <p>Meu linux, minha vida! Durante algum tempo fui um usuário Linux casual e cheguei a utilizar distribuições como Red Hat 5.0, Conectiva, Mandrake e acabei gostando do Slackware, pois foi a única</p>
-            </section>
-        </a>
-        <footer class="post-card-meta">
-
-            <ul class="author-list">
-                <li class="author-list-item">
-
-                    <div class="author-name-tooltip">
-                        William Sena
-                    </div>
-
-                        <a href="../author/will/" class="static-avatar"><img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena"></a>
-                </li>
-            </ul>
-
-            <span class="reading-time">3 min read</span>
-
-        </footer>
-    </div>
-</article>
 
         </div>
     </div>
@@ -358,7 +294,7 @@ ghost.init({
 <div class="floating-header">
     <div class="floating-header-logo">
         <a href="https://www.coisadeprogramador.com.br">
-                <img src="../content/images/2018/09/logo_60.png" alt="Coisa de Programador icon">
+                <img src="../content/images/size/w30/2018/09/logo_60.png" alt="Coisa de Programador icon">
             <span>Coisa de Programador</span>
         </a>
     </div>
@@ -388,7 +324,7 @@ ghost.init({
 
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a> © 2018</section>
+                <section class="copyright"><a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a> © 2019</section>
                 <nav class="site-footer-nav">
                     <a href="https://www.coisadeprogramador.com.br">Latest Posts</a>
                     <a href="https://www.facebook.com/coisadeprogramador/" target="_blank" rel="noopener">Facebook</a>
@@ -415,7 +351,7 @@ ghost.init({
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="../assets/built/jquery.fitvids.js?v=42670f6313"></script>
+    <script type="text/javascript" src="../assets/built/jquery.fitvids.js?v=fca976e73d"></script>
 
 
     <script>

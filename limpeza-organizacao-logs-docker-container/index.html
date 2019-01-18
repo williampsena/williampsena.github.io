@@ -8,7 +8,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=42670f6313">
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=fca976e73d">
 
     <meta name="description" content="Neste artigo iremos abordar técnicas para limpeza de log dos containers docker, tanto por rotação logrotate ou manual.  Evitando problemas de espaço.">
     <link rel="shortcut icon" href="../favicon.png" type="image/png">
@@ -19,7 +19,16 @@
     <meta property="og:site_name" content="Coisa de Programador">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Limpeza e organização nos logs de containers docker">
-    <meta property="og:description" content="Neste artigo iremos abordar técnicas para limpeza de log dos containers docker, tanto por rotação logrotate ou manual.  Evitando problemas de espaço.">
+    <meta property="og:description" content='Logs do Docker
+Os logs dos containers docker  são mantidos em arquivos encontrados em 
+/var/lib/docker/containers/*/*-.log.
+
+As vezes criamos aplicações "verbosas" que podem acabar com nosso espaço em
+disco, por este motivo é importante manter os logs por um período ou relevância.
+
+Não seria nada legal prejudicar as aplicações de um nó ou servidor, por falta de
+espaço em disco, pois nosso querido container está "tagarelando" no arquivo de
+log, pois alguém esqueceu de desativar o debug, não é car'>
     <meta property="og:url" content="https://www.coisadeprogramador.com.br/limpeza-organizacao-logs-docker-container/">
     <meta property="og:image" content="https://www.coisadeprogramador.com.br/content/images/2018/01/docker-logs-1.png">
     <meta property="article:published_time" content="2018-01-18T11:38:00.000Z">
@@ -30,7 +39,16 @@
     <meta property="article:publisher" content="https://www.facebook.com/coisadeprogramador/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Limpeza e organização nos logs de containers docker">
-    <meta name="twitter:description" content="Neste artigo iremos abordar técnicas para limpeza de log dos containers docker, tanto por rotação logrotate ou manual.  Evitando problemas de espaço.">
+    <meta name="twitter:description" content='Logs do Docker
+Os logs dos containers docker  são mantidos em arquivos encontrados em 
+/var/lib/docker/containers/*/*-.log.
+
+As vezes criamos aplicações "verbosas" que podem acabar com nosso espaço em
+disco, por este motivo é importante manter os logs por um período ou relevância.
+
+Não seria nada legal prejudicar as aplicações de um nó ou servidor, por falta de
+espaço em disco, pois nosso querido container está "tagarelando" no arquivo de
+log, pois alguém esqueceu de desativar o debug, não é car'>
     <meta name="twitter:url" content="https://www.coisadeprogramador.com.br/limpeza-organizacao-logs-docker-container/">
     <meta name="twitter:image" content="https://www.coisadeprogramador.com.br/content/images/2018/01/docker-logs-1.png">
     <meta name="twitter:label1" content="Written by">
@@ -77,7 +95,7 @@
         "height": 628
     },
     "keywords": "docker, linux",
-    "description": "Neste artigo iremos abordar técnicas para limpeza de log dos containers docker, tanto por rotação logrotate ou manual.  Evitando problemas de espaço.",
+    "description": "Logs do Docker\nOs logs dos containers docker  são mantidos em arquivos encontrados em \n/var/lib/docker/containers/*/*-.log.\n\nAs vezes criamos aplicações &quot;verbosas&quot; que podem acabar com nosso espaço em\ndisco, por este motivo é importante manter os logs por um período ou relevância.\n\nNão seria nada legal prejudicar as aplicações de um nó ou servidor, por falta de\nespaço em disco, pois nosso querido container está &quot;tagarelando&quot; no arquivo de\nlog, pois alguém esqueceu de desativar o debug, não é car",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.coisadeprogramador.com.br/"
@@ -85,14 +103,14 @@
 }
     </script>
 
-    <script src="../public/ghost-sdk.js?v=42670f6313"></script>
+    <script src="../public/ghost-sdk.js?v=fca976e73d"></script>
 <script>
 ghost.init({
 	clientId: "ghost-frontend",
 	clientSecret: "5068eef47be9"
 });
 </script>
-    <meta name="generator" content="Ghost 2.7">
+    <meta name="generator" content="Ghost 2.11">
     <link rel="alternate" type="application/rss+xml" title="Coisa de Programador" href="https://www.coisadeprogramador.com.br/rss/">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
@@ -172,7 +190,13 @@ ghost.init({
                 <h1 class="post-full-title">Limpeza e organização nos logs de containers docker</h1>
             </header>
 
-            <figure class="post-full-image" style="background-image: url(../content/images/2018/01/docker-logs-1.png)">
+            <figure class="post-full-image">
+                <img srcset="https://www.coisadeprogramador.com.br/content/images/size/w300/2018/01/docker-logs-1.png 300w,
+                            https://www.coisadeprogramador.com.br/content/images/size/w600/2018/01/docker-logs-1.png 600w,
+                            https://www.coisadeprogramador.com.br/content/images/size/w1000/2018/01/docker-logs-1.png 1000w,
+                            https://www.coisadeprogramador.com.br/content/images/size/w2000/2018/01/docker-logs-1.png 2000w" sizes="(max-width: 800px) 400px,
+                            (max-width: 1170px) 700px,
+                            1400px" src="https://www.coisadeprogramador.com.br/content/images/size/w2000/2018/01/docker-logs-1.png" alt="Limpeza e organização nos logs de containers docker">
             </figure>
 
             <section class="post-full-content">
@@ -224,7 +248,7 @@ ghost.init({
 
                     
 <section class="author-card">
-        <img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena">
+        <img class="author-profile-image" src="https://www.coisadeprogramador.com.br/content/images/size/w100/2017/05/willsena_ss0510_1.jpg" alt="William Sena">
     <section class="author-card-content">
         <h4 class="author-card-name"><a href="../author/will/">William Sena</a></h4>
             <p>Read <a href="../author/will/">more posts</a> by this author.</p>
@@ -238,30 +262,6 @@ ghost.init({
             </footer>
 
 
-            <section class="post-full-comments">
-                <div id="disqus_thread"></div>
-                <script>
-
-                /**
-                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                /*
-                var disqus_config = function () {
-                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-                */
-                (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = 'https://coisadeprogramador.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            </section>
-
-
         </article>
 
     </div>
@@ -270,7 +270,7 @@ ghost.init({
 <aside class="read-next outer">
     <div class="inner">
         <div class="read-next-feed">
-                <article class="read-next-card" style="background-image: url(../content/images/2018/09/alex-jones-2394-unsplash.jpg)">
+                <article class="read-next-card" style="background-image: url(../content/images/size/w600/2018/09/alex-jones-2394-unsplash.jpg)">
                     <header class="read-next-card-header">
                         <small class="read-next-card-header-sitetitle">— Coisa de Programador —</small>
                         <h3 class="read-next-card-header-title"><a href="../tag/docker/">docker</a></h3>
@@ -288,71 +288,7 @@ ghost.init({
                     </footer>
                 </article>
 
-                <article class="post-card post tag-projetos">
-        <a class="post-card-image-link" href="../meus-projetos/">
-            <div class="post-card-image" style="background-image: url(../content/images/2018/09/thumb-projetos.png)"></div>
-        </a>
-    <div class="post-card-content">
-        <a class="post-card-content-link" href="../meus-projetos/">
-            <header class="post-card-header">
-                    <span class="post-card-tags">projetos</span>
-                <h2 class="post-card-title">Meus Projetos</h2>
-            </header>
-            <section class="post-card-excerpt">
-                <p>Open SourceProjetos desenvolvidos e claro Open Source.Bible SearchUm cliente para consumo do Bible Search Api (https://pt-br.bibles.org/) para NodeJS.https://www.npmjs.com/package/bible-searchTuning TimeProjeto inspirado na técnica Pomodoro,</p>
-            </section>
-        </a>
-        <footer class="post-card-meta">
 
-            <ul class="author-list">
-                <li class="author-list-item">
-
-                    <div class="author-name-tooltip">
-                        William Sena
-                    </div>
-
-                        <a href="../author/william/" class="static-avatar"><img class="author-profile-image" src="https://www.gravatar.com/avatar/7a92dc571d7a08bd4f06593757e472b4?s=250&amp;d=mm&amp;r=x" alt="William Sena"></a>
-                </li>
-            </ul>
-
-            <span class="reading-time">1 min read</span>
-
-        </footer>
-    </div>
-</article>
-
-                <article class="post-card post tag-dotnet tag-package-manager">
-        <a class="post-card-image-link" href="../nuget-package-reference-packages-config/">
-            <div class="post-card-image" style="background-image: url(../content/images/2017/12/nuget_package_type_banner.png)"></div>
-        </a>
-    <div class="post-card-content">
-        <a class="post-card-content-link" href="../nuget-package-reference-packages-config/">
-            <header class="post-card-header">
-                    <span class="post-card-tags">dotnet</span>
-                <h2 class="post-card-title">.NET - Nuget referência por pacote ou packages.config</h2>
-            </header>
-            <section class="post-card-excerpt">
-                <p>NuGet É o gerenciador de pacotes .NET, possibilita a publicação e utilização de bibliotecas, assim como npm, yarn, pip, gem e etc. Por algum tempo o NuGet foi até mesmo recomendado para frameworks</p>
-            </section>
-        </a>
-        <footer class="post-card-meta">
-
-            <ul class="author-list">
-                <li class="author-list-item">
-
-                    <div class="author-name-tooltip">
-                        William Sena
-                    </div>
-
-                        <a href="../author/will/" class="static-avatar"><img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena"></a>
-                </li>
-            </ul>
-
-            <span class="reading-time">2 min read</span>
-
-        </footer>
-    </div>
-</article>
 
         </div>
     </div>
@@ -361,7 +297,7 @@ ghost.init({
 <div class="floating-header">
     <div class="floating-header-logo">
         <a href="https://www.coisadeprogramador.com.br">
-                <img src="../content/images/2018/09/logo_60.png" alt="Coisa de Programador icon">
+                <img src="../content/images/size/w30/2018/09/logo_60.png" alt="Coisa de Programador icon">
             <span>Coisa de Programador</span>
         </a>
     </div>
@@ -391,7 +327,7 @@ ghost.init({
 
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a> © 2018</section>
+                <section class="copyright"><a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a> © 2019</section>
                 <nav class="site-footer-nav">
                     <a href="https://www.coisadeprogramador.com.br">Latest Posts</a>
                     <a href="https://www.facebook.com/coisadeprogramador/" target="_blank" rel="noopener">Facebook</a>
@@ -418,7 +354,7 @@ ghost.init({
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="../assets/built/jquery.fitvids.js?v=42670f6313"></script>
+    <script type="text/javascript" src="../assets/built/jquery.fitvids.js?v=fca976e73d"></script>
 
 
     <script>

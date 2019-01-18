@@ -8,7 +8,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=42670f6313">
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=fca976e73d">
 
     <meta name="description" content="Neste artigo serão abordados configurações de um projeto REST .NET Web API vNext rodando sobre uma máquina linux Ubuntu com persistência de dados SQlite.">
     <link rel="shortcut icon" href="../favicon.png" type="image/png">
@@ -19,7 +19,14 @@
     <meta property="og:site_name" content="Coisa de Programador">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Como criar REST .NET Web API vNext com persistência de dados">
-    <meta property="og:description" content="Neste artigo serão abordados configurações de um projeto REST .NET Web API vNext rodando sobre uma máquina linux Ubuntu com persistência de dados SQlite.">
+    <meta property="og:description" content="O mundo vNext
+O ano de 2015 foi marcado com grandes mudanças na plataforma .NET que se tornou
+oficialmente Cross-Platform, digo oficialmente pois desde 2004 apesar do
+framework Mono [http://www.mono-project.com/]  não ser da Microsoft, tem
+realizado um trabalho para manter o .NET Cross-Platform, muitos projetos
+utilizam o Mono [http://www.mono-project.com/], desde o Xamarin
+[https://xamarin.com/]  que possibilita a criação de aplicações Mobile (Android
+e IOS) ao Unity 3D [https://unity3d.com/]  ">
     <meta property="og:url" content="https://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/">
     <meta property="og:image" content="https://www.coisadeprogramador.com.br/content/images/2016/01/thumb-coisadeprogramador-vnext-webapi.png">
     <meta property="article:published_time" content="2016-01-10T18:06:00.000Z">
@@ -31,7 +38,14 @@
     <meta property="article:publisher" content="https://www.facebook.com/coisadeprogramador/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Como criar REST .NET Web API vNext com persistência de dados">
-    <meta name="twitter:description" content="Neste artigo serão abordados configurações de um projeto REST .NET Web API vNext rodando sobre uma máquina linux Ubuntu com persistência de dados SQlite.">
+    <meta name="twitter:description" content="O mundo vNext
+O ano de 2015 foi marcado com grandes mudanças na plataforma .NET que se tornou
+oficialmente Cross-Platform, digo oficialmente pois desde 2004 apesar do
+framework Mono [http://www.mono-project.com/]  não ser da Microsoft, tem
+realizado um trabalho para manter o .NET Cross-Platform, muitos projetos
+utilizam o Mono [http://www.mono-project.com/], desde o Xamarin
+[https://xamarin.com/]  que possibilita a criação de aplicações Mobile (Android
+e IOS) ao Unity 3D [https://unity3d.com/]  ">
     <meta name="twitter:url" content="https://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/">
     <meta name="twitter:image" content="https://www.coisadeprogramador.com.br/content/images/2016/01/thumb-coisadeprogramador-vnext-webapi.png">
     <meta name="twitter:label1" content="Written by">
@@ -78,7 +92,7 @@
         "height": 628
     },
     "keywords": "aspnet-vnext, linux, dotnet",
-    "description": "Neste artigo serão abordados configurações de um projeto REST .NET Web API vNext rodando sobre uma máquina linux Ubuntu com persistência de dados SQlite.",
+    "description": "O mundo vNext\nO ano de 2015 foi marcado com grandes mudanças na plataforma .NET que se tornou\noficialmente Cross-Platform, digo oficialmente pois desde 2004 apesar do\nframework Mono [http://www.mono-project.com/]  não ser da Microsoft, tem\nrealizado um trabalho para manter o .NET Cross-Platform, muitos projetos\nutilizam o Mono [http://www.mono-project.com/], desde o Xamarin\n[https://xamarin.com/]  que possibilita a criação de aplicações Mobile (Android\ne IOS) ao Unity 3D [https://unity3d.com/]  ",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.coisadeprogramador.com.br/"
@@ -86,14 +100,14 @@
 }
     </script>
 
-    <script src="../public/ghost-sdk.js?v=42670f6313"></script>
+    <script src="../public/ghost-sdk.js?v=fca976e73d"></script>
 <script>
 ghost.init({
 	clientId: "ghost-frontend",
 	clientSecret: "5068eef47be9"
 });
 </script>
-    <meta name="generator" content="Ghost 2.7">
+    <meta name="generator" content="Ghost 2.11">
     <link rel="alternate" type="application/rss+xml" title="Coisa de Programador" href="https://www.coisadeprogramador.com.br/rss/">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
@@ -173,12 +187,18 @@ ghost.init({
                 <h1 class="post-full-title">Como criar um projeto REST .NET Web API vNext</h1>
             </header>
 
-            <figure class="post-full-image" style="background-image: url(../content/images/2016/01/thumb-coisadeprogramador-vnext-webapi.png)">
+            <figure class="post-full-image">
+                <img srcset="https://www.coisadeprogramador.com.br/content/images/size/w300/2016/01/thumb-coisadeprogramador-vnext-webapi.png 300w,
+                            https://www.coisadeprogramador.com.br/content/images/size/w600/2016/01/thumb-coisadeprogramador-vnext-webapi.png 600w,
+                            https://www.coisadeprogramador.com.br/content/images/size/w1000/2016/01/thumb-coisadeprogramador-vnext-webapi.png 1000w,
+                            https://www.coisadeprogramador.com.br/content/images/size/w2000/2016/01/thumb-coisadeprogramador-vnext-webapi.png 2000w" sizes="(max-width: 800px) 400px,
+                            (max-width: 1170px) 700px,
+                            1400px" src="https://www.coisadeprogramador.com.br/content/images/size/w2000/2016/01/thumb-coisadeprogramador-vnext-webapi.png" alt="Como criar um projeto REST .NET Web API vNext">
             </figure>
 
             <section class="post-full-content">
                 <div class="post-content">
-                    <p><img src="../content/images/2016/01/thumb-coisadeprogramador-vnext-webapi-1.png" alt="Asp.Net Logo"></p>
+                    <p><img src="https://www.coisadeprogramador.com.br/content/images/2016/01/thumb-coisadeprogramador-vnext-webapi-1.png" alt="Asp.Net Logo"></p>
 <h2 id="omundovnext">O mundo vNext</h2>
 <p>O ano de 2015 foi marcado com grandes mudanças na plataforma .NET que se tornou oficialmente <em>Cross-Platform</em>, digo oficialmente pois desde 2004 apesar do framework <strong><a href="http://www.mono-project.com/">Mono</a></strong> não ser da Microsoft, tem realizado um trabalho para manter o .NET <em>Cross-Platform</em>, muitos projetos utilizam o <strong><a href="http://www.mono-project.com/">Mono</a></strong>, desde o <strong><a href="https://xamarin.com/">Xamarin</a></strong> que possibilita a criação de aplicações Mobile (Android e IOS) ao <strong><a href="https://unity3d.com/">Unity 3D</a></strong> uma grande plataforma de desenvolvimento de jogos que também utiliza o framework para possibilitar a entrega em diversas plataformas.</p>
 <h2 id="prrequisitos">Pré-requisitos</h2>
@@ -199,26 +219,26 @@ ghost.init({
 <pre><code>yo aspnet
 </code></pre>
 <p><em>Selecione a opção <code>Web API Application</code>.</em></p>
-<p><img src="../content/images/2016/01/vnext-webapi-01.gif" alt=""></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2016/01/vnext-webapi-01.gif" alt=""></p>
 <h2 id="restorenospacotes">Restore nos pacotes</h2>
 <p>O projeto foi criado porém será necessário realizar uma restauração nos pacotes do <em>.NET Web Api</em>, digite o comando abaixo para realizar esta operação.</p>
 <pre><code>dnu restore
 </code></pre>
 <p>Agora é hora de tomar aquele cafezinho e esperar o <em>download</em> dos pacotes.</p>
-<p><img src="../content/images/2016/01/coffetime.gif" alt=""></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2016/01/coffetime.gif" alt=""></p>
 <p>Pronto neste caso foram instalados <strong>129</strong> pacotes.</p>
-<p><img src="../content/images/2016/01/vnext-webapi-screenshot-01.png" alt=""></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2016/01/vnext-webapi-screenshot-01.png" alt=""></p>
 <h2 id="rodandoaaplicaobase">Rodando a aplicação base</h2>
 <p>Com a estrutura do projeto já definida e os pacotes restaurados, vamos testar a aplicação base conhecida por nós desenvolvedores .NET que retorna uma lista de valores, digite em sua linha de comando.</p>
 <pre><code>dnx web
 </code></pre>
-<p><img src="../content/images/2016/01/vnext-webapi-02.gif" alt=""></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2016/01/vnext-webapi-02.gif" alt=""></p>
 <p>Okay, aplicação base rodando vamos implementar o <code>Controller</code> <em>ValuesController</em>, que aplicará o conceito de programação assíncrona.</p>
 <h2 id="implementandoovaluescontroller">Implementando o ValuesController</h2>
 <p>Para deixar o conteúdo do <em>ValuesController</em> persistente iremos utilizar o <strong><a href="https://www.sqlite.org/">SQlite</a></strong>, criei uma estrutura de base de dados para o projeto:</p>
 <pre><code>CREATE TABLE word (text TEXT, id INTEGER PRIMARY KEY AUTOINCREMENT)
 </code></pre>
-<p><img src="../content/images/2016/01/vnext-webapi-screenshots-08.png" alt=""></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2016/01/vnext-webapi-screenshots-08.png" alt=""></p>
 <p>Será necessário instalar o <strong><a href="https://www.sqlite.org/">SQlite</a></strong> e adicionar a referência ao projeto.</p>
 <pre><code>sudo apt-get install sqlite3 libsqlite3-dev
 dnu install Microsoft.Data.Sqlite
@@ -363,21 +383,21 @@ namespace WebApi.Controllers
 <li><strong>GET (/api/values)</strong></li>
 </ul>
 <p>Requisição: <code>http://localhost:5000/api/values</code></p>
-<p><img src="../content/images/2016/01/vnext-webapi-screenshots-03.png" alt=""></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2016/01/vnext-webapi-screenshots-03.png" alt=""></p>
 <ul>
 <li><strong>GET (/api/values/1)</strong></li>
 </ul>
 <p>Requisição: <code>http://localhost:5000/api/values/1</code></p>
-<p><img src="../content/images/2016/01/vnext-webapi-screenshots-04.png" alt=""></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2016/01/vnext-webapi-screenshots-04.png" alt=""></p>
 <p><strong>POST (/api/values)</strong></p>
 <p>Requisição: <code>http://localhost:5000/api/values</code></p>
-<p><img src="../content/images/2016/01/vnext-webapi-screenshots-05.png" alt=""></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2016/01/vnext-webapi-screenshots-05.png" alt=""></p>
 <p><strong>PUT (/api/values)</strong></p>
 <p>Requisição: <code>http://localhost:5000/api/values/4</code></p>
-<p><img src="../content/images/2016/01/vnext-webapi-screenshots-06.png" alt=""></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2016/01/vnext-webapi-screenshots-06.png" alt=""></p>
 <p><strong>DELETE (/api/values)</strong></p>
 <p>Requisição: <code>http://localhost:5000/api/values/1</code></p>
-<p><img src="../content/images/2016/01/vnext-webapi-screenshots-07.png" alt=""></p>
+<p><img src="https://www.coisadeprogramador.com.br/content/images/2016/01/vnext-webapi-screenshots-07.png" alt=""></p>
 <h2 id="github">GitHub</h2>
 <p>Veja o código completo no <a href="https://github.com/williampsena/coisadeprogramador-samples/tree/master/AspNet-vNext/WebApi">GitHub</a></p>
 <h2 id="fim">Fim</h2>
@@ -393,7 +413,7 @@ namespace WebApi.Controllers
 
                     
 <section class="author-card">
-        <img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena">
+        <img class="author-profile-image" src="https://www.coisadeprogramador.com.br/content/images/size/w100/2017/05/willsena_ss0510_1.jpg" alt="William Sena">
     <section class="author-card-content">
         <h4 class="author-card-name"><a href="../author/will/">William Sena</a></h4>
             <p>Read <a href="../author/will/">more posts</a> by this author.</p>
@@ -407,30 +427,6 @@ namespace WebApi.Controllers
             </footer>
 
 
-            <section class="post-full-comments">
-                <div id="disqus_thread"></div>
-                <script>
-
-                /**
-                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                /*
-                var disqus_config = function () {
-                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-                */
-                (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = 'https://coisadeprogramador.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            </section>
-
-
         </article>
 
     </div>
@@ -439,7 +435,7 @@ namespace WebApi.Controllers
 <aside class="read-next outer">
     <div class="inner">
         <div class="read-next-feed">
-                <article class="read-next-card" style="background-image: url(../content/images/2018/09/alex-jones-2394-unsplash.jpg)">
+                <article class="read-next-card" style="background-image: url(../content/images/size/w600/2018/09/alex-jones-2394-unsplash.jpg)">
                     <header class="read-next-card-header">
                         <small class="read-next-card-header-sitetitle">— Coisa de Programador —</small>
                         <h3 class="read-next-card-header-title"><a href="../tag/aspnet-vnext/">aspnet-vnext</a></h3>
@@ -456,71 +452,7 @@ namespace WebApi.Controllers
                     </footer>
                 </article>
 
-                <article class="post-card post tag-nodejs tag-javascript tag-typescript">
-        <a class="post-card-image-link" href="../introducao-ao-webpack-o-flexivel-module-bundler-typescript/">
-            <div class="post-card-image" style="background-image: url(../content/images/2016/01/thumb-coisadeprogramador-webpack.png)"></div>
-        </a>
-    <div class="post-card-content">
-        <a class="post-card-content-link" href="../introducao-ao-webpack-o-flexivel-module-bundler-typescript/">
-            <header class="post-card-header">
-                    <span class="post-card-tags">NodeJs</span>
-                <h2 class="post-card-title">Introdução ao webpack o flexível module bundler com TypeScript</h2>
-            </header>
-            <section class="post-card-excerpt">
-                <p>O que é ? O webpack é um module bundler semelhante ao browserify que disponibiliza conteúdos estáticos por módulos e  dependências, abraçando o conceito de code-splitting. Simplesmente agrupar a codificação em um único arquivo</p>
-            </section>
-        </a>
-        <footer class="post-card-meta">
 
-            <ul class="author-list">
-                <li class="author-list-item">
-
-                    <div class="author-name-tooltip">
-                        William Sena
-                    </div>
-
-                        <a href="../author/will/" class="static-avatar"><img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena"></a>
-                </li>
-            </ul>
-
-            <span class="reading-time">4 min read</span>
-
-        </footer>
-    </div>
-</article>
-
-                <article class="post-card post tag-quick-tips tag-nodejs">
-        <a class="post-card-image-link" href="../configurando-uma-conexao-por-proxy-http-para-o-npm/">
-            <div class="post-card-image" style="background-image: url(../content/images/2015/12/thumb-coisadeprogramador-tips-npm.png)"></div>
-        </a>
-    <div class="post-card-content">
-        <a class="post-card-content-link" href="../configurando-uma-conexao-por-proxy-http-para-o-npm/">
-            <header class="post-card-header">
-                    <span class="post-card-tags">quick-tips</span>
-                <h2 class="post-card-title">Configurando uma conexão por proxy HTTP para o NPM</h2>
-            </header>
-            <section class="post-card-excerpt">
-                <p>Fala galera! Esta dica é simples, porém é um problema muito comum ao tentar utilizar NodeJs em uma organização onde existe o proxy para acesso à internet. Já tentou instalar um módulo NPM</p>
-            </section>
-        </a>
-        <footer class="post-card-meta">
-
-            <ul class="author-list">
-                <li class="author-list-item">
-
-                    <div class="author-name-tooltip">
-                        William Sena
-                    </div>
-
-                        <a href="../author/will/" class="static-avatar"><img class="author-profile-image" src="../content/images/2017/05/willsena_ss0510_1.jpg" alt="William Sena"></a>
-                </li>
-            </ul>
-
-            <span class="reading-time">1 min read</span>
-
-        </footer>
-    </div>
-</article>
 
         </div>
     </div>
@@ -529,7 +461,7 @@ namespace WebApi.Controllers
 <div class="floating-header">
     <div class="floating-header-logo">
         <a href="https://www.coisadeprogramador.com.br">
-                <img src="../content/images/2018/09/logo_60.png" alt="Coisa de Programador icon">
+                <img src="../content/images/size/w30/2018/09/logo_60.png" alt="Coisa de Programador icon">
             <span>Coisa de Programador</span>
         </a>
     </div>
@@ -559,7 +491,7 @@ namespace WebApi.Controllers
 
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a> © 2018</section>
+                <section class="copyright"><a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a> © 2019</section>
                 <nav class="site-footer-nav">
                     <a href="https://www.coisadeprogramador.com.br">Latest Posts</a>
                     <a href="https://www.facebook.com/coisadeprogramador/" target="_blank" rel="noopener">Facebook</a>
@@ -586,7 +518,7 @@ namespace WebApi.Controllers
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="../assets/built/jquery.fitvids.js?v=42670f6313"></script>
+    <script type="text/javascript" src="../assets/built/jquery.fitvids.js?v=fca976e73d"></script>
 
 
     <script>
