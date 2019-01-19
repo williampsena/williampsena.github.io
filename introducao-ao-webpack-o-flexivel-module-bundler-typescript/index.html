@@ -1,24 +1,25 @@
-
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Introdução ao webpack o flexível module bundler com TypeScript</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=fca976e73d">
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css?v=9a608edf1a" />
 
-    <meta name="description" content="Desenvolver aplicações usando todo o poder do ES6 ou TypeScript, folhas de estilo Sass ou Less, HTML com Jade ou Mustache, o webpack resolve este problema.">
-    <link rel="shortcut icon" href="../favicon.png" type="image/png">
-    <link rel="canonical" href="https://www.coisadeprogramador.com.br/introducao-ao-webpack-o-flexivel-module-bundler-typescript/">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="https://www.coisadeprogramador.com.br/introducao-ao-webpack-o-flexivel-module-bundler-typescript/amp/">
+    <meta name="description" content="Desenvolver aplicações usando todo o poder do ES6 ou TypeScript, folhas de estilo Sass ou Less, HTML com Jade ou Mustache, o webpack resolve este problema." />
+    <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://www.coisadeprogramador.com.br/introducao-ao-webpack-o-flexivel-module-bundler-typescript/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://www.coisadeprogramador.com.br/introducao-ao-webpack-o-flexivel-module-bundler-typescript/amp/" />
     
-    <meta property="og:site_name" content="Coisa de Programador">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Introdução ao webpack o flexível module bundler com TypeScript">
+    <meta property="og:site_name" content="Coisa de Programador" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Introdução ao webpack o flexível module bundler com TypeScript" />
     <meta property="og:description" content="O que é ?
 O webpack  é um module bundler  semelhante ao browserify
 [http://browserify.org/]  que disponibiliza conteúdos estáticos por módulos e
@@ -28,18 +29,18 @@ codificação em um único arquivo é uma prática ineficiente para grandes
 aplicações, especialmente quando você tem uma codificação que será utilizada em
 ponto específico, este problema pode ser resolvido com o module bundler.
 
-M">
-    <meta property="og:url" content="https://www.coisadeprogramador.com.br/introducao-ao-webpack-o-flexivel-module-bundler-typescript/">
-    <meta property="og:image" content="https://www.coisadeprogramador.com.br/content/images/2016/01/thumb-coisadeprogramador-webpack.png">
-    <meta property="article:published_time" content="2016-01-25T16:28:00.000Z">
-    <meta property="article:modified_time" content="2017-05-12T11:58:49.000Z">
-    <meta property="article:tag" content="NodeJs">
-    <meta property="article:tag" content="javascript">
-    <meta property="article:tag" content="typescript">
+M" />
+    <meta property="og:url" content="https://www.coisadeprogramador.com.br/introducao-ao-webpack-o-flexivel-module-bundler-typescript/" />
+    <meta property="og:image" content="https://www.coisadeprogramador.com.br/content/images/2016/01/thumb-coisadeprogramador-webpack.png" />
+    <meta property="article:published_time" content="2016-01-25T16:28:00.000Z" />
+    <meta property="article:modified_time" content="2017-05-12T11:58:49.000Z" />
+    <meta property="article:tag" content="NodeJs" />
+    <meta property="article:tag" content="javascript" />
+    <meta property="article:tag" content="typescript" />
     
-    <meta property="article:publisher" content="https://www.facebook.com/coisadeprogramador/">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Introdução ao webpack o flexível module bundler com TypeScript">
+    <meta property="article:publisher" content="https://www.facebook.com/coisadeprogramador/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Introdução ao webpack o flexível module bundler com TypeScript" />
     <meta name="twitter:description" content="O que é ?
 O webpack  é um module bundler  semelhante ao browserify
 [http://browserify.org/]  que disponibiliza conteúdos estáticos por módulos e
@@ -49,15 +50,15 @@ codificação em um único arquivo é uma prática ineficiente para grandes
 aplicações, especialmente quando você tem uma codificação que será utilizada em
 ponto específico, este problema pode ser resolvido com o module bundler.
 
-M">
-    <meta name="twitter:url" content="https://www.coisadeprogramador.com.br/introducao-ao-webpack-o-flexivel-module-bundler-typescript/">
-    <meta name="twitter:image" content="https://www.coisadeprogramador.com.br/content/images/2016/01/thumb-coisadeprogramador-webpack.png">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="William Sena">
-    <meta name="twitter:label2" content="Filed under">
-    <meta name="twitter:data2" content="NodeJs, javascript, typescript">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="628">
+M" />
+    <meta name="twitter:url" content="https://www.coisadeprogramador.com.br/introducao-ao-webpack-o-flexivel-module-bundler-typescript/" />
+    <meta name="twitter:image" content="https://www.coisadeprogramador.com.br/content/images/2016/01/thumb-coisadeprogramador-webpack.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="William Sena" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="NodeJs, javascript, typescript" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="628" />
     
     <script type="application/ld+json">
 {
@@ -104,8 +105,8 @@ M">
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.11">
-    <link rel="alternate" type="application/rss+xml" title="Coisa de Programador" href="https://www.coisadeprogramador.com.br/rss/">
+    <meta name="generator" content="Ghost 2.11" />
+    <link rel="alternate" type="application/rss+xml" title="Coisa de Programador" href="https://www.coisadeprogramador.com.br/rss/" />
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
 <style>
@@ -149,21 +150,21 @@ M">
     <div class="inner">
         <nav class="site-nav">
     <div class="site-nav-left">
-                <a class="site-nav-logo" href="https://www.coisadeprogramador.com.br"><img src="https://www.coisadeprogramador.com.br/content/images/2018/09/logo_600.png" alt="Coisa de Programador"></a>
+                <a class="site-nav-logo" href="https://www.coisadeprogramador.com.br"><img src="https://www.coisadeprogramador.com.br/content/images/2018/09/logo_600.png" alt="Coisa de Programador" /></a>
             <ul class="nav" role="menu">
     <li class="nav-home" role="menuitem"><a href="https://www.coisadeprogramador.com.br/">Home</a></li>
     <li class="nav-sobre" role="menuitem"><a href="https://www.coisadeprogramador.com.br/sobre/">Sobre</a></li>
-    <li class="nav-projetos" role="menuitem"><a href="https://www.coisadeprogramador.com.br/meus-projetos">Projetos</a></li>
-    <li class="nav-contato" role="menuitem"><a href="https://www.coisadeprogramador.com.br/contato">Contato</a></li>
+    <li class="nav-projetos" role="menuitem"><a href="https://www.coisadeprogramador.com.br/meus-projetos/">Projetos</a></li>
+    <li class="nav-contato" role="menuitem"><a href="https://www.coisadeprogramador.com.br/contato/">Contato</a></li>
 </ul>
 
     </div>
     <div class="site-nav-right">
         <div class="social-links">
-                <a class="social-link social-link-fb" href="https://www.facebook.com/coisadeprogramador/" title="Facebook" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
+                <a class="social-link social-link-fb" href="https://www.facebook.com/coisadeprogramador/" title="Facebook" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 </a>
         </div>
-            <a class="rss-button" href="https://feedly.com/i/subscription/feed/https://www.coisadeprogramador.com.br/rss/" title="RSS" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"></circle><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"></path></svg>
+            <a class="rss-button" href="https://feedly.com/i/subscription/feed/https://www.coisadeprogramador.com.br/rss/" title="RSS" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
 </a>
     </div>
 </nav>
@@ -179,18 +180,23 @@ M">
             <header class="post-full-header">
                 <section class="post-full-meta">
                     <time class="post-full-meta-date" datetime="2016-01-25">25 janeiro 2016</time>
-                        <span class="date-divider">/</span> <a href="../tag/nodejs/">NodeJs</a>
+                        <span class="date-divider">/</span> <a href="/tag/nodejs/">NodeJs</a>
                 </section>
                 <h1 class="post-full-title">Introdução ao webpack o flexível module bundler com TypeScript</h1>
             </header>
 
             <figure class="post-full-image">
-                <img srcset="https://www.coisadeprogramador.com.br/content/images/size/w300/2016/01/thumb-coisadeprogramador-webpack.png 300w,
+                <img
+                    srcset="https://www.coisadeprogramador.com.br/content/images/size/w300/2016/01/thumb-coisadeprogramador-webpack.png 300w,
                             https://www.coisadeprogramador.com.br/content/images/size/w600/2016/01/thumb-coisadeprogramador-webpack.png 600w,
                             https://www.coisadeprogramador.com.br/content/images/size/w1000/2016/01/thumb-coisadeprogramador-webpack.png 1000w,
-                            https://www.coisadeprogramador.com.br/content/images/size/w2000/2016/01/thumb-coisadeprogramador-webpack.png 2000w" sizes="(max-width: 800px) 400px,
+                            https://www.coisadeprogramador.com.br/content/images/size/w2000/2016/01/thumb-coisadeprogramador-webpack.png 2000w"
+                    sizes="(max-width: 800px) 400px,
                             (max-width: 1170px) 700px,
-                            1400px" src="https://www.coisadeprogramador.com.br/content/images/size/w2000/2016/01/thumb-coisadeprogramador-webpack.png" alt="Introdução ao webpack o flexível module bundler com TypeScript">
+                            1400px"
+                    src="https://www.coisadeprogramador.com.br/content/images/size/w2000/2016/01/thumb-coisadeprogramador-webpack.png"
+                    alt="Introdução ao webpack o flexível module bundler com TypeScript"
+                />
             </figure>
 
             <section class="post-full-content">
@@ -199,14 +205,14 @@ M">
 <h2 id="oque">O que é ?</h2>
 <p>O <code>webpack</code> é um <strong>module bundler</strong> semelhante ao <a href="http://browserify.org/">browserify</a> que disponibiliza conteúdos estáticos por módulos e  dependências, abraçando o conceito de <a href="http://webpack.github.io/docs/code-splitting.html">code-splitting</a>. Simplesmente agrupar a codificação em um único arquivo é uma prática ineficiente para grandes aplicações, especialmente quando você tem uma codificação que será utilizada em ponto específico, este problema pode ser resolvido com o <code>module bundler</code>.</p>
 <h2 id="modulebundler">Module Bundler</h2>
-<p>A <em>"modularização"</em> está presente no mundo <em>JavaScript</em> há algum tempo. O <a href="http://requirejs.org/">RequireJS</a> possibilita o carregamento de módulo e arquivos no <em>client-side</em> e também é compatível com <em>NodeJs</em>. O próprio <em>NodeJs</em> provê módulos no <em>server-side</em>. Já o <a href="http://browserify.org/">Browserify</a> garante que seus módulos <em>NodeJs</em> também rodem no navegador(<em>client-side</em>).</p>
+<p>A <em>&quot;modularização&quot;</em> está presente no mundo <em>JavaScript</em> há algum tempo. O <a href="http://requirejs.org/">RequireJS</a> possibilita o carregamento de módulo e arquivos no <em>client-side</em> e também é compatível com <em>NodeJs</em>. O próprio <em>NodeJs</em> provê módulos no <em>server-side</em>. Já o <a href="http://browserify.org/">Browserify</a> garante que seus módulos <em>NodeJs</em> também rodem no navegador(<em>client-side</em>).</p>
 <p>O <code>webpack</code> possui uma flexibilidade no carregamento de código que pode ser no padrão <em>CommonJs, AMD ou ES6</em>.</p>
 <p>A grande sacada do <code>webpack</code> é foco no <em>front-end</em> você poderá criar bundles e suas dependências para <em>JavaScript e Css</em>.</p>
 <h2 id="prrequisitos">Pré-requisitos</h2>
 <p>Se você não está familiarizado com o mundo <em>NodeJs</em> veja:</p>
 <ul>
-<li><a href="https://www.coisadeprogramador.com.br/nodejs-primeiros-passos/">NodeJs - Primeiros passos</a></li>
-<li><a href="https://www.coisadeprogramador.com.br/gulp-automatize-facilmente-suas-tarefas/">Gulp - Automatizando tarefas</a></li>
+<li><a href="http://www.coisadeprogramador.com.br/nodejs-primeiros-passos/">NodeJs - Primeiros passos</a></li>
+<li><a href="http://www.coisadeprogramador.com.br/gulp-automatize-facilmente-suas-tarefas/">Gulp - Automatizando tarefas</a></li>
 </ul>
 <h2 id="vamosinstalar">Vamos instalar?</h2>
 <p>Primeiramente instale o <code>webpack</code> como módulo global e depois instale como uma dependência de desenvolvimento.</p>
@@ -217,7 +223,7 @@ npm install webpack --save-dev
 <h2 id="loaders">Loaders</h2>
 <p>Que tal desenvolver aplicações usando todo o poder do <a href="http://www.ecma-international.org/ecma-262/6.0/#sec-method-definitions">EcmaScript 6 - ES6</a> ou <a href="http://www.typescriptlang.org/">TypeScript</a>, criar folhas de estilo com <a href="http://sass-lang.com/">Sass</a> ou <a href="http://lesscss.org/">Less</a>, codificar seu HTML com <a href="http://jade-lang.com/">Jade</a> ou <a href="https://mustache.github.io/">Mustache</a>. Este são os tipos de problema que o <code>webpack</code> resolve com diversos loaders, onde você poderá definir quais serão os padrões do seu projeto.</p>
 <h2 id="typescriptnacabea">TypeScript na cabeça</h2>
-<p>O <em>TypeScript</em> possibilita uma escrita de <em>JavaScript</em> fortemente <em>"tipada"</em>, compilando e mantendo a compatibilidade para qualquer navegador ou host compatível com o <em>ES3</em>, isso mesmo <em>NodeJs</em> e aquele seu navegador favorito <em>Internet Explorer 8</em>, rs.</p>
+<p>O <em>TypeScript</em> possibilita uma escrita de <em>JavaScript</em> fortemente <em>&quot;tipada&quot;</em>, compilando e mantendo a compatibilidade para qualquer navegador ou host compatível com o <em>ES3</em>, isso mesmo <em>NodeJs</em> e aquele seu navegador favorito <em>Internet Explorer 8</em>, rs.</p>
 <p><img src="https://www.coisadeprogramador.com.br/content/images/2016/01/ohyeah.gif" alt="Will Dancing"></p>
 <p>Primeiramente instale o <em>Typescript</em>.</p>
 <p><strong>Será instalado a versão 1.6.2 por questões de compatibilidade com o loader TypeScript do webpack</strong></p>
@@ -230,28 +236,28 @@ npm install webpack --save-dev
 </ul>
 <p><a href="https://github.com/Microsoft/TypeScript/wiki/tsconfig.json">Clique aqui</a> para maiores informações relacionadas as configurações deste arquivo.</p>
 <pre><code class="language-language-javascript">{
-  "compilerOptions": {
-    "target": "es5",
-    "noImplicitAny": false,
-    "removeComments": true,
-    "sourceMap": true,
-    "module": "commonjs",
-    "experimentalDecorators": true
+  &quot;compilerOptions&quot;: {
+    &quot;target&quot;: &quot;es5&quot;,
+    &quot;noImplicitAny&quot;: false,
+    &quot;removeComments&quot;: true,
+    &quot;sourceMap&quot;: true,
+    &quot;module&quot;: &quot;commonjs&quot;,
+    &quot;experimentalDecorators&quot;: true
   },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "dev",
-    "reports"
+  &quot;exclude&quot;: [
+    &quot;node_modules&quot;,
+    &quot;dist&quot;,
+    &quot;dev&quot;,
+    &quot;reports&quot;
   ]
 }
 </code></pre>
-<p>Além do <em>intellisense</em>, vamos configurar o <code>tsd</code> que torna qualquer framework JavaScript fortemente "tipado", <em>Yes, TypeScript Rocks</em>!</p>
+<p>Além do <em>intellisense</em>, vamos configurar o <code>tsd</code> que torna qualquer framework JavaScript fortemente &quot;tipado&quot;, <em>Yes, TypeScript Rocks</em>!</p>
 <p><img src="https://www.coisadeprogramador.com.br/content/images/2016/01/will-dancing.gif" alt=""></p>
 <p>Será necessário instalar o <strong><a href="http://definitelytyped.org/tsd/">tsd</a></strong>.</p>
 <pre><code>sudo npm install tsd -g
 </code></pre>
-<p>Pronto para inicializar, digite o comando abaixo na pasta do projeto, será criado o arquivo de configuração <code>tsd.json</code> e o arquivo de importação do "tsd" o <code>typings/tsd.d.ts</code>.</p>
+<p>Pronto para inicializar, digite o comando abaixo na pasta do projeto, será criado o arquivo de configuração <code>tsd.json</code> e o arquivo de importação do &quot;tsd&quot; o <code>typings/tsd.d.ts</code>.</p>
 <pre><code>tsd init
 </code></pre>
 <p>Para este artigo iremos utilizar o jQuery, será necessário instalar o <em>tsd</em> do jQuery, que possibilitará o <em>intellisense</em> no editor e uma validação <em>semântica</em>.</p>
@@ -313,7 +319,7 @@ export class NinjaTurtle implements INinjaTurtle {
     }
 
     greeter() {
-        return "Cowabunga, ".concat(this.name);
+        return &quot;Cowabunga, &quot;.concat(this.name);
     }
 
     getImage() {
@@ -333,7 +339,7 @@ export class NinjasTurtles {
         let ninjaTurtle = new NinjaTurtle(this.turtles[this.index]);
 
         $('#message').html(ninjaTurtle.greeter());
-        $('#picture').attr("src", ninjaTurtle.getImage());
+        $('#picture').attr(&quot;src&quot;, ninjaTurtle.getImage());
 
         this.index++;
     }
@@ -343,7 +349,7 @@ export class NinjasTurtles {
 <ul>
 <li>app.ts</li>
 </ul>
-<pre><code class="language-language-javascript">import {NinjaTurtle, INinjaTurtle, NinjasTurtles} from "./ninjaTurtle";
+<pre><code class="language-language-javascript">import {NinjaTurtle, INinjaTurtle, NinjasTurtles} from &quot;./ninjaTurtle&quot;;
 import $ = require('jquery');
 
 $(() =&gt; {
@@ -366,7 +372,7 @@ $(() =&gt; {
 <pre><code>webpack -p
 </code></pre>
 <ul>
-<li>Rodando com o "watcher"</li>
+<li>Rodando com o &quot;watcher&quot;</li>
 </ul>
 <p>O <code>webpack</code> possibilita que a cada modificação de código ocorra uma recompilação, porém esta funcionalidade fica mais interessante utilizando o <em>browsersync</em>, que recarrega o navegador também, este é um recurso muito conhecido por desenvolvedores do <a href="https://www.meteor.com/">Meteor</a>.</p>
 <pre><code>webpack --watch
@@ -388,14 +394,14 @@ $(() =&gt; {
 
                     
 <section class="author-card">
-        <img class="author-profile-image" src="https://www.coisadeprogramador.com.br/content/images/size/w100/2017/05/willsena_ss0510_1.jpg" alt="William Sena">
+        <img class="author-profile-image" src="https://www.coisadeprogramador.com.br/content/images/size/w100/2017/05/willsena_ss0510_1.jpg" alt="William Sena" />
     <section class="author-card-content">
-        <h4 class="author-card-name"><a href="../author/will/">William Sena</a></h4>
-            <p>Read <a href="../author/will/">more posts</a> by this author.</p>
+        <h4 class="author-card-name"><a href="/author/will/">William Sena</a></h4>
+            <p>Read <a href="/author/will/">more posts</a> by this author.</p>
     </section>
 </section>
 <div class="post-full-footer-right">
-    <a class="author-card-button" href="../author/will/">Read More</a>
+    <a class="author-card-button" href="/author/will/">Read More</a>
 </div>
 
 
@@ -433,22 +439,24 @@ $(() =&gt; {
 <aside class="read-next outer">
     <div class="inner">
         <div class="read-next-feed">
-                <article class="read-next-card" style="background-image: url(https://www.coisadeprogramador.com.br/content/images/size/w600/2018/09/alex-jones-2394-unsplash.jpg)">
+                <article class="read-next-card"
+                            style="background-image: url(https://www.coisadeprogramador.com.br/content/images/size/w600/2018/09/alex-jones-2394-unsplash.jpg)"
+                >
                     <header class="read-next-card-header">
-                        <small class="read-next-card-header-sitetitle">— Coisa de Programador —</small>
-                        <h3 class="read-next-card-header-title"><a href="../tag/nodejs/">NodeJs</a></h3>
+                        <small class="read-next-card-header-sitetitle">&mdash; Coisa de Programador &mdash;</small>
+                        <h3 class="read-next-card-header-title"><a href="/tag/nodejs/">NodeJs</a></h3>
                     </header>
-                    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"></path></svg>
+                    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
 </div>
                     <div class="read-next-card-content">
                         <ul>
-                            <li><a href="../configurando-uma-conexao-por-proxy-http-para-o-npm/">Configurando uma conexão por proxy HTTP para o NPM</a></li>
-                            <li><a href="../escrevendo-seus-testes-unitarios-com-o-mocha-js/">Escrevendo seus testes unitários com o Mocha.Js</a></li>
-                            <li><a href="../bible-search-cliente-para-bibles-org/">Bible Search - Um cliente NodeJs para Bibles.Org</a></li>
+                            <li><a href="/configurando-uma-conexao-por-proxy-http-para-o-npm/">Configurando uma conexão por proxy HTTP para o NPM</a></li>
+                            <li><a href="/escrevendo-seus-testes-unitarios-com-o-mocha-js/">Escrevendo seus testes unitários com o Mocha.Js</a></li>
+                            <li><a href="/bible-search-cliente-para-bibles-org/">Bible Search - Um cliente NodeJs para Bibles.Org</a></li>
                         </ul>
                     </div>
                     <footer class="read-next-card-footer">
-                        <a href="../tag/nodejs/">See all 6 posts →</a>
+                        <a href="/tag/nodejs/">See all 6 posts →</a>
                     </footer>
                 </article>
 
@@ -461,22 +469,24 @@ $(() =&gt; {
 <div class="floating-header">
     <div class="floating-header-logo">
         <a href="https://www.coisadeprogramador.com.br">
-                <img src="https://www.coisadeprogramador.com.br/content/images/size/w30/2018/09/logo_60.png" alt="Coisa de Programador icon">
+                <img src="https://www.coisadeprogramador.com.br/content/images/size/w30/2018/09/logo_60.png" alt="Coisa de Programador icon" />
             <span>Coisa de Programador</span>
         </a>
     </div>
-    <span class="floating-header-divider">—</span>
+    <span class="floating-header-divider">&mdash;</span>
     <div class="floating-header-title">Introdução ao webpack o flexível module bundler com TypeScript</div>
     <div class="floating-header-share">
-        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
-    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"></path>
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Introdu%C3%A7%C3%A3o%20ao%20webpack%20o%20flex%C3%ADvel%20module%20bundler%20com%20TypeScript&amp;url=https://www.coisadeprogramador.com.br/introducao-ao-webpack-o-flexivel-module-bundler-typescript/" onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Introdu%C3%A7%C3%A3o%20ao%20webpack%20o%20flex%C3%ADvel%20module%20bundler%20com%20TypeScript&amp;url=https://www.coisadeprogramador.com.br/introducao-ao-webpack-o-flexivel-module-bundler-typescript/"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.coisadeprogramador.com.br/introducao-ao-webpack-o-flexivel-module-bundler-typescript/" onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.coisadeprogramador.com.br/introducao-ao-webpack-o-flexivel-module-bundler-typescript/"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
         </a>
     </div>
     <progress id="reading-progress" class="progress" value="0">
@@ -491,7 +501,7 @@ $(() =&gt; {
 
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a> © 2019</section>
+                <section class="copyright"><a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a> &copy; 2019</section>
                 <nav class="site-footer-nav">
                     <a href="https://www.coisadeprogramador.com.br">Latest Posts</a>
                     <a href="https://www.facebook.com/coisadeprogramador/" target="_blank" rel="noopener">Facebook</a>
@@ -516,9 +526,12 @@ $(() =&gt; {
     </script>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="../assets/built/jquery.fitvids.js?v=fca976e73d"></script>
+    <script type="text/javascript" src="/assets/built/jquery.fitvids.js?v=9a608edf1a"></script>
 
 
     <script>
@@ -596,3 +609,4 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
 </body>
+</html>

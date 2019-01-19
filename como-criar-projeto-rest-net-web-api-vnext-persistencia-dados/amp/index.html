@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html ⚡>
+<head>
+    <meta charset="utf-8">
+
+    <title>Como criar REST .NET Web API vNext com persistência de dados</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <meta name="description" content="Neste artigo serão abordados configurações de um projeto REST .NET Web API vNext rodando sobre uma máquina linux Ubuntu com persistência de dados SQlite." />
+    <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <meta property="og:site_name" content="Coisa de Programador" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Como criar REST .NET Web API vNext com persistência de dados" />
+    <meta property="og:description" content="O mundo vNext
+O ano de 2015 foi marcado com grandes mudanças na plataforma .NET que se tornou
+oficialmente Cross-Platform, digo oficialmente pois desde 2004 apesar do
+framework Mono [http://www.mono-project.com/]  não ser da Microsoft, tem
+realizado um trabalho para manter o .NET Cross-Platform, muitos projetos
+utilizam o Mono [http://www.mono-project.com/], desde o Xamarin
+[https://xamarin.com/]  que possibilita a criação de aplicações Mobile (Android
+e IOS) ao Unity 3D [https://unity3d.com/]  " />
+    <meta property="og:url" content="https://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/" />
+    <meta property="og:image" content="https://www.coisadeprogramador.com.br/content/images/2016/01/thumb-coisadeprogramador-vnext-webapi.png" />
+    <meta property="article:published_time" content="2016-01-10T18:06:00.000Z" />
+    <meta property="article:modified_time" content="2018-09-05T01:37:39.000Z" />
+    <meta property="article:tag" content="aspnet-vnext" />
+    <meta property="article:tag" content="linux" />
+    <meta property="article:tag" content="dotnet" />
+    
+    <meta property="article:publisher" content="https://www.facebook.com/coisadeprogramador/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Como criar REST .NET Web API vNext com persistência de dados" />
+    <meta name="twitter:description" content="O mundo vNext
+O ano de 2015 foi marcado com grandes mudanças na plataforma .NET que se tornou
+oficialmente Cross-Platform, digo oficialmente pois desde 2004 apesar do
+framework Mono [http://www.mono-project.com/]  não ser da Microsoft, tem
+realizado um trabalho para manter o .NET Cross-Platform, muitos projetos
+utilizam o Mono [http://www.mono-project.com/], desde o Xamarin
+[https://xamarin.com/]  que possibilita a criação de aplicações Mobile (Android
+e IOS) ao Unity 3D [https://unity3d.com/]  " />
+    <meta name="twitter:url" content="https://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/" />
+    <meta name="twitter:image" content="https://www.coisadeprogramador.com.br/content/images/2016/01/thumb-coisadeprogramador-vnext-webapi.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="William Sena" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="aspnet-vnext, linux, dotnet" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="628" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Coisa de Programador",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.coisadeprogramador.com.br/content/images/2018/09/logo_600.png",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "William Sena",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://www.coisadeprogramador.com.br/content/images/2017/05/willsena_ss0510_1.jpg",
+            "width": 2189,
+            "height": 2354
+        },
+        "url": "https://www.coisadeprogramador.com.br/author/will/",
+        "sameAs": []
+    },
+    "headline": "Como criar REST .NET Web API vNext com persistência de dados",
+    "url": "https://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/",
+    "datePublished": "2016-01-10T18:06:00.000Z",
+    "dateModified": "2018-09-05T01:37:39.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://www.coisadeprogramador.com.br/content/images/2016/01/thumb-coisadeprogramador-vnext-webapi.png",
+        "width": 1200,
+        "height": 628
+    },
+    "keywords": "aspnet-vnext, linux, dotnet",
+    "description": "O mundo vNext\nO ano de 2015 foi marcado com grandes mudanças na plataforma .NET que se tornou\noficialmente Cross-Platform, digo oficialmente pois desde 2004 apesar do\nframework Mono [http://www.mono-project.com/]  não ser da Microsoft, tem\nrealizado um trabalho para manter o .NET Cross-Platform, muitos projetos\nutilizam o Mono [http://www.mono-project.com/], desde o Xamarin\n[https://xamarin.com/]  que possibilita a criação de aplicações Mobile (Android\ne IOS) ao Unity 3D [https://unity3d.com/]  ",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.coisadeprogramador.com.br/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.11" />
+    <link rel="alternate" type="application/rss+xml" title="Coisa de Programador" href="https://www.coisadeprogramador.com.br/rss/" />
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
+    <style amp-custom>html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{margin:0.67em 0;font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{position:relative;vertical-align:baseline;font-size:75%;line-height:0}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}amp-img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{margin:0;color:inherit;font:inherit}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{margin:0 2px;padding:0.35em 0.625em 0.75em;border:1px solid #c0c0c0}legend{padding:0;border:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-spacing:0;border-collapse:collapse}td,th{padding:0}html{max-height:100%;height:100%;font-size:62.5%;-webkit-tap-highlight-color:rgba(0, 0, 0, 0)}body{max-height:100%;height:100%;color:#3a4145;background:#f4f8fb;letter-spacing:0.01rem;font-family:"Merriweather", serif;font-size:1.8rem;line-height:1.75em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"kern" 1;-moz-font-feature-settings:"kern" 1;-o-font-feature-settings:"kern" 1}::-moz-selection{background:#d6edff}::selection{background:#d6edff}h1,h2,h3,h4,h5,h6{margin:0 0 0.3em 0;color:#2e2e2e;font-family:"Open Sans", sans-serif;line-height:1.15em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-moz-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-o-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1}h1{text-indent:-2px;letter-spacing:-1px;font-size:2.6rem}h2{letter-spacing:0;font-size:2.4rem}h3{letter-spacing:-0.6px;font-size:2.1rem}h4{font-size:1.9rem}h5{font-size:1.8rem}h6{font-size:1.8rem}a{color:#4a4a4a}a:hover{color:#111}p,ul,ol,dl{margin:0 0 2.5rem 0;font-size:1.5rem;text-rendering:geometricPrecision;-webkit-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-moz-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-o-font-feature-settings:"liga" 1, "onum" 1, "kern" 1}ol,ul{padding-left:2em}ol ol,ul ul,ul ol,ol ul{margin:0 0 0.4em 0;padding-left:2em}dl dt{float:left;clear:left;overflow:hidden;margin-bottom:1em;width:180px;text-align:right;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-bottom:1em;margin-left:200px}li{margin:0.4em 0}li li{margin:0}hr{display:block;margin:1.75em 0;padding:0;height:1px;border:0;border-top:#efefef 1px solid}blockquote{box-sizing:border-box;margin:1.75em 0 1.75em 0;padding:0 0 0 1.75em;border-left:#4a4a4a 0.4em solid;-moz-box-sizing:border-box}blockquote p{margin:0.8em 0;font-style:italic}blockquote small{display:inline-block;margin:0.8em 0 0.8em 1.5em;color:#ccc;font-size:0.9em}blockquote small:before{content:"\2014 \00A0"}blockquote cite{font-weight:700}blockquote cite a{font-weight:normal}mark{background-color:#fdffb6}code,tt{padding:1px 3px;border:#e3edf3 1px solid;background:#f7fafb;border-radius:2px;white-space:pre-wrap;font-family:Inconsolata, monospace, sans-serif;font-size:0.85em;font-feature-settings:"liga" 0;-webkit-font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" 0}pre{overflow:auto;box-sizing:border-box;margin:0 0 1.75em 0;padding:10px;width:100%;border:#e3edf3 1px solid;background:#f7fafb;border-radius:3px;white-space:pre;font-family:Inconsolata, monospace, sans-serif;font-size:0.9em;-moz-box-sizing:border-box}pre code,pre tt{padding:0;border:none;background:transparent;white-space:pre-wrap;font-size:inherit}kbd{display:inline-block;margin-bottom:0.4em;padding:1px 8px;border:#ccc 1px solid;background:#f4f4f4;border-radius:4px;box-shadow:0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;color:#666;text-shadow:#fff 0 1px 0;font-size:0.9em;font-weight:700}table{box-sizing:border-box;margin:1.75em 0;max-width:100%;width:100%;background-color:transparent;-moz-box-sizing:border-box}table th,table td{padding:8px;border-top:#efefef 1px solid;vertical-align:top;text-align:left;line-height:20px}table th{color:#000}table caption + thead tr:first-child th,table caption + thead tr:first-child td,table colgroup + thead tr:first-child th,table colgroup + thead tr:first-child td,table thead:first-child tr:first-child th,table thead:first-child tr:first-child td{border-top:0}table tbody + tbody{border-top:#efefef 2px solid}table table table{background-color:#fff}table tbody > tr:nth-child(odd) > td,table tbody > tr:nth-child(odd) > th{background-color:#f6f6f6}table.plain tbody > tr:nth-child(odd) > td,table.plain tbody > tr:nth-child(odd) > th{background:transparent}iframe,amp-iframe,.fluid-width-video-wrapper{display:block;margin:1.75em 0}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper amp-iframe{margin:0}textarea,select,input{margin:0 0 5px 0;padding:6px 9px;width:260px;outline:0;border:#e7eef2 1px solid;background:#fff;border-radius:4px;box-shadow:none;font-family:"Open Sans", sans-serif;font-size:1.6rem;line-height:1.4em;font-weight:100;-webkit-appearance:none}textarea{min-width:250px;min-height:80px;max-width:340px;width:100%;height:auto}input[type="text"]:focus,input[type="email"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="number"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,textarea:focus{outline:none;outline-width:0;border:#bbc7cc 1px solid;background:#fff}select{width:270px;height:30px;line-height:30px}.clearfix:before,.clearfix:after{content:" ";display:table}.clearfix:after{clear:both}.clearfix{zoom:1}.main-header{position:relative;display:table;overflow:hidden;box-sizing:border-box;width:100%;height:50px;background:#5ba4e5 no-repeat center center;background-size:cover;text-align:left;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}.content{background:#fff;padding-top:15px}.blog-title,.content{margin:auto;max-width:600px}.blog-title a{display:block;padding-right:16px;padding-left:16px;height:50px;color:#fff;text-decoration:none;font-family:"Open Sans", sans-serif;font-size:16px;line-height:50px;font-weight:600}.post{position:relative;margin-top:0;margin-right:16px;margin-left:16px;padding-bottom:0;max-width:100%;border-bottom:#ebf2f6 1px solid;word-wrap:break-word;font-size:0.95em;line-height:1.65em}.post-header{margin-bottom:1rem}.post-title{margin-bottom:0}.post-title a{text-decoration:none}.post-meta{display:block;margin:3px 0 0 0;color:#9eabb3;font-family:"Open Sans", sans-serif;font-size:1.3rem;line-height:2.2rem}.post-meta a{color:#9eabb3;text-decoration:none}.post-meta a:hover{text-decoration:underline}.post-meta .author{margin:0;font-size:1.3rem;line-height:1.3em}.post-date{display:inline-block;text-transform:uppercase;white-space:nowrap;font-size:1.2rem;line-height:1.2em}.post-image{margin:0;padding-top:3rem;padding-bottom:30px;border-top:1px #E8E8E8 solid}.post-content amp-img,.post-content amp-anim{position:relative;left:50%;display:block;padding:0;min-width:0;max-width:112%;width:calc(100% + 32px);height:auto;transform:translateX(-50%);-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%)}.footnotes{font-size:1.3rem;line-height:1.6em;font-style:italic}.footnotes li{margin:0.6rem 0}.footnotes p{margin:0}.footnotes p a:last-child{text-decoration:none}.site-footer{position:relative;margin:0 auto 20px auto;padding:1rem 15px;max-width:600px;color:rgba(0,0,0,0.5);font-family:"Open Sans", sans-serif;font-size:1.1rem;line-height:1.75em}.site-footer a{color:rgba(0,0,0,0.5);text-decoration:none;font-weight:bold}.site-footer a:hover{border-bottom:#bbc7cc 1px solid}.poweredby{display:block;float:right;width:45%;text-align:right}.copyright{display:block;float:left;width:45%}</style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
+
+</head>
+
+<body class="amp-template">
+    <header class="main-header">
+        <nav class="blog-title">
+            <a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a>
+        </nav>
+    </header>
+
+    <main class="content" role="main">
+        <article class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">Como criar um projeto REST .NET Web API vNext</h1>
+                <section class="post-meta">
+                    <p class="author">by <a href="/author/will/">William Sena</a></p>
+                    <time class="post-date" datetime="2016-01-10">2016-01-10</time>
+                </section>
+            </header>
+            <figure class="post-image">
+                <amp-img src="https://www.coisadeprogramador.com.br/content/images/2016/01/thumb-coisadeprogramador-vnext-webapi.png" width="600" height="400" layout="responsive"></amp-img>
+            </figure>
+            <section class="post-content">
+
+                <p></p>
+<h2 id="omundovnext">O mundo vNext</h2>
+<p>O ano de 2015 foi marcado com grandes mudanças na plataforma .NET que se tornou oficialmente <em>Cross-Platform</em>, digo oficialmente pois desde 2004 apesar do framework <strong><a href="http://www.mono-project.com/">Mono</a></strong> não ser da Microsoft, tem realizado um trabalho para manter o .NET <em>Cross-Platform</em>, muitos projetos utilizam o <strong><a href="http://www.mono-project.com/">Mono</a></strong>, desde o <strong><a href="https://xamarin.com/">Xamarin</a></strong> que possibilita a criação de aplicações Mobile (Android e IOS) ao <strong><a href="https://unity3d.com/">Unity 3D</a></strong> uma grande plataforma de desenvolvimento de jogos que também utiliza o framework para possibilitar a entrega em diversas plataformas.</p>
+<h2 id="prrequisitos">Pré-requisitos</h2>
+<p>Este projeto será criado em Linux numa distribuição <em>(Ubuntu/Debian)</em> e claro por ser <em>Cross-Platform</em> poderá ser portada para o <em>Windows e OSX</em>, a execução do projeto é controlada pelo DNVM (.NET Version Manager).</p>
+<p><strong>Recomendo a leitura do primeiro artigo relacionado ao vNext</strong></p>
+<ul>
+<li><a href="http://www.coisadeprogramador.com.br/como-instalar-o-asp-net-vnext-no-ubuntu/">Primeiros Passos vNext</a></li>
+</ul>
+<p>Será necessário a instalação do <strong><a href="http://yeoman.io/">Yeoman</a></strong>, pois serão utilizados <em>scaffolding</em> para facilitar nosso trabalho de configuração da estrutura do projeto, segue outro artigo de introdução.</p>
+<ul>
+<li><a href="http://www.coisadeprogramador.com.br/yeoman-facilitando-a-preparacao-do-ambiente-de-desenvolvimento/">Introdução Yeoman</a></li>
+</ul>
+<h2 id="vamoscomear">Vamos começar ?</h2>
+<p>Primeiramente instale o gerador de <code>scaffolding</code> <strong><a href="https://github.com/omnisharp/generator-aspnet">OminiSharp</a></strong> de maneira global, inserindo o comando abaixo em sua linha de comando.</p>
+<pre><code>sudo npm install -g generator-aspnet
+</code></pre>
+<p>Ok, com o template instalado vamos iniciar a criação do projeto com o comando.</p>
+<pre><code>yo aspnet
+</code></pre>
+<p><em>Selecione a opção <code>Web API Application</code>.</em></p>
+<p></p>
+<h2 id="restorenospacotes">Restore nos pacotes</h2>
+<p>O projeto foi criado porém será necessário realizar uma restauração nos pacotes do <em>.NET Web Api</em>, digite o comando abaixo para realizar esta operação.</p>
+<pre><code>dnu restore
+</code></pre>
+<p>Agora é hora de tomar aquele cafezinho e esperar o <em>download</em> dos pacotes.</p>
+<p></p>
+<p>Pronto neste caso foram instalados <strong>129</strong> pacotes.</p>
+<p></p>
+<h2 id="rodandoaaplicaobase">Rodando a aplicação base</h2>
+<p>Com a estrutura do projeto já definida e os pacotes restaurados, vamos testar a aplicação base conhecida por nós desenvolvedores .NET que retorna uma lista de valores, digite em sua linha de comando.</p>
+<pre><code>dnx web
+</code></pre>
+<p></p>
+<p>Okay, aplicação base rodando vamos implementar o <code>Controller</code> <em>ValuesController</em>, que aplicará o conceito de programação assíncrona.</p>
+<h2 id="implementandoovaluescontroller">Implementando o ValuesController</h2>
+<p>Para deixar o conteúdo do <em>ValuesController</em> persistente iremos utilizar o <strong><a href="https://www.sqlite.org/">SQlite</a></strong>, criei uma estrutura de base de dados para o projeto:</p>
+<pre><code>CREATE TABLE word (text TEXT, id INTEGER PRIMARY KEY AUTOINCREMENT)
+</code></pre>
+<p></p>
+<p>Será necessário instalar o <strong><a href="https://www.sqlite.org/">SQlite</a></strong> e adicionar a referência ao projeto.</p>
+<pre><code>sudo apt-get install sqlite3 libsqlite3-dev
+dnu install Microsoft.Data.Sqlite
+</code></pre>
+<p><em>Para maiores informações veja o projeto Microsoft.Data.Sqlite no <strong><a href="https://github.com/aspnet/Microsoft.Data.Sqlite">GitHub</a></strong></em>.</p>
+<p>Após a instalação a referência será adicionada ao <code>project.json</code>.</p>
+<pre><code>{
+  "dependencies": {
+    "Microsoft.Data.Sqlite": "1.0.0-rc1-final"
+  }
+}
+</code></pre>
+<p>O arquivo <em>ApplicationContext</em> foi criado de maneira simples apenas para exemplificar e criar uma conexão com o <em>SQLite</em>, porém é possível criar outros projetos e realizar a separação de interesses!</p>
+<pre><code class="language-csharp">using System;
+using System.Data;
+using Microsoft.Data.Sqlite;
+
+public static class ApplicationContext
+{
+    public static SqliteConnection Connection { get; private set; }
+    
+    public static void Initialize()
+    {
+        Connection = new SqliteConnection("Data Source=database.sqlite");
+        Connection.Open();
+    }
+    
+}
+</code></pre>
+<p>Veja como ficou a implementação do <code>controller</code>.</p>
+<pre><code class="language-csharp">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNet.Mvc;
+using Microsoft.Data.Sqlite;
+
+namespace WebApi.Controllers
+{
+    [Route("api/[controller]")]
+    public class ValuesController : Controller
+    {
+        // GET: api/values
+        [HttpGet]
+        public async Task&lt;IEnumerable&lt;string&gt;&gt; Get()
+        {
+            var command = new SqliteCommand("SELECT text from word", ApplicationContext.Connection);
+
+            var reader = command.ExecuteReader();
+
+            var data = new List&lt;string&gt;();
+
+            while (await reader.ReadAsync())
+            {
+                data.Add(reader.GetString(0));
+            }
+
+            return data;
+        }
+
+        // GET api/values/5
+        [HttpGet("{id}")]
+        public async Task&lt;string&gt; Get(int id)
+        {
+            string text = null;
+
+            var command = new SqliteCommand("SELECT text from word where id=@id", ApplicationContext.Connection);
+            command.Parameters.AddWithValue("@id", id);
+
+            var reader = command.ExecuteReader();
+
+            while (await reader.ReadAsync())
+            {
+                text = reader.GetString(0);
+            }
+
+            return text;
+        }
+
+        // POST api/values
+        [HttpPost]
+        public async Task Post([FromBody]string value)
+        {
+            using (var transaction = ApplicationContext.Connection.BeginTransaction())
+            {
+                var command = new SqliteCommand("INSERT INTO word (text) values (@text)", ApplicationContext.Connection, transaction);
+                command.Parameters.AddWithValue("@text", value);
+
+                await command.ExecuteNonQueryAsync();
+
+                transaction.Commit();
+            }
+        }
+
+        // PUT api/values/5
+        [HttpPut("{id}")]
+        public async Task Put(int id, [FromBody]string value)
+        {
+            using (var transaction = ApplicationContext.Connection.BeginTransaction())
+            {
+                var command = new SqliteCommand("UPDATE word set text= @text where id = @id", ApplicationContext.Connection, transaction);
+                command.Parameters.AddWithValue("@id", id);
+                command.Parameters.AddWithValue("@text", value);
+
+                await command.ExecuteNonQueryAsync();
+
+                transaction.Commit();
+            }
+        }
+
+        // DELETE api/values/5
+        [HttpDelete("{id}")]
+        public async Task Delete(int id)
+        {
+            using (var transaction = ApplicationContext.Connection.BeginTransaction())
+            {
+                var command = new SqliteCommand("DELETE FROM word where id = @id", ApplicationContext.Connection, transaction);
+                command.Parameters.AddWithValue("@id", id);
+
+                await command.ExecuteNonQueryAsync();
+
+                transaction.Commit();
+            }
+        }
+    }
+}
+</code></pre>
+<p>Será necessário inicializar o <code>ApplicationContext</code> altere o <code>Startup.cs</code>.</p>
+<pre><code>   public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        {
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
+
+            //... altere aqui
+            
+            InitializeApplication();
+        }
+</code></pre>
+<p>Precisaremos simular todos os verbos da aplicação <em>REST (GET, POST, PUT, DELETE)</em> por isso recomendo a utilização da extensão <strong><a href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/related">Postman</a></strong> do Chrome.</p>
+<p>Veja o consumo da aplicação.</p>
+<ul>
+<li><strong>GET (/api/values)</strong></li>
+</ul>
+<p>Requisição: <code>http://localhost:5000/api/values</code></p>
+<p></p>
+<ul>
+<li><strong>GET (/api/values/1)</strong></li>
+</ul>
+<p>Requisição: <code>http://localhost:5000/api/values/1</code></p>
+<p></p>
+<p><strong>POST (/api/values)</strong></p>
+<p>Requisição: <code>http://localhost:5000/api/values</code></p>
+<p></p>
+<p><strong>PUT (/api/values)</strong></p>
+<p>Requisição: <code>http://localhost:5000/api/values/4</code></p>
+<p></p>
+<p><strong>DELETE (/api/values)</strong></p>
+<p>Requisição: <code>http://localhost:5000/api/values/1</code></p>
+<p></p>
+<h2 id="github">GitHub</h2>
+<p>Veja o código completo no <a href="https://github.com/williampsena/coisadeprogramador-samples/tree/master/AspNet-vNext/WebApi">GitHub</a></p>
+<h2 id="fim">Fim</h2>
+<p>Quem diria o <em>.NET</em> roda mesmo no <code>Linux</code>. Aos poucos estamos ganhando mais e  mais injeção de <em>Cross-Platform</em> no mundo .NET, algumas portabilidades de bibliotecas estão ocorrendo, como vimos o <em>SQLite</em> já esta nesta lista!</p>
+<p>E isso e tudo pessoal!</p>
+
+
+            </section>
+
+        </article>
+    </main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a> &copy; 2019</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+</body>
+</html>

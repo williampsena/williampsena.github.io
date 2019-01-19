@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html ⚡>
+<head>
+    <meta charset="utf-8">
+
+    <title>Introdução ao HTML para iniciantes</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <meta name="description" content="Neste tutorial serão abordados conceitos básicos do HTML e as principais tags que envolvem o head e body. Este conteúdo é voltado para iniciantes," />
+    <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://www.coisadeprogramador.com.br/introducao-html-iniciantes/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <meta property="og:site_name" content="Coisa de Programador" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Introdução ao HTML para iniciantes" />
+    <meta property="og:description" content="." />
+    <meta property="og:url" content="https://www.coisadeprogramador.com.br/introducao-html-iniciantes/" />
+    <meta property="og:image" content="https://www.coisadeprogramador.com.br/content/images/2015/11/thumb-coisadeprogramador-HTML-1.png" />
+    <meta property="article:published_time" content="2015-11-21T13:58:00.000Z" />
+    <meta property="article:modified_time" content="2018-09-05T01:35:31.000Z" />
+    <meta property="article:tag" content="html" />
+    <meta property="article:tag" content="iniciantes" />
+    
+    <meta property="article:publisher" content="https://www.facebook.com/coisadeprogramador/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Introdução ao HTML para iniciantes" />
+    <meta name="twitter:description" content="." />
+    <meta name="twitter:url" content="https://www.coisadeprogramador.com.br/introducao-html-iniciantes/" />
+    <meta name="twitter:image" content="https://www.coisadeprogramador.com.br/content/images/2015/11/thumb-coisadeprogramador-HTML-1.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="William Sena" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="html, iniciantes" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="628" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Coisa de Programador",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.coisadeprogramador.com.br/content/images/2018/09/logo_600.png",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "William Sena",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://www.coisadeprogramador.com.br/content/images/2017/05/willsena_ss0510_1.jpg",
+            "width": 2189,
+            "height": 2354
+        },
+        "url": "https://www.coisadeprogramador.com.br/author/will/",
+        "sameAs": []
+    },
+    "headline": "Introdução ao HTML para iniciantes",
+    "url": "https://www.coisadeprogramador.com.br/introducao-html-iniciantes/",
+    "datePublished": "2015-11-21T13:58:00.000Z",
+    "dateModified": "2018-09-05T01:35:31.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://www.coisadeprogramador.com.br/content/images/2015/11/thumb-coisadeprogramador-HTML-1.png",
+        "width": 1200,
+        "height": 628
+    },
+    "keywords": "html, iniciantes",
+    "description": ".",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.coisadeprogramador.com.br/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.11" />
+    <link rel="alternate" type="application/rss+xml" title="Coisa de Programador" href="https://www.coisadeprogramador.com.br/rss/" />
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
+    <style amp-custom>html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{margin:0.67em 0;font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{position:relative;vertical-align:baseline;font-size:75%;line-height:0}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}amp-img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{margin:0;color:inherit;font:inherit}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{margin:0 2px;padding:0.35em 0.625em 0.75em;border:1px solid #c0c0c0}legend{padding:0;border:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-spacing:0;border-collapse:collapse}td,th{padding:0}html{max-height:100%;height:100%;font-size:62.5%;-webkit-tap-highlight-color:rgba(0, 0, 0, 0)}body{max-height:100%;height:100%;color:#3a4145;background:#f4f8fb;letter-spacing:0.01rem;font-family:"Merriweather", serif;font-size:1.8rem;line-height:1.75em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"kern" 1;-moz-font-feature-settings:"kern" 1;-o-font-feature-settings:"kern" 1}::-moz-selection{background:#d6edff}::selection{background:#d6edff}h1,h2,h3,h4,h5,h6{margin:0 0 0.3em 0;color:#2e2e2e;font-family:"Open Sans", sans-serif;line-height:1.15em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-moz-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-o-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1}h1{text-indent:-2px;letter-spacing:-1px;font-size:2.6rem}h2{letter-spacing:0;font-size:2.4rem}h3{letter-spacing:-0.6px;font-size:2.1rem}h4{font-size:1.9rem}h5{font-size:1.8rem}h6{font-size:1.8rem}a{color:#4a4a4a}a:hover{color:#111}p,ul,ol,dl{margin:0 0 2.5rem 0;font-size:1.5rem;text-rendering:geometricPrecision;-webkit-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-moz-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-o-font-feature-settings:"liga" 1, "onum" 1, "kern" 1}ol,ul{padding-left:2em}ol ol,ul ul,ul ol,ol ul{margin:0 0 0.4em 0;padding-left:2em}dl dt{float:left;clear:left;overflow:hidden;margin-bottom:1em;width:180px;text-align:right;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-bottom:1em;margin-left:200px}li{margin:0.4em 0}li li{margin:0}hr{display:block;margin:1.75em 0;padding:0;height:1px;border:0;border-top:#efefef 1px solid}blockquote{box-sizing:border-box;margin:1.75em 0 1.75em 0;padding:0 0 0 1.75em;border-left:#4a4a4a 0.4em solid;-moz-box-sizing:border-box}blockquote p{margin:0.8em 0;font-style:italic}blockquote small{display:inline-block;margin:0.8em 0 0.8em 1.5em;color:#ccc;font-size:0.9em}blockquote small:before{content:"\2014 \00A0"}blockquote cite{font-weight:700}blockquote cite a{font-weight:normal}mark{background-color:#fdffb6}code,tt{padding:1px 3px;border:#e3edf3 1px solid;background:#f7fafb;border-radius:2px;white-space:pre-wrap;font-family:Inconsolata, monospace, sans-serif;font-size:0.85em;font-feature-settings:"liga" 0;-webkit-font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" 0}pre{overflow:auto;box-sizing:border-box;margin:0 0 1.75em 0;padding:10px;width:100%;border:#e3edf3 1px solid;background:#f7fafb;border-radius:3px;white-space:pre;font-family:Inconsolata, monospace, sans-serif;font-size:0.9em;-moz-box-sizing:border-box}pre code,pre tt{padding:0;border:none;background:transparent;white-space:pre-wrap;font-size:inherit}kbd{display:inline-block;margin-bottom:0.4em;padding:1px 8px;border:#ccc 1px solid;background:#f4f4f4;border-radius:4px;box-shadow:0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;color:#666;text-shadow:#fff 0 1px 0;font-size:0.9em;font-weight:700}table{box-sizing:border-box;margin:1.75em 0;max-width:100%;width:100%;background-color:transparent;-moz-box-sizing:border-box}table th,table td{padding:8px;border-top:#efefef 1px solid;vertical-align:top;text-align:left;line-height:20px}table th{color:#000}table caption + thead tr:first-child th,table caption + thead tr:first-child td,table colgroup + thead tr:first-child th,table colgroup + thead tr:first-child td,table thead:first-child tr:first-child th,table thead:first-child tr:first-child td{border-top:0}table tbody + tbody{border-top:#efefef 2px solid}table table table{background-color:#fff}table tbody > tr:nth-child(odd) > td,table tbody > tr:nth-child(odd) > th{background-color:#f6f6f6}table.plain tbody > tr:nth-child(odd) > td,table.plain tbody > tr:nth-child(odd) > th{background:transparent}iframe,amp-iframe,.fluid-width-video-wrapper{display:block;margin:1.75em 0}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper amp-iframe{margin:0}textarea,select,input{margin:0 0 5px 0;padding:6px 9px;width:260px;outline:0;border:#e7eef2 1px solid;background:#fff;border-radius:4px;box-shadow:none;font-family:"Open Sans", sans-serif;font-size:1.6rem;line-height:1.4em;font-weight:100;-webkit-appearance:none}textarea{min-width:250px;min-height:80px;max-width:340px;width:100%;height:auto}input[type="text"]:focus,input[type="email"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="number"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,textarea:focus{outline:none;outline-width:0;border:#bbc7cc 1px solid;background:#fff}select{width:270px;height:30px;line-height:30px}.clearfix:before,.clearfix:after{content:" ";display:table}.clearfix:after{clear:both}.clearfix{zoom:1}.main-header{position:relative;display:table;overflow:hidden;box-sizing:border-box;width:100%;height:50px;background:#5ba4e5 no-repeat center center;background-size:cover;text-align:left;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}.content{background:#fff;padding-top:15px}.blog-title,.content{margin:auto;max-width:600px}.blog-title a{display:block;padding-right:16px;padding-left:16px;height:50px;color:#fff;text-decoration:none;font-family:"Open Sans", sans-serif;font-size:16px;line-height:50px;font-weight:600}.post{position:relative;margin-top:0;margin-right:16px;margin-left:16px;padding-bottom:0;max-width:100%;border-bottom:#ebf2f6 1px solid;word-wrap:break-word;font-size:0.95em;line-height:1.65em}.post-header{margin-bottom:1rem}.post-title{margin-bottom:0}.post-title a{text-decoration:none}.post-meta{display:block;margin:3px 0 0 0;color:#9eabb3;font-family:"Open Sans", sans-serif;font-size:1.3rem;line-height:2.2rem}.post-meta a{color:#9eabb3;text-decoration:none}.post-meta a:hover{text-decoration:underline}.post-meta .author{margin:0;font-size:1.3rem;line-height:1.3em}.post-date{display:inline-block;text-transform:uppercase;white-space:nowrap;font-size:1.2rem;line-height:1.2em}.post-image{margin:0;padding-top:3rem;padding-bottom:30px;border-top:1px #E8E8E8 solid}.post-content amp-img,.post-content amp-anim{position:relative;left:50%;display:block;padding:0;min-width:0;max-width:112%;width:calc(100% + 32px);height:auto;transform:translateX(-50%);-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%)}.footnotes{font-size:1.3rem;line-height:1.6em;font-style:italic}.footnotes li{margin:0.6rem 0}.footnotes p{margin:0}.footnotes p a:last-child{text-decoration:none}.site-footer{position:relative;margin:0 auto 20px auto;padding:1rem 15px;max-width:600px;color:rgba(0,0,0,0.5);font-family:"Open Sans", sans-serif;font-size:1.1rem;line-height:1.75em}.site-footer a{color:rgba(0,0,0,0.5);text-decoration:none;font-weight:bold}.site-footer a:hover{border-bottom:#bbc7cc 1px solid}.poweredby{display:block;float:right;width:45%;text-align:right}.copyright{display:block;float:left;width:45%}</style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
+
+</head>
+
+<body class="amp-template">
+    <header class="main-header">
+        <nav class="blog-title">
+            <a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a>
+        </nav>
+    </header>
+
+    <main class="content" role="main">
+        <article class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">Introdução ao HTML - Para iniciantes</h1>
+                <section class="post-meta">
+                    <p class="author">by <a href="/author/will/">William Sena</a></p>
+                    <time class="post-date" datetime="2015-11-21">2015-11-21</time>
+                </section>
+            </header>
+            <figure class="post-image">
+                <amp-img src="https://www.coisadeprogramador.com.br/content/images/2015/11/thumb-coisadeprogramador-HTML-1.png" width="600" height="400" layout="responsive"></amp-img>
+            </figure>
+            <section class="post-content">
+
+                <h2 id="oquehtml">O que é HTML?</h2>
+<p>É uma linguagem de computador que permite a criação de páginas web.</p>
+<h2 id="qualadefiniodehtml">Qual a definição de HTML?</h2>
+<pre><code>HTML - HyperText Markup Language
+</code></pre>
+<ul>
+<li>
+<p><em>HyperText</em> -O conteúdo <em>HTML</em> não é apenas texto, pode ser dinâmico, clicando em textos especiais, pode ocorrer um direcionamento para uma página do próprio site ou conteúdo externo.</p>
+</li>
+<li>
+<p><em>Markup</em> - Este é o conceito das <em>tags</em> que possuem uma estrutura que permite texto dentro delas. A <em>tag Strong</em> <code>&lt;strong&gt;&lt;/strong&gt;</code> define que o conteúdo dentro dela será negrito.</p>
+</li>
+<li>
+<p><em>Language</em> - Como toda linguagem, o HTML tem palavras reservadas, sintaxe e semântica.</p>
+</li>
+</ul>
+<h2 id="quaissoasferramentasutilizadasparaodesenvolvimento">Quais são as ferramentas utilizadas para o desenvolvimento?</h2>
+<p>Você pode utilizar até mesmo por bloco de notas, claro se você tiver paciência e domínio da linguagem.</p>
+<p></p>
+<p>Existem diversas IDEs com recursos importantes como <em>syntax highlighting</em> e <em>auto-complete</em>, segue a lista:</p>
+<p></p>
+<ul>
+<li><a href="https://atom.io/">Atom (GitHub)</a></li>
+<li><a href="http://brackets.io/">Brackets (Adobe)</a></li>
+<li><a href="http://www.sublimetext.com/">Sublime Text</a></li>
+<li><a href="https://code.visualstudio.com/">Visual Studio Code (Microsoft)</a></li>
+</ul>
+<p><strong>Os editores listados são <em>cross-platform</em>, funcionam nos sistemas operacionais (<em>Linux, Mac e Windows</em>).</strong></p>
+<h2 id="arenderizao">A renderização</h2>
+<p>O <em>HTML</em> é composto por uma estrutura de dados conhecida como <code>tag</code> dentro de um arquivo texto, no qual pode ser renderizada por um navegador (browser) ex: Chorme, Firefox, Internet Explorer, Safari, Opera e o Edge.</p>
+<p></p>
+<p>Para os usuários de linha de comando o Lynx rss.</p>
+<p><br />
+O processo de renderização segue a hierarquia de <em>tags</em>, esta estrutura do documento é iniciada pelo o Cabeçalho <strong>(Head)</strong> e o Corpo <strong>(Body)</strong>.</p>
+<h3 id="okcomosoessastags">Ok, como são essas tags?</h3>
+<p>A maioria do conteúdo renderizado é inserido dentro das tags, as tags são representadas por palavras entre <code>&lt;&gt;</code> ex: <code>&lt;oi-tag&gt;</code>. As <em>tags</em> podem ser imagens, texto, tabelas, listas, links e outros tipos de conteúdo. Cada tipo de conteúdo possui uma tag específica, veja um exemplo:</p>
+<pre><code class="language-markup">&lt;p&gt;Vamos deixar a &lt;strong&gt;meta&lt;/strong&gt; em aberto&lt;/p&gt;
+</code></pre>
+<p>O exemplo acima renderiza um parágrafo com a palavra meta em negrito.</p>
+<h3 id="fechamentodetags">Fechamento de Tags##</h3>
+<p>Indica a finalização do conteúdo, o fechamento segue o padrão <code>&lt;/nome-da-tag&gt;</code> veja o exemplo abaixo:</p>
+<pre><code class="language-markup">&lt;p&gt;Novo parágrafo&lt;/p&gt;
+</code></pre>
+<p>Há outras Tags que podem ser fechadas de uma maneira <em>"self closing tag"</em>, alguns exemplos <code>&lt;br /&gt;, &lt;embed /&gt;, &lt;hr /&gt;, &lt;img /&gt;, &lt;input /&gt;, &lt;link /&gt; e &lt;meta /&gt;</code>.</p>
+<h3 id="aestrutura">A estrutura</h3>
+<p>Para definir uma página <em>HTML</em> será necessário declarar a versão do HTML.</p>
+<p>A marcação <code>&lt;!DOCTYPE html&gt;</code> define que a versão HTML5 será utilizada. É importante declarar o tipo de documento.</p>
+<p>O documento é inicializado pela tag HTML que engloba outras <em>tags</em> como <code>&lt;body&gt; e &lt;head&gt;</code>, segue um exemplo:</p>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt; 
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Vamos Brasil&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;Vamos deixar a &lt;strong&gt;meta&lt;/strong&gt; em aberto&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="atributos">Atributos</h2>
+<p>Definem as configurações das tags, estas configurações podem estar relacionadas a referência, disposição do conteúdo, restrições ou comportamento. O atributo segue o padrão <code>nome-do-atributo=valor-do-atributo</code>, veja o exemplo.</p>
+<pre><code class="language-markup">&lt;hr size="3" /&gt;
+</code></pre>
+<p>A tag <code>&lt;hr/&gt;</code> renderiza uma linha horizontal, o atributo <code>size</code> define a largura da linha.</p>
+<h2 id="cabealho">Cabeçalho</h2>
+<p>O cabeçalho contém configurações do documento, como título, descrição da página, folhas de estilo e outras configurações. Você pode definir outras configurações relacionados ao <em>SEO (Search Engine Optimize)</em>.</p>
+<h3 id="tagsdocabealho">Tags do Cabeçalho</h3>
+<p>Segue a lista de tags básicas para criação do cabeçalho de um HTML.</p>
+<ul>
+<li>Title <code>&lt;title&gt;&lt;/title&gt;</code> define o título da página e exibe na barra de título da janela.</li>
+<li>Meta <code>&lt;meta&gt;&lt;/meta&gt;</code> define configurações do documento e parâmetros para indexação de busca.</li>
+<li>Link <code>&lt;link /&gt;</code> define um relacionamento de um conteúdo externo ao documento, este conteúdo pode ser uma folha de estilo.</li>
+</ul>
+<h2 id="ocorpo">O corpo</h2>
+<p>Representado pela tag <code>&lt;body&gt;&lt;/body&gt;</code> nesta tag estão os conteúdos da página, é importante que todo HTML tenha um o corpo <body>.</body></p>
+<p><em>"Em minha experiência profissional já encontrei uma página HTML sem o <code>&lt;body&gt;</code> rss."</em></p>
+<h3 id="tagsdocorpo">Tags do Corpo</h3>
+<p>Segue a lista de tags básicas para criação do corpo do HTML.</p>
+<ul>
+<li>
+<p>Paragraph <code>&lt;p&gt;&lt;p/&gt;</code> insere um parágrafo.</p>
+</li>
+<li>
+<p>Strong <code>&lt;strong&gt;&lt;/strong&gt;</code>define que o conteúdo inserido dentro dela é relevante e fica em negrito.</p>
+</li>
+<li>
+<p>Image <code>&lt;img /&gt;</code> insere uma imagem, o atributo <code>src=</code> define o local da imagem, o atributo <code>alt=</code> define em texto do que se trata a imagem, é utilizado em questões de acessibilidade e indexação de buscadores.</p>
+</li>
+<li>
+<p>Hyperlink <code>&lt;a&gt;&lt;/a&gt;</code>insere um link para um página interna ou externa, o atributo <code>href=</code> define a página de destino. Outro atributo utilizado é o <code>target=</code>que define em qual janela o site será aberto, a opção <code>target=_blank</code>possibilita a abertura de uma nova janela.</p>
+</li>
+</ul>
+<h2 id="suaprimeirapginahtml">Sua primeira página HTML.</h2>
+<p>Forma apresentadas algumas tags do HTML, considerando apenas tags apropriadas pela versão <em>HTML5</em>, exemplo de tags descartadas:</p>
+<ul>
+<li><a href="http://www.w3schools.com/tags/tag_b.asp">Tag B</a></li>
+<li><a href="http://www.w3schools.com/tags/tag_i.asp">Tag I</a></li>
+</ul>
+<p>O objetivo deste exemplo é criar uma página utilizando as principais tags apresentadas, primeiro vamos definir a estrutura do <em>HTML</em>.</p>
+<pre><code class="language-markup">&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Pronto vamos definir as tags de Title, Meta, Paragraph, Strong, Image e HyperLink.</p>
+<pre><code class="language-markup">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Ooooh HTML&lt;/title&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;
+       Esta é minha primeira página &lt;strong&gt;HTML&lt;/strong&gt;.
+    &lt;/p&gt;
+    &lt;p&gt;
+       &lt;img src="http://i.giphy.com/az3XlqP9zQ9ry.gif" /&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+       Visite &lt;a href="http://www.coisadeprogramador.com.br"&gt;Coisa de Programador&lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Ver o resultado no <a href="https://jsfiddle.net/willsenabr/y2p292am/">JsFiddle</a></p>
+<h2 id="testando">Testando</h2>
+<p>Salve o HTML em um arquivo e abra sua página em seu navegador informando o endereço físico do arquivo, ex: <code>c:\teste\html01.html</code>.</p>
+<p></p>
+<h2 id="fim">Fim</h2>
+<p>Esta foi uma breve introdução ao HTML para iniciantes, abraços até a próxima.</p>
+<p></p>
+
+
+            </section>
+
+        </article>
+    </main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a> &copy; 2019</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+</body>
+</html>

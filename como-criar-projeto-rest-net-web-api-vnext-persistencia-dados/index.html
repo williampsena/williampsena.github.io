@@ -1,24 +1,25 @@
-
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Como criar REST .NET Web API vNext com persistência de dados</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=fca976e73d">
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css?v=9a608edf1a" />
 
-    <meta name="description" content="Neste artigo serão abordados configurações de um projeto REST .NET Web API vNext rodando sobre uma máquina linux Ubuntu com persistência de dados SQlite.">
-    <link rel="shortcut icon" href="../favicon.png" type="image/png">
-    <link rel="canonical" href="https://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="https://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/amp/">
+    <meta name="description" content="Neste artigo serão abordados configurações de um projeto REST .NET Web API vNext rodando sobre uma máquina linux Ubuntu com persistência de dados SQlite." />
+    <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/amp/" />
     
-    <meta property="og:site_name" content="Coisa de Programador">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Como criar REST .NET Web API vNext com persistência de dados">
+    <meta property="og:site_name" content="Coisa de Programador" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Como criar REST .NET Web API vNext com persistência de dados" />
     <meta property="og:description" content="O mundo vNext
 O ano de 2015 foi marcado com grandes mudanças na plataforma .NET que se tornou
 oficialmente Cross-Platform, digo oficialmente pois desde 2004 apesar do
@@ -26,18 +27,18 @@ framework Mono [http://www.mono-project.com/]  não ser da Microsoft, tem
 realizado um trabalho para manter o .NET Cross-Platform, muitos projetos
 utilizam o Mono [http://www.mono-project.com/], desde o Xamarin
 [https://xamarin.com/]  que possibilita a criação de aplicações Mobile (Android
-e IOS) ao Unity 3D [https://unity3d.com/]  ">
-    <meta property="og:url" content="https://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/">
-    <meta property="og:image" content="https://www.coisadeprogramador.com.br/content/images/2016/01/thumb-coisadeprogramador-vnext-webapi.png">
-    <meta property="article:published_time" content="2016-01-10T18:06:00.000Z">
-    <meta property="article:modified_time" content="2018-09-05T01:37:39.000Z">
-    <meta property="article:tag" content="aspnet-vnext">
-    <meta property="article:tag" content="linux">
-    <meta property="article:tag" content="dotnet">
+e IOS) ao Unity 3D [https://unity3d.com/]  " />
+    <meta property="og:url" content="https://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/" />
+    <meta property="og:image" content="https://www.coisadeprogramador.com.br/content/images/2016/01/thumb-coisadeprogramador-vnext-webapi.png" />
+    <meta property="article:published_time" content="2016-01-10T18:06:00.000Z" />
+    <meta property="article:modified_time" content="2018-09-05T01:37:39.000Z" />
+    <meta property="article:tag" content="aspnet-vnext" />
+    <meta property="article:tag" content="linux" />
+    <meta property="article:tag" content="dotnet" />
     
-    <meta property="article:publisher" content="https://www.facebook.com/coisadeprogramador/">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Como criar REST .NET Web API vNext com persistência de dados">
+    <meta property="article:publisher" content="https://www.facebook.com/coisadeprogramador/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Como criar REST .NET Web API vNext com persistência de dados" />
     <meta name="twitter:description" content="O mundo vNext
 O ano de 2015 foi marcado com grandes mudanças na plataforma .NET que se tornou
 oficialmente Cross-Platform, digo oficialmente pois desde 2004 apesar do
@@ -45,15 +46,15 @@ framework Mono [http://www.mono-project.com/]  não ser da Microsoft, tem
 realizado um trabalho para manter o .NET Cross-Platform, muitos projetos
 utilizam o Mono [http://www.mono-project.com/], desde o Xamarin
 [https://xamarin.com/]  que possibilita a criação de aplicações Mobile (Android
-e IOS) ao Unity 3D [https://unity3d.com/]  ">
-    <meta name="twitter:url" content="https://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/">
-    <meta name="twitter:image" content="https://www.coisadeprogramador.com.br/content/images/2016/01/thumb-coisadeprogramador-vnext-webapi.png">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="William Sena">
-    <meta name="twitter:label2" content="Filed under">
-    <meta name="twitter:data2" content="aspnet-vnext, linux, dotnet">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="628">
+e IOS) ao Unity 3D [https://unity3d.com/]  " />
+    <meta name="twitter:url" content="https://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/" />
+    <meta name="twitter:image" content="https://www.coisadeprogramador.com.br/content/images/2016/01/thumb-coisadeprogramador-vnext-webapi.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="William Sena" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="aspnet-vnext, linux, dotnet" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="628" />
     
     <script type="application/ld+json">
 {
@@ -100,8 +101,8 @@ e IOS) ao Unity 3D [https://unity3d.com/]  ">
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.11">
-    <link rel="alternate" type="application/rss+xml" title="Coisa de Programador" href="https://www.coisadeprogramador.com.br/rss/">
+    <meta name="generator" content="Ghost 2.11" />
+    <link rel="alternate" type="application/rss+xml" title="Coisa de Programador" href="https://www.coisadeprogramador.com.br/rss/" />
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
 <style>
@@ -145,21 +146,21 @@ e IOS) ao Unity 3D [https://unity3d.com/]  ">
     <div class="inner">
         <nav class="site-nav">
     <div class="site-nav-left">
-                <a class="site-nav-logo" href="https://www.coisadeprogramador.com.br"><img src="https://www.coisadeprogramador.com.br/content/images/2018/09/logo_600.png" alt="Coisa de Programador"></a>
+                <a class="site-nav-logo" href="https://www.coisadeprogramador.com.br"><img src="https://www.coisadeprogramador.com.br/content/images/2018/09/logo_600.png" alt="Coisa de Programador" /></a>
             <ul class="nav" role="menu">
     <li class="nav-home" role="menuitem"><a href="https://www.coisadeprogramador.com.br/">Home</a></li>
     <li class="nav-sobre" role="menuitem"><a href="https://www.coisadeprogramador.com.br/sobre/">Sobre</a></li>
-    <li class="nav-projetos" role="menuitem"><a href="https://www.coisadeprogramador.com.br/meus-projetos">Projetos</a></li>
-    <li class="nav-contato" role="menuitem"><a href="https://www.coisadeprogramador.com.br/contato">Contato</a></li>
+    <li class="nav-projetos" role="menuitem"><a href="https://www.coisadeprogramador.com.br/meus-projetos/">Projetos</a></li>
+    <li class="nav-contato" role="menuitem"><a href="https://www.coisadeprogramador.com.br/contato/">Contato</a></li>
 </ul>
 
     </div>
     <div class="site-nav-right">
         <div class="social-links">
-                <a class="social-link social-link-fb" href="https://www.facebook.com/coisadeprogramador/" title="Facebook" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
+                <a class="social-link social-link-fb" href="https://www.facebook.com/coisadeprogramador/" title="Facebook" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 </a>
         </div>
-            <a class="rss-button" href="https://feedly.com/i/subscription/feed/https://www.coisadeprogramador.com.br/rss/" title="RSS" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"></circle><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"></path></svg>
+            <a class="rss-button" href="https://feedly.com/i/subscription/feed/https://www.coisadeprogramador.com.br/rss/" title="RSS" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
 </a>
     </div>
 </nav>
@@ -175,18 +176,23 @@ e IOS) ao Unity 3D [https://unity3d.com/]  ">
             <header class="post-full-header">
                 <section class="post-full-meta">
                     <time class="post-full-meta-date" datetime="2016-01-10">10 janeiro 2016</time>
-                        <span class="date-divider">/</span> <a href="../tag/aspnet-vnext/">aspnet-vnext</a>
+                        <span class="date-divider">/</span> <a href="/tag/aspnet-vnext/">aspnet-vnext</a>
                 </section>
                 <h1 class="post-full-title">Como criar um projeto REST .NET Web API vNext</h1>
             </header>
 
             <figure class="post-full-image">
-                <img srcset="https://www.coisadeprogramador.com.br/content/images/size/w300/2016/01/thumb-coisadeprogramador-vnext-webapi.png 300w,
+                <img
+                    srcset="https://www.coisadeprogramador.com.br/content/images/size/w300/2016/01/thumb-coisadeprogramador-vnext-webapi.png 300w,
                             https://www.coisadeprogramador.com.br/content/images/size/w600/2016/01/thumb-coisadeprogramador-vnext-webapi.png 600w,
                             https://www.coisadeprogramador.com.br/content/images/size/w1000/2016/01/thumb-coisadeprogramador-vnext-webapi.png 1000w,
-                            https://www.coisadeprogramador.com.br/content/images/size/w2000/2016/01/thumb-coisadeprogramador-vnext-webapi.png 2000w" sizes="(max-width: 800px) 400px,
+                            https://www.coisadeprogramador.com.br/content/images/size/w2000/2016/01/thumb-coisadeprogramador-vnext-webapi.png 2000w"
+                    sizes="(max-width: 800px) 400px,
                             (max-width: 1170px) 700px,
-                            1400px" src="https://www.coisadeprogramador.com.br/content/images/size/w2000/2016/01/thumb-coisadeprogramador-vnext-webapi.png" alt="Como criar um projeto REST .NET Web API vNext">
+                            1400px"
+                    src="https://www.coisadeprogramador.com.br/content/images/size/w2000/2016/01/thumb-coisadeprogramador-vnext-webapi.png"
+                    alt="Como criar um projeto REST .NET Web API vNext"
+                />
             </figure>
 
             <section class="post-full-content">
@@ -198,11 +204,11 @@ e IOS) ao Unity 3D [https://unity3d.com/]  ">
 <p>Este projeto será criado em Linux numa distribuição <em>(Ubuntu/Debian)</em> e claro por ser <em>Cross-Platform</em> poderá ser portada para o <em>Windows e OSX</em>, a execução do projeto é controlada pelo DNVM (.NET Version Manager).</p>
 <p><strong>Recomendo a leitura do primeiro artigo relacionado ao vNext</strong></p>
 <ul>
-<li><a href="https://www.coisadeprogramador.com.br/como-instalar-o-asp-net-vnext-no-ubuntu/">Primeiros Passos vNext</a></li>
+<li><a href="http://www.coisadeprogramador.com.br/como-instalar-o-asp-net-vnext-no-ubuntu/">Primeiros Passos vNext</a></li>
 </ul>
 <p>Será necessário a instalação do <strong><a href="http://yeoman.io/">Yeoman</a></strong>, pois serão utilizados <em>scaffolding</em> para facilitar nosso trabalho de configuração da estrutura do projeto, segue outro artigo de introdução.</p>
 <ul>
-<li><a href="https://www.coisadeprogramador.com.br/yeoman-facilitando-a-preparacao-do-ambiente-de-desenvolvimento/">Introdução Yeoman</a></li>
+<li><a href="http://www.coisadeprogramador.com.br/yeoman-facilitando-a-preparacao-do-ambiente-de-desenvolvimento/">Introdução Yeoman</a></li>
 </ul>
 <h2 id="vamoscomear">Vamos começar ?</h2>
 <p>Primeiramente instale o gerador de <code>scaffolding</code> <strong><a href="https://github.com/omnisharp/generator-aspnet">OminiSharp</a></strong> de maneira global, inserindo o comando abaixo em sua linha de comando.</p>
@@ -239,8 +245,8 @@ dnu install Microsoft.Data.Sqlite
 <p><em>Para maiores informações veja o projeto Microsoft.Data.Sqlite no <strong><a href="https://github.com/aspnet/Microsoft.Data.Sqlite">GitHub</a></strong></em>.</p>
 <p>Após a instalação a referência será adicionada ao <code>project.json</code>.</p>
 <pre><code>{
-  "dependencies": {
-    "Microsoft.Data.Sqlite": "1.0.0-rc1-final"
+  &quot;dependencies&quot;: {
+    &quot;Microsoft.Data.Sqlite&quot;: &quot;1.0.0-rc1-final&quot;
   }
 }
 </code></pre>
@@ -255,7 +261,7 @@ public static class ApplicationContext
     
     public static void Initialize()
     {
-        Connection = new SqliteConnection("Data Source=database.sqlite");
+        Connection = new SqliteConnection(&quot;Data Source=database.sqlite&quot;);
         Connection.Open();
     }
     
@@ -271,14 +277,14 @@ using Microsoft.Data.Sqlite;
 
 namespace WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route(&quot;api/[controller]&quot;)]
     public class ValuesController : Controller
     {
         // GET: api/values
         [HttpGet]
         public async Task&lt;IEnumerable&lt;string&gt;&gt; Get()
         {
-            var command = new SqliteCommand("SELECT text from word", ApplicationContext.Connection);
+            var command = new SqliteCommand(&quot;SELECT text from word&quot;, ApplicationContext.Connection);
 
             var reader = command.ExecuteReader();
 
@@ -293,13 +299,13 @@ namespace WebApi.Controllers
         }
 
         // GET api/values/5
-        [HttpGet("{id}")]
+        [HttpGet(&quot;{id}&quot;)]
         public async Task&lt;string&gt; Get(int id)
         {
             string text = null;
 
-            var command = new SqliteCommand("SELECT text from word where id=@id", ApplicationContext.Connection);
-            command.Parameters.AddWithValue("@id", id);
+            var command = new SqliteCommand(&quot;SELECT text from word where id=@id&quot;, ApplicationContext.Connection);
+            command.Parameters.AddWithValue(&quot;@id&quot;, id);
 
             var reader = command.ExecuteReader();
 
@@ -317,8 +323,8 @@ namespace WebApi.Controllers
         {
             using (var transaction = ApplicationContext.Connection.BeginTransaction())
             {
-                var command = new SqliteCommand("INSERT INTO word (text) values (@text)", ApplicationContext.Connection, transaction);
-                command.Parameters.AddWithValue("@text", value);
+                var command = new SqliteCommand(&quot;INSERT INTO word (text) values (@text)&quot;, ApplicationContext.Connection, transaction);
+                command.Parameters.AddWithValue(&quot;@text&quot;, value);
 
                 await command.ExecuteNonQueryAsync();
 
@@ -327,14 +333,14 @@ namespace WebApi.Controllers
         }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
+        [HttpPut(&quot;{id}&quot;)]
         public async Task Put(int id, [FromBody]string value)
         {
             using (var transaction = ApplicationContext.Connection.BeginTransaction())
             {
-                var command = new SqliteCommand("UPDATE word set text= @text where id = @id", ApplicationContext.Connection, transaction);
-                command.Parameters.AddWithValue("@id", id);
-                command.Parameters.AddWithValue("@text", value);
+                var command = new SqliteCommand(&quot;UPDATE word set text= @text where id = @id&quot;, ApplicationContext.Connection, transaction);
+                command.Parameters.AddWithValue(&quot;@id&quot;, id);
+                command.Parameters.AddWithValue(&quot;@text&quot;, value);
 
                 await command.ExecuteNonQueryAsync();
 
@@ -343,13 +349,13 @@ namespace WebApi.Controllers
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
+        [HttpDelete(&quot;{id}&quot;)]
         public async Task Delete(int id)
         {
             using (var transaction = ApplicationContext.Connection.BeginTransaction())
             {
-                var command = new SqliteCommand("DELETE FROM word where id = @id", ApplicationContext.Connection, transaction);
-                command.Parameters.AddWithValue("@id", id);
+                var command = new SqliteCommand(&quot;DELETE FROM word where id = @id&quot;, ApplicationContext.Connection, transaction);
+                command.Parameters.AddWithValue(&quot;@id&quot;, id);
 
                 await command.ExecuteNonQueryAsync();
 
@@ -362,7 +368,7 @@ namespace WebApi.Controllers
 <p>Será necessário inicializar o <code>ApplicationContext</code> altere o <code>Startup.cs</code>.</p>
 <pre><code>   public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddConsole(Configuration.GetSection(&quot;Logging&quot;));
             loggerFactory.AddDebug();
 
             //... altere aqui
@@ -406,14 +412,14 @@ namespace WebApi.Controllers
 
                     
 <section class="author-card">
-        <img class="author-profile-image" src="https://www.coisadeprogramador.com.br/content/images/size/w100/2017/05/willsena_ss0510_1.jpg" alt="William Sena">
+        <img class="author-profile-image" src="https://www.coisadeprogramador.com.br/content/images/size/w100/2017/05/willsena_ss0510_1.jpg" alt="William Sena" />
     <section class="author-card-content">
-        <h4 class="author-card-name"><a href="../author/will/">William Sena</a></h4>
-            <p>Read <a href="../author/will/">more posts</a> by this author.</p>
+        <h4 class="author-card-name"><a href="/author/will/">William Sena</a></h4>
+            <p>Read <a href="/author/will/">more posts</a> by this author.</p>
     </section>
 </section>
 <div class="post-full-footer-right">
-    <a class="author-card-button" href="../author/will/">Read More</a>
+    <a class="author-card-button" href="/author/will/">Read More</a>
 </div>
 
 
@@ -451,20 +457,22 @@ namespace WebApi.Controllers
 <aside class="read-next outer">
     <div class="inner">
         <div class="read-next-feed">
-                <article class="read-next-card" style="background-image: url(https://www.coisadeprogramador.com.br/content/images/size/w600/2018/09/alex-jones-2394-unsplash.jpg)">
+                <article class="read-next-card"
+                            style="background-image: url(https://www.coisadeprogramador.com.br/content/images/size/w600/2018/09/alex-jones-2394-unsplash.jpg)"
+                >
                     <header class="read-next-card-header">
-                        <small class="read-next-card-header-sitetitle">— Coisa de Programador —</small>
-                        <h3 class="read-next-card-header-title"><a href="../tag/aspnet-vnext/">aspnet-vnext</a></h3>
+                        <small class="read-next-card-header-sitetitle">&mdash; Coisa de Programador &mdash;</small>
+                        <h3 class="read-next-card-header-title"><a href="/tag/aspnet-vnext/">aspnet-vnext</a></h3>
                     </header>
-                    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"></path></svg>
+                    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
 </div>
                     <div class="read-next-card-content">
                         <ul>
-                            <li><a href="../como-instalar-o-asp-net-vnext-no-ubuntu/">Primeiros passos com ASP.NET vNext no Ubuntu</a></li>
+                            <li><a href="/como-instalar-o-asp-net-vnext-no-ubuntu/">Primeiros passos com ASP.NET vNext no Ubuntu</a></li>
                         </ul>
                     </div>
                     <footer class="read-next-card-footer">
-                        <a href="../tag/aspnet-vnext/">1 post →</a>
+                        <a href="/tag/aspnet-vnext/">1 post →</a>
                     </footer>
                 </article>
 
@@ -477,22 +485,24 @@ namespace WebApi.Controllers
 <div class="floating-header">
     <div class="floating-header-logo">
         <a href="https://www.coisadeprogramador.com.br">
-                <img src="https://www.coisadeprogramador.com.br/content/images/size/w30/2018/09/logo_60.png" alt="Coisa de Programador icon">
+                <img src="https://www.coisadeprogramador.com.br/content/images/size/w30/2018/09/logo_60.png" alt="Coisa de Programador icon" />
             <span>Coisa de Programador</span>
         </a>
     </div>
-    <span class="floating-header-divider">—</span>
+    <span class="floating-header-divider">&mdash;</span>
     <div class="floating-header-title">Como criar um projeto REST .NET Web API vNext</div>
     <div class="floating-header-share">
-        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
-    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"></path>
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Como%20criar%20um%20projeto%20REST%20.NET%20Web%20API%20vNext&amp;url=https://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/" onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Como%20criar%20um%20projeto%20REST%20.NET%20Web%20API%20vNext&amp;url=https://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/" onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.coisadeprogramador.com.br/como-criar-projeto-rest-net-web-api-vnext-persistencia-dados/"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
         </a>
     </div>
     <progress id="reading-progress" class="progress" value="0">
@@ -507,7 +517,7 @@ namespace WebApi.Controllers
 
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a> © 2019</section>
+                <section class="copyright"><a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a> &copy; 2019</section>
                 <nav class="site-footer-nav">
                     <a href="https://www.coisadeprogramador.com.br">Latest Posts</a>
                     <a href="https://www.facebook.com/coisadeprogramador/" target="_blank" rel="noopener">Facebook</a>
@@ -532,9 +542,12 @@ namespace WebApi.Controllers
     </script>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="../assets/built/jquery.fitvids.js?v=fca976e73d"></script>
+    <script type="text/javascript" src="/assets/built/jquery.fitvids.js?v=9a608edf1a"></script>
 
 
     <script>
@@ -612,3 +625,4 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
 </body>
+</html>
