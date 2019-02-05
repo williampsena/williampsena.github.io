@@ -20,7 +20,7 @@
     <meta property="og:url" content="https://www.coisadeprogramador.com.br/dicas-de-otimizacao-arquivos-assets-jogos/" />
     <meta property="og:image" content="https://www.coisadeprogramador.com.br/content/images/2019/02/gift-1420830_1920.jpg" />
     <meta property="article:published_time" content="2019-02-05T00:38:45.000Z" />
-    <meta property="article:modified_time" content="2019-02-05T00:38:45.000Z" />
+    <meta property="article:modified_time" content="2019-02-05T00:44:12.000Z" />
     <meta property="article:tag" content="linux" />
     
     <meta property="article:publisher" content="https://www.facebook.com/coisadeprogramador/" />
@@ -65,7 +65,7 @@
     "headline": "Dicas de otimização de arquivos assets para seus jogos e apps",
     "url": "https://www.coisadeprogramador.com.br/dicas-de-otimizacao-arquivos-assets-jogos/",
     "datePublished": "2019-02-05T00:38:45.000Z",
-    "dateModified": "2019-02-05T00:38:45.000Z",
+    "dateModified": "2019-02-05T00:44:12.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "https://www.coisadeprogramador.com.br/content/images/2019/02/gift-1420830_1920.jpg",
@@ -116,11 +116,12 @@
             </figure>
             <section class="post-content">
 
-                <p>É comum ter uma certa dependência de <em>assets </em>como imagens ou sons, em jogos ou até mesmo em aplicações web e apps.</p><p>O tamanho dos <em>assets</em> prejudicam na entrega de conteúdo da aplicação, impactando a performance. Lembrando que no Brasil não há grande cobertura de 4G em alguns pontos podemos até nomear de 0,5G.</p><p>Por isso é muito importante cuidar desse garoto mimado que é nosso bundle, sempre quer mais e mais conteúdo. Ele adora quando você baixa aquela biblioteca de sons ou imagens e usa 10% ou menos.</p><amp-iframe src="https://giphy.com/embed/TXQxgZP2qopMs" width="480" height="272" frameborder="0" class="giphy-embed" allowfullscreen sandbox="allow-scripts allow-same-origin" layout="responsive"></amp-iframe><p><a href="https://giphy.com/gifs/pizza-krush-groove-TXQxgZP2qopMs">via GIPHY</a></p><p></p><p>Com as dicas abaixo é possível reduzir o seu bundle com ferramentas <em>Open Source.</em></p><h2 id="1-reduzindo-o-audio">1- Reduzindo o audio</h2><p>O ffmpeg dispensa comentários, além de converter vídeos, é possível converter o áudio aplicando configurações e codecs.</p><h3 id="como-instalar">Como instalar?</h3><p>Para ubuntu e derivados:</p><pre><code>sudo apt install ffmpeg
+                <p>É comum ter uma certa dependência de <em>assets </em>como imagens ou sons, em jogos ou até mesmo em aplicações web e apps.</p><p>O tamanho dos <em>assets</em> prejudicam na entrega de conteúdo da aplicação, impactando a performance. Lembrando que no Brasil não há grande cobertura de 4G em alguns pontos podemos até nomear de 0,5G.</p><p>Por isso é muito importante cuidar desse garoto mimado que é o nosso bundle, sempre quer mais e mais conteúdo. Ele adora quando você baixa aquela biblioteca de sons ou imagens e usa 10% ou menos.</p><amp-iframe src="https://giphy.com/embed/TXQxgZP2qopMs" width="480" height="272" frameborder="0" class="giphy-embed" allowfullscreen sandbox="allow-scripts allow-same-origin" layout="responsive"></amp-iframe><p><a href="https://giphy.com/gifs/pizza-krush-groove-TXQxgZP2qopMs">via GIPHY</a></p><p></p><p>Com as dicas abaixo é possível reduzir o seu bundle com ferramentas <em>Open Source.</em></p><h2 id="1-reduzindo-o-audio">1- Reduzindo o audio</h2><p>O ffmpeg dispensa comentários, além de converter vídeos, é possível converter o áudio aplicando configurações e codecs.</p><h3 id="como-instalar">Como instalar?</h3><p>Para ubuntu e derivados:</p><pre><code>sudo apt install ffmpeg
 </code></pre>
 <p>Exemplo de conversão.</p><pre><code>ffmpeg -i &lt;origem&gt;.mp3 -acodec libmp3lame -ac 2 -ab 64k -ar 44100 &lt;destino&gt;.mp3
 </code></pre>
-<p>Utilizei esta configuração para reduzir o tamanho de arquivos de efeitos especiais e tive um ganho de mais de 50%.</p><p><a href="https://www.ffmpeg.org/documentation.html">Documentação</a></p><h2 id="2-reduzindo-imagens">2- Reduzindo imagens</h2><h3 id="como-instalar-1">Como instalar?</h3><p>Para ubuntu e derivados:</p><p>sudo apt install optipng</p>
+<p>Utilizei esta configuração para reduzir o tamanho de arquivos de efeitos especiais e tive um ganho de mais de 50%.</p><p><a href="https://www.ffmpeg.org/documentation.html">Documentação</a></p><h2 id="2-reduzindo-imagens">2- Reduzindo imagens</h2><h3 id="como-instalar-1">Como instalar?</h3><p>Para ubuntu e derivados:</p><pre><code>sudo apt install optipng
+</code></pre>
 <p>Ou instale diretamente pelo código-fonte:</p><pre><code>cd /tmp
 wget http://prdownloads.sourceforge.net/optipng/optipng-0.7.7.tar.gz
 tar zxvf optipng-0.7.7.tar.gz
