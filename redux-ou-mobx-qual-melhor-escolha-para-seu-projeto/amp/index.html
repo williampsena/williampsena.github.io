@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html ⚡>
+<head>
+    <meta charset="utf-8">
+
+    <title>Redux ou Mobx: Qual é a melhor escolha para o seu projeto</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <meta name="description" content="Por ser agnóstico, o React permite que bibliotecas externas com abordagens diferentes, como o Mobx e o Redux possam ser integrados ao seu ecossistema." />
+    <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://www.coisadeprogramador.com.br/redux-ou-mobx-qual-melhor-escolha-para-seu-projeto/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <meta property="og:site_name" content="Coisa de Programador" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Redux ou Mobx: Qual é a melhor escolha para o seu projeto" />
+    <meta property="og:description" content="Por ser agnóstico, o React permite que bibliotecas externas com abordagens diferentes, como o Mobx e o Redux possam ser integrados ao seu ecossistema." />
+    <meta property="og:url" content="https://www.coisadeprogramador.com.br/redux-ou-mobx-qual-melhor-escolha-para-seu-projeto/" />
+    <meta property="og:image" content="https://www.coisadeprogramador.com.br/content/images/2019/03/thumb_mobx_or_redux.png" />
+    <meta property="article:published_time" content="2019-03-26T14:05:36.000Z" />
+    <meta property="article:modified_time" content="2019-03-26T14:09:54.000Z" />
+    <meta property="article:tag" content="react" />
+    <meta property="article:tag" content="redux" />
+    <meta property="article:tag" content="mobx" />
+    
+    <meta property="article:publisher" content="https://www.facebook.com/coisadeprogramador/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Redux ou Mobx: Qual é a melhor escolha para o seu projeto" />
+    <meta name="twitter:description" content="Por ser agnóstico, o React permite que bibliotecas externas com abordagens diferentes, como o Mobx e o Redux possam ser integrados ao seu ecossistema." />
+    <meta name="twitter:url" content="https://www.coisadeprogramador.com.br/redux-ou-mobx-qual-melhor-escolha-para-seu-projeto/" />
+    <meta name="twitter:image" content="https://www.coisadeprogramador.com.br/content/images/2019/03/thumb_mobx_or_redux.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="William Sena" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="react, redux, mobx" />
+    <meta property="og:image:width" content="1368" />
+    <meta property="og:image:height" content="912" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Coisa de Programador",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.coisadeprogramador.com.br/content/images/2018/09/logo_600.png",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "William Sena",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://www.coisadeprogramador.com.br/content/images/2017/05/willsena_ss0510_1.jpg",
+            "width": 2189,
+            "height": 2354
+        },
+        "url": "https://www.coisadeprogramador.com.br/author/will/",
+        "sameAs": []
+    },
+    "headline": "Redux ou Mobx: Qual é a melhor escolha para o seu projeto",
+    "url": "https://www.coisadeprogramador.com.br/redux-ou-mobx-qual-melhor-escolha-para-seu-projeto/",
+    "datePublished": "2019-03-26T14:05:36.000Z",
+    "dateModified": "2019-03-26T14:09:54.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://www.coisadeprogramador.com.br/content/images/2019/03/thumb_mobx_or_redux.png",
+        "width": 1368,
+        "height": 912
+    },
+    "keywords": "react, redux, mobx",
+    "description": "Por ser agnóstico, o React permite que bibliotecas externas com abordagens diferentes, como o Mobx e o Redux possam ser integrados ao seu ecossistema.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.coisadeprogramador.com.br/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.11" />
+    <link rel="alternate" type="application/rss+xml" title="Coisa de Programador" href="https://www.coisadeprogramador.com.br/rss/" />
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
+    <style amp-custom>html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{margin:0.67em 0;font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{position:relative;vertical-align:baseline;font-size:75%;line-height:0}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}amp-img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{margin:0;color:inherit;font:inherit}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{margin:0 2px;padding:0.35em 0.625em 0.75em;border:1px solid #c0c0c0}legend{padding:0;border:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-spacing:0;border-collapse:collapse}td,th{padding:0}html{max-height:100%;height:100%;font-size:62.5%;-webkit-tap-highlight-color:rgba(0, 0, 0, 0)}body{max-height:100%;height:100%;color:#3a4145;background:#f4f8fb;letter-spacing:0.01rem;font-family:"Merriweather", serif;font-size:1.8rem;line-height:1.75em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"kern" 1;-moz-font-feature-settings:"kern" 1;-o-font-feature-settings:"kern" 1}::-moz-selection{background:#d6edff}::selection{background:#d6edff}h1,h2,h3,h4,h5,h6{margin:0 0 0.3em 0;color:#2e2e2e;font-family:"Open Sans", sans-serif;line-height:1.15em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-moz-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-o-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1}h1{text-indent:-2px;letter-spacing:-1px;font-size:2.6rem}h2{letter-spacing:0;font-size:2.4rem}h3{letter-spacing:-0.6px;font-size:2.1rem}h4{font-size:1.9rem}h5{font-size:1.8rem}h6{font-size:1.8rem}a{color:#4a4a4a}a:hover{color:#111}p,ul,ol,dl{margin:0 0 2.5rem 0;font-size:1.5rem;text-rendering:geometricPrecision;-webkit-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-moz-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-o-font-feature-settings:"liga" 1, "onum" 1, "kern" 1}ol,ul{padding-left:2em}ol ol,ul ul,ul ol,ol ul{margin:0 0 0.4em 0;padding-left:2em}dl dt{float:left;clear:left;overflow:hidden;margin-bottom:1em;width:180px;text-align:right;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-bottom:1em;margin-left:200px}li{margin:0.4em 0}li li{margin:0}hr{display:block;margin:1.75em 0;padding:0;height:1px;border:0;border-top:#efefef 1px solid}blockquote{box-sizing:border-box;margin:1.75em 0 1.75em 0;padding:0 0 0 1.75em;border-left:#4a4a4a 0.4em solid;-moz-box-sizing:border-box}blockquote p{margin:0.8em 0;font-style:italic}blockquote small{display:inline-block;margin:0.8em 0 0.8em 1.5em;color:#ccc;font-size:0.9em}blockquote small:before{content:"\2014 \00A0"}blockquote cite{font-weight:700}blockquote cite a{font-weight:normal}mark{background-color:#fdffb6}code,tt{padding:1px 3px;border:#e3edf3 1px solid;background:#f7fafb;border-radius:2px;white-space:pre-wrap;font-family:Inconsolata, monospace, sans-serif;font-size:0.85em;font-feature-settings:"liga" 0;-webkit-font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" 0}pre{overflow:auto;box-sizing:border-box;margin:0 0 1.75em 0;padding:10px;width:100%;border:#e3edf3 1px solid;background:#f7fafb;border-radius:3px;white-space:pre;font-family:Inconsolata, monospace, sans-serif;font-size:0.9em;-moz-box-sizing:border-box}pre code,pre tt{padding:0;border:none;background:transparent;white-space:pre-wrap;font-size:inherit}kbd{display:inline-block;margin-bottom:0.4em;padding:1px 8px;border:#ccc 1px solid;background:#f4f4f4;border-radius:4px;box-shadow:0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;color:#666;text-shadow:#fff 0 1px 0;font-size:0.9em;font-weight:700}table{box-sizing:border-box;margin:1.75em 0;max-width:100%;width:100%;background-color:transparent;-moz-box-sizing:border-box}table th,table td{padding:8px;border-top:#efefef 1px solid;vertical-align:top;text-align:left;line-height:20px}table th{color:#000}table caption + thead tr:first-child th,table caption + thead tr:first-child td,table colgroup + thead tr:first-child th,table colgroup + thead tr:first-child td,table thead:first-child tr:first-child th,table thead:first-child tr:first-child td{border-top:0}table tbody + tbody{border-top:#efefef 2px solid}table table table{background-color:#fff}table tbody > tr:nth-child(odd) > td,table tbody > tr:nth-child(odd) > th{background-color:#f6f6f6}table.plain tbody > tr:nth-child(odd) > td,table.plain tbody > tr:nth-child(odd) > th{background:transparent}iframe,amp-iframe,.fluid-width-video-wrapper{display:block;margin:1.75em 0}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper amp-iframe{margin:0}textarea,select,input{margin:0 0 5px 0;padding:6px 9px;width:260px;outline:0;border:#e7eef2 1px solid;background:#fff;border-radius:4px;box-shadow:none;font-family:"Open Sans", sans-serif;font-size:1.6rem;line-height:1.4em;font-weight:100;-webkit-appearance:none}textarea{min-width:250px;min-height:80px;max-width:340px;width:100%;height:auto}input[type="text"]:focus,input[type="email"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="number"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,textarea:focus{outline:none;outline-width:0;border:#bbc7cc 1px solid;background:#fff}select{width:270px;height:30px;line-height:30px}.clearfix:before,.clearfix:after{content:" ";display:table}.clearfix:after{clear:both}.clearfix{zoom:1}.main-header{position:relative;display:table;overflow:hidden;box-sizing:border-box;width:100%;height:50px;background:#5ba4e5 no-repeat center center;background-size:cover;text-align:left;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}.content{background:#fff;padding-top:15px}.blog-title,.content{margin:auto;max-width:600px}.blog-title a{display:block;padding-right:16px;padding-left:16px;height:50px;color:#fff;text-decoration:none;font-family:"Open Sans", sans-serif;font-size:16px;line-height:50px;font-weight:600}.post{position:relative;margin-top:0;margin-right:16px;margin-left:16px;padding-bottom:0;max-width:100%;border-bottom:#ebf2f6 1px solid;word-wrap:break-word;font-size:0.95em;line-height:1.65em}.post-header{margin-bottom:1rem}.post-title{margin-bottom:0}.post-title a{text-decoration:none}.post-meta{display:block;margin:3px 0 0 0;color:#9eabb3;font-family:"Open Sans", sans-serif;font-size:1.3rem;line-height:2.2rem}.post-meta a{color:#9eabb3;text-decoration:none}.post-meta a:hover{text-decoration:underline}.post-meta .author{margin:0;font-size:1.3rem;line-height:1.3em}.post-date{display:inline-block;text-transform:uppercase;white-space:nowrap;font-size:1.2rem;line-height:1.2em}.post-image{margin:0;padding-top:3rem;padding-bottom:30px;border-top:1px #E8E8E8 solid}.post-content amp-img,.post-content amp-anim{position:relative;left:50%;display:block;padding:0;min-width:0;max-width:112%;width:calc(100% + 32px);height:auto;transform:translateX(-50%);-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%)}.footnotes{font-size:1.3rem;line-height:1.6em;font-style:italic}.footnotes li{margin:0.6rem 0}.footnotes p{margin:0}.footnotes p a:last-child{text-decoration:none}.site-footer{position:relative;margin:0 auto 20px auto;padding:1rem 15px;max-width:600px;color:rgba(0,0,0,0.5);font-family:"Open Sans", sans-serif;font-size:1.1rem;line-height:1.75em}.site-footer a{color:rgba(0,0,0,0.5);text-decoration:none;font-weight:bold}.site-footer a:hover{border-bottom:#bbc7cc 1px solid}.poweredby{display:block;float:right;width:45%;text-align:right}.copyright{display:block;float:left;width:45%}</style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+
+</head>
+
+<body class="amp-template">
+    <header class="main-header">
+        <nav class="blog-title">
+            <a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a>
+        </nav>
+    </header>
+
+    <main class="content" role="main">
+        <article class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">Redux ou MobX: Qual é a melhor escolha para seu projeto?</h1>
+                <section class="post-meta">
+                    <p class="author">by <a href="/author/will/">William Sena</a></p>
+                    <time class="post-date" datetime="2019-03-26">2019-03-26</time>
+                </section>
+            </header>
+            <figure class="post-image">
+                <amp-img src="https://www.coisadeprogramador.com.br/content/images/2019/03/thumb_mobx_or_redux.png" width="600" height="400" layout="responsive"></amp-img>
+            </figure>
+            <section class="post-content">
+
+                <p>Por se tratar de uma biblioteca, o <em>React</em> é agnóstico e permite que existam diversos caminhos felizes para sua aplicação, sendo assim é comum a existência de dependências externas para controle do estado global integrados ao seu ecossistema.</p><p>Durante a concepção do <em>React</em> não havia uma receita de bolo para controlar o estado global de forma integrada ao sistema e muito menos recurso disponível ou implementado. O caminho sugerido para aplicações em grande escala era o <em>Flux</em> que foi criado pelo próprio Facebook, não era só para controle de estado global e sim para atender aplicações de grande porte. Sendo assim faz sentido usar o <em>Flux</em> para qualquer aplicação? Não tentem matar uma formiga com uma bazuca. </p><center>
+<amp-iframe src="https://giphy.com/embed/ertxbTvZZQwvK" width="480" height="268" frameborder="0" class="giphy-embed" allowfullscreen sandbox="allow-scripts allow-same-origin" layout="responsive"></amp-iframe>cor
+</center><p></p><p>Durante a evolução do <em>React</em> surgiram bibliotecas com motivações de padronizar a comunicação entre os componentes e o contexto externo, seja uma requisição ou um banco local. Existem duas bibliotecas que trabalham para resolver um problema em comum, porém com abordagens diferentes o <em>Redux</em> e <em>MobX</em>.</p><h3 id="redux">Redux</h3><p>Criado em 2015 por <em>Dan Abramov</em> e <em>Andrew Clark</em>  seu próprio nome o traduz o funcionamento que é baseado em funções reduce para manter o estado global. Apesar de inspirado no Flux, traz a simplicidade unificando tudo em um único store, o <strong>Redux</strong> pode facilitar o desenvolvimento, teste e <em>debug</em> das aplicações, já que toda mudança de estado global é disparada por uma action que por sua vez invoca reducers impactando na mudança do estado. </p><p>Apesar de bem documentado e robusto, o Redux, não é bala de prata, o próprio criador do <strong>Redux</strong> escreveu um artigo sugerindo comece o projeto com <strong>React</strong>, para entender se as necessidades do projeto podem ser resolvidas pelo <strong>Redux</strong>. </p><blockquote><em>"Instead learn to <a href="https://facebook.github.io/react/docs/thinking-in-react.html" rel="nofollow noopener">think in React</a>. Come back to Redux if you find a real need for it, or if you want to try something new. But approach it with caution, just like you do with any highly opinionated tool."</em></blockquote><p>Referências:<strong> <a href="https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367">You Might Not Need Redux - Dan Abramov</a></strong></p><p><strong>Prós</strong></p><ul><li>Convenções que levam a adoção de padrões;</li><li>Estado imutável, imutabilidade é um conceito difundido em programação funcional, cada ação resulta em um novo estado. O <em>Redux</em> mantém uma cópia de cada estado isolando de qualquer hack que você queira fazer;</li><li><em>Time Travel</em>, como cada ação reflete em um novo estado é possível viajar no tempo, como desfazer ações e até mesmo refazer;</li><li><em>Suporte,</em> <em>Dan Abramov</em> trabalha no Facebook sendo assim podemos garantir que haverá suporte parcial da equipe React;</li><li><em>Dev Tools</em>, há diversas extensões que permitem monitorar e depurar mudanças de estado;</li></ul><p><strong>Contras</strong></p><ul><li><em>Verboso</em> - Não é muito difícil tornar o projeto <em>verborrágico</em> já que estamos falando de actions, reducers, states, selectors e outros milhões de helpers e pacotes que seu projeto provavelmente tem dependência;</li><li><em>Boilerplate</em>, muitas vezes a falta de um pode induzir ao erro;</li><li><em>Curva de aprendizagem</em>, não é tão intuitivo para desenvolvedores que vieram da orientação a objeto, entretanto para quem trabalha com funcional é bem claro;</li></ul><h3 id="mobx">MobX</h3><p>Patrocinado por empresas conceituadas como Algolia, Coinbase e Facebook Open Source, o <em>MobX</em> é uma alternativa para o controle do estado global utilizando processos reativos. Assim como o <em>Redux</em> não é específico para React, é compatível com outras bibliotecas ou frameworks como <em>Angular</em> e <em>Vue</em>.</p><p>É divido em quatro partes:</p><ul><li><strong>Observable state, </strong>qualquer tipo de valor pode ser mutável seja primitivo ou complexo;</li><li><strong>Computed values, </strong>valores computáveis podem ser concatenação de string ou seletores;</li><li><strong>Reactions, </strong>semelhante a um valor computado, em vez de produzir um novo valor, produz um efeito colateral. Este efeito pode ser a mudança de dados que pode resultar em alguma mudança no DOM;</li><li><strong>Actions, </strong>são os principais meios para modificar o estado;</li></ul><p><strong>Prós</strong></p><ul><li>Curva de aprendizagem, os Stores do <em>Mobx</em> são reativos ou seja você pode manipular diversos tipos de objetos e o <strong>MobX</strong> irá cuidar da renderização por causa dos <em>Observables;</em></li><li><em>Menos verboso</em>, já que você não escreve <em>Actions + Reducers</em> no padrão <em>Redux</em>, há um ganho neste quesito;</li><li>Sem <em>middleware</em>, por trabalhar de outra forma não há a necessidade de utilizar <em>middleware</em> como o <em>Thunk</em> para ações assíncronas;</li><li>Store flexível, além de manter dados o Store pode ser qualquer coisa desde uma classe <em>proxy</em> que depende de uma API;</li><li>Dev Tools, assim como o <em>Redux</em> há extensões para <em>Chrome</em> e Firefox, ótimo para acompanhar as mudanças de estado;</li></ul><h3 id="contras"><strong>Contras</strong></h3><ul><li><em>Interpretação</em>, por ser muito simples podemos encontrar equívocos de implementação;</li><li><em>Renderização</em>, como há reatividade podem ocorrer renderizações em massa impactando na performance, sendo assim use o <em>Observable</em> com moderação.</li></ul><h2 id="show-me-the-code">Show me the code</h2><p>Apenas para comparação e experiência criei duas implementações <em>Redux</em> e <em>Mobx</em>.</p><p>O projeto é um <em>TODO-LIST</em> utilizando o <a href="https://parceljs.org/">Parcel.js</a> como bundler para facilitar e simplificar o trabalho.</p><p>Serão exibidas partes de código principais da implementação, o código na completo pode ser visualizado no <em>GitHub</em>.</p><pre><code class="language-javascript line-numbers">import { combineReducers } from 'redux'
+import { ADD_TASK, CLEAR_TASKS, TOGGLE_TASK, FILTER_TASKS } from './../actions/todoList'
+
+const initialState = {
+  tasks: [],
+  filters: {
+    status: null
+  }
+}
+
+const todoList = (state = initialState, action) =&gt; {
+  switch (action.type) {
+    case ADD_TASK:
+      return {
+        ...state,
+        tasks: [ ...state.tasks, action.task ]
+      }
+    default:
+      return state
+  }
+}
+
+const todoListReducer = combineReducers({
+  todoList
+})
+
+export default todoListReducer
+</code></pre><h3 id="redux-1">Redux </h3><h3 id="actions">Actions</h3><pre><code class="language-javascript line-numbers">export const ADD_TASK = 'ADD_TASK'
+
+export const addTask = task =&gt; {
+  return {
+    type: ADD_TASK,
+    task
+  }
+}
+</code></pre><h3 id="reducers">Reducers</h3><h3 id="components">Components</h3><pre><code class="language-javascript line-numbers">//app.jsx
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { ToDoListComponent } from './todoList'
+import store from './store'
+
+render(
+  &lt;Provider store={store}&gt;
+    &lt;ToDoListComponent /&gt;
+  &lt;/Provider&gt;,
+  document.getElementById('root')
+)
+
+//main.jsx
+import React from 'react'
+import { connect } from 'react-redux'
+import { addTask, toggleTask, clearTasks, filterTasks } from '../actions/todoList'
+import { getTasks } from '../selectors'
+
+const Home = () =&gt; {
+  const handleClear = () =&gt; clearTasks()
+    
+  // ...
+  return (
+    &lt;section&gt;
+    &lt;/section&gt;
+  )
+}
+
+const mapStateToProps = (state, _ownProps) =&gt; ({
+  tasks: getTasks(state)
+})
+
+const mapDispatchToProps = (dispatch, _ownProps) =&gt; ({
+  addTask: task =&gt; dispatch(addTask(task))
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home)
+</code></pre><h3 id="mobx-1">Mobx</h3><h3 id="store">Store</h3><pre><code class="language-javascript line-numbers">import { action, observable, computed } from 'mobx'
+
+class TasksStore {
+  @observable data = []
+
+  @observable filter = null
+
+  @action setFilter = filter =&gt; { this.filter = filter }
+
+  @action addTask (task) {
+    this.data.push(task)
+  }
+
+  getTasks (filter) {
+    return this.filter === null
+      ? this.data
+      : this.data.filter(x =&gt; x.done === filter)
+  }
+
+  @computed get tasks () {
+    return this.getTasks(this.filter)
+  }
+}
+
+export default TasksStore
+</code></pre><h3 id="component">Component</h3><pre><code class="language-javascript line-numbers">//app.jsx
+import React from 'react'
+import { render } from 'react-dom'
+import { configure } from 'mobx'
+import { ToDoListComponent } from './todoList'
+import { appStore } from './store'
+import DevTools from 'mobx-react-devtools'
+
+configure({ enforceActions: 'always' })
+
+render(
+  &lt;div&gt;
+    &lt;DevTools /&gt;
+    &lt;ToDoListComponent store={appStore} /&gt;,
+  &lt;/div&gt;,
+  document.getElementById('root')
+)
+
+//main.jsx
+import React from 'react'
+import ToDoListInput from './input'
+import ToDoListTasks from './tasks'
+import ToDoListFooter from './footer'
+
+const Home = props =&gt; {
+  const handleClear = () =&gt; props.store.tasks.clearTasks()
+  // ...
+
+  return (
+    &lt;section&gt;
+    &lt;/section&gt;
+  )
+}
+
+export default Home</code></pre><h2 id="conclus-o">Conclusão</h2><p>Neste exemplo podemos encontrar as convenções do <em>Redux</em> e uma lado verboso comparado ao <em>MobX</em>. Fica<strong> </strong>bem claro que cada biblioteca trabalha de maneira diferente, resumidamente o <em>MobX</em> apoia a reatividade e o <em>Redux</em> abraça a programação funcional utilizando fortemente a imutabilidade.</p><p>Na concepção de um projeto <em>React,</em> se há uma nível de experiência da equipe em projetos com Vue ou Angular, penso que o <em>MobX</em> se encaixa melhor na minha opinião.</p><p>As convenções <em>Redux </em>ajudam os desenvolvedores a não reinventar a roda<em>,</em> é muito comum encontrar a combinação <em>React + Redux</em>, já que há uma forte comunidade, entretanto é possível encontrar projetos onde <em>Redux</em> não deveria estar, por este motivo peço que comparem qual abordagem facilitaria manutenção e tornaria o código limpo.</p><amp-iframe src="https://giphy.com/embed/smcZqsDujyjiU" width="429" height="480" frameborder="0" class="giphy-embed" allowfullscreen sandbox="allow-scripts allow-same-origin" layout="responsive"></amp-iframe><p>Código Fonte</p><p><a href="https://github.com/williampsena/todolist-parcel-react-redux">https://github.com/williampsena/todolist-parcel-react-redux</a></p><p><a href="https://github.com/williampsena/todolist-parcel-react-mobx">https://github.com/williampsena/todolist-parcel-react-mobx</a></p>
+
+            </section>
+
+        </article>
+    </main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="https://www.coisadeprogramador.com.br">Coisa de Programador</a> &copy; 2019</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+</body>
+</html>

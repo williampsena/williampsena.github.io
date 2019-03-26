@@ -8,12 +8,13 @@
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="/assets/css/app.min.css?v=7129da7055" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/devicon.min.css?v=7129da7055" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/devicon-colors.css?v=7129da7055" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/custom.css?v=7129da7055" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.min.css?v=77395f904b" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/devicon.min.css?v=77395f904b" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/devicon-colors.css?v=77395f904b" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/custom.css?v=77395f904b" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/prism/dracula.css?v=77395f904b" />
 
     <link rel="shortcut icon" href="/favicon.png" type="image/png" />
     <link rel="canonical" href="https://www.coisadeprogramador.com.br/nodejs-acesso-ao-banco-de-dados-mysql/" />
@@ -83,7 +84,7 @@
 }
     </script>
 
-    <script src="/public/ghost-sdk.js?v=7129da7055"></script>
+    <script src="/public/ghost-sdk.js?v=77395f904b"></script>
 <script>
 ghost.init({
 	clientId: "ghost-frontend",
@@ -519,7 +520,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script>
       var disqus_shortname = 'coisadeprogramador'
     </script>
-    <script async src="/assets/js/app.min.js?v=7129da7055"></script>
-
+    <script src="/assets/js/app.js?v=77395f904b"></script>
+    <script async src="/assets/js/prism.js?v=77395f904b"></script>
+    <script type="text/javascript">
+      Prism.plugins.NormalizeWhitespace.setDefaults(
+        {
+          'remove-trailing': true,
+          'remove-indent': true,
+          'left-trim': true,
+          'right-trim': true,
+          // 'break-lines': 10,
+          // 'indent': 2,
+          // 'remove-initial-line-feed': false,
+          // 'tabs-to-spaces': 4,
+          // 'spaces-to-tabs': 4
+        });
+    </script>
   </body>
 </html>

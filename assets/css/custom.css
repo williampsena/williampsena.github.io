@@ -1,4 +1,16 @@
 
+
+@font-face{
+    font-family: 'Fira Code';
+    src: url('/assets/css/fonts/FiraCode-Regular.eot');
+    src: url('/assets/css/fonts/FiraCode-Regular.eot') format('embedded-opentype'),
+         url('/assets/css/fonts/FiraCode-Regular.woff2') format('woff2'),
+         url('/assets/css/fonts/FiraCode-Regular.woff') format('woff'),
+         url('/assets/css/fonts/FiraCode-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
 body {
   overflow-x: hidden;
 }

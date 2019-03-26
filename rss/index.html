@@ -1,4 +1,142 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Coisa de Programador]]></title><description><![CDATA[Transpilando cafeína em código]]></description><link>https://www.coisadeprogramador.com.br/</link><image><url>https://www.coisadeprogramador.com.br/favicon.png</url><title>Coisa de Programador</title><link>https://www.coisadeprogramador.com.br/</link></image><generator>Ghost 2.11</generator><lastBuildDate>Tue, 05 Feb 2019 00:44:23 GMT</lastBuildDate><atom:link href="https://www.coisadeprogramador.com.br/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Dicas de otimização de arquivos assets para seus jogos.]]></title><description><![CDATA[A redução de arquivos bundles é o melhor caminho para facilitar a instalação de seus jogos ou apps. OptiPNG e ffmpeg são ótimas ferramentas para redução.]]></description><link>https://www.coisadeprogramador.com.br/dicas-de-otimizacao-arquivos-assets-jogos/</link><guid isPermaLink="false">5c4e43e9804ceb290f04029d</guid><category><![CDATA[linux]]></category><dc:creator><![CDATA[William Sena]]></dc:creator><pubDate>Tue, 05 Feb 2019 00:38:45 GMT</pubDate><media:content url="https://www.coisadeprogramador.com.br/content/images/2019/02/gift-1420830_1920.jpg" medium="image"/><content:encoded><![CDATA[<img src="https://www.coisadeprogramador.com.br/content/images/2019/02/gift-1420830_1920.jpg" alt="Dicas de otimização de arquivos assets para seus jogos."><p>É comum ter uma certa dependência de <em>assets </em>como imagens ou sons, em jogos ou até mesmo em aplicações web e apps.</p><p>O tamanho dos <em>assets</em> prejudicam na entrega de conteúdo da aplicação, impactando a performance. Lembrando que no Brasil não há grande cobertura de 4G em alguns pontos podemos até nomear de 0,5G.</p><p>Por isso é muito importante cuidar desse garoto mimado que é o nosso bundle, sempre quer mais e mais conteúdo. Ele adora quando você baixa aquela biblioteca de sons ou imagens e usa 10% ou menos.</p><iframe src="https://giphy.com/embed/TXQxgZP2qopMs" width="480" height="272" frameborder="0" class="giphy-embed" allowfullscreen></iframe><p><a href="https://giphy.com/gifs/pizza-krush-groove-TXQxgZP2qopMs">via GIPHY</a></p><p></p><p>Com as dicas abaixo é possível reduzir o seu bundle com ferramentas <em>Open Source.</em></p><h2 id="1-reduzindo-o-audio">1- Reduzindo o audio</h2><p>O ffmpeg dispensa comentários, além de converter vídeos, é possível converter o áudio aplicando configurações e codecs.</p><h3 id="como-instalar">Como instalar?</h3><p>Para ubuntu e derivados:</p><pre><code>sudo apt install ffmpeg
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Coisa de Programador]]></title><description><![CDATA[Transpilando cafeína em código]]></description><link>https://www.coisadeprogramador.com.br/</link><image><url>https://www.coisadeprogramador.com.br/favicon.png</url><title>Coisa de Programador</title><link>https://www.coisadeprogramador.com.br/</link></image><generator>Ghost 2.11</generator><lastBuildDate>Tue, 26 Mar 2019 14:27:35 GMT</lastBuildDate><atom:link href="https://www.coisadeprogramador.com.br/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Redux ou MobX: Qual é a melhor escolha para seu projeto?]]></title><description><![CDATA[Por ser agnóstico, o React permite que bibliotecas externas com abordagens diferentes, como o Mobx e o Redux possam ser integrados ao seu ecossistema.]]></description><link>https://www.coisadeprogramador.com.br/redux-ou-mobx-qual-melhor-escolha-para-seu-projeto/</link><guid isPermaLink="false">5c69ac9197f7ae3655d3eedf</guid><category><![CDATA[react]]></category><category><![CDATA[redux]]></category><category><![CDATA[mobx]]></category><dc:creator><![CDATA[William Sena]]></dc:creator><pubDate>Tue, 26 Mar 2019 14:05:36 GMT</pubDate><media:content url="https://www.coisadeprogramador.com.br/content/images/2019/03/thumb_mobx_or_redux.png" medium="image"/><content:encoded><![CDATA[<img src="https://www.coisadeprogramador.com.br/content/images/2019/03/thumb_mobx_or_redux.png" alt="Redux ou MobX: Qual é a melhor escolha para seu projeto?"><p>Por se tratar de uma biblioteca, o <em>React</em> é agnóstico e permite que existam diversos caminhos felizes para sua aplicação, sendo assim é comum a existência de dependências externas para controle do estado global integrados ao seu ecossistema.</p><p>Durante a concepção do <em>React</em> não havia uma receita de bolo para controlar o estado global de forma integrada ao sistema e muito menos recurso disponível ou implementado. O caminho sugerido para aplicações em grande escala era o <em>Flux</em> que foi criado pelo próprio Facebook, não era só para controle de estado global e sim para atender aplicações de grande porte. Sendo assim faz sentido usar o <em>Flux</em> para qualquer aplicação? Não tentem matar uma formiga com uma bazuca. </p><center>
+<iframe src="https://giphy.com/embed/ertxbTvZZQwvK" width="480" height="268" frameborder="0" class="giphy-embed" allowfullscreen></iframe>cor
+</center><p></p><p>Durante a evolução do <em>React</em> surgiram bibliotecas com motivações de padronizar a comunicação entre os componentes e o contexto externo, seja uma requisição ou um banco local. Existem duas bibliotecas que trabalham para resolver um problema em comum, porém com abordagens diferentes o <em>Redux</em> e <em>MobX</em>.</p><h3 id="redux">Redux</h3><p>Criado em 2015 por <em>Dan Abramov</em> e <em>Andrew Clark</em>  seu próprio nome o traduz o funcionamento que é baseado em funções reduce para manter o estado global. Apesar de inspirado no Flux, traz a simplicidade unificando tudo em um único store, o <strong>Redux</strong> pode facilitar o desenvolvimento, teste e <em>debug</em> das aplicações, já que toda mudança de estado global é disparada por uma action que por sua vez invoca reducers impactando na mudança do estado. </p><p>Apesar de bem documentado e robusto, o Redux, não é bala de prata, o próprio criador do <strong>Redux</strong> escreveu um artigo sugerindo comece o projeto com <strong>React</strong>, para entender se as necessidades do projeto podem ser resolvidas pelo <strong>Redux</strong>. </p><blockquote><em>"Instead learn to <a href="https://facebook.github.io/react/docs/thinking-in-react.html" rel="nofollow noopener">think in React</a>. Come back to Redux if you find a real need for it, or if you want to try something new. But approach it with caution, just like you do with any highly opinionated tool."</em></blockquote><p>Referências:<strong> <a href="https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367">You Might Not Need Redux - Dan Abramov</a></strong></p><p><strong>Prós</strong></p><ul><li>Convenções que levam a adoção de padrões;</li><li>Estado imutável, imutabilidade é um conceito difundido em programação funcional, cada ação resulta em um novo estado. O <em>Redux</em> mantém uma cópia de cada estado isolando de qualquer hack que você queira fazer;</li><li><em>Time Travel</em>, como cada ação reflete em um novo estado é possível viajar no tempo, como desfazer ações e até mesmo refazer;</li><li><em>Suporte,</em> <em>Dan Abramov</em> trabalha no Facebook sendo assim podemos garantir que haverá suporte parcial da equipe React;</li><li><em>Dev Tools</em>, há diversas extensões que permitem monitorar e depurar mudanças de estado;</li></ul><p><strong>Contras</strong></p><ul><li><em>Verboso</em> - Não é muito difícil tornar o projeto <em>verborrágico</em> já que estamos falando de actions, reducers, states, selectors e outros milhões de helpers e pacotes que seu projeto provavelmente tem dependência;</li><li><em>Boilerplate</em>, muitas vezes a falta de um pode induzir ao erro;</li><li><em>Curva de aprendizagem</em>, não é tão intuitivo para desenvolvedores que vieram da orientação a objeto, entretanto para quem trabalha com funcional é bem claro;</li></ul><h3 id="mobx">MobX</h3><p>Patrocinado por empresas conceituadas como Algolia, Coinbase e Facebook Open Source, o <em>MobX</em> é uma alternativa para o controle do estado global utilizando processos reativos. Assim como o <em>Redux</em> não é específico para React, é compatível com outras bibliotecas ou frameworks como <em>Angular</em> e <em>Vue</em>.</p><p>É divido em quatro partes:</p><ul><li><strong>Observable state, </strong>qualquer tipo de valor pode ser mutável seja primitivo ou complexo;</li><li><strong>Computed values, </strong>valores computáveis podem ser concatenação de string ou seletores;</li><li><strong>Reactions, </strong>semelhante a um valor computado, em vez de produzir um novo valor, produz um efeito colateral. Este efeito pode ser a mudança de dados que pode resultar em alguma mudança no DOM;</li><li><strong>Actions, </strong>são os principais meios para modificar o estado;</li></ul><p><strong>Prós</strong></p><ul><li>Curva de aprendizagem, os Stores do <em>Mobx</em> são reativos ou seja você pode manipular diversos tipos de objetos e o <strong>MobX</strong> irá cuidar da renderização por causa dos <em>Observables;</em></li><li><em>Menos verboso</em>, já que você não escreve <em>Actions + Reducers</em> no padrão <em>Redux</em>, há um ganho neste quesito;</li><li>Sem <em>middleware</em>, por trabalhar de outra forma não há a necessidade de utilizar <em>middleware</em> como o <em>Thunk</em> para ações assíncronas;</li><li>Store flexível, além de manter dados o Store pode ser qualquer coisa desde uma classe <em>proxy</em> que depende de uma API;</li><li>Dev Tools, assim como o <em>Redux</em> há extensões para <em>Chrome</em> e Firefox, ótimo para acompanhar as mudanças de estado;</li></ul><h3 id="contras"><strong>Contras</strong></h3><ul><li><em>Interpretação</em>, por ser muito simples podemos encontrar equívocos de implementação;</li><li><em>Renderização</em>, como há reatividade podem ocorrer renderizações em massa impactando na performance, sendo assim use o <em>Observable</em> com moderação.</li></ul><h2 id="show-me-the-code">Show me the code</h2><p>Apenas para comparação e experiência criei duas implementações <em>Redux</em> e <em>Mobx</em>.</p><p>O projeto é um <em>TODO-LIST</em> utilizando o <a href="https://parceljs.org/">Parcel.js</a> como bundler para facilitar e simplificar o trabalho.</p><p>Serão exibidas partes de código principais da implementação, o código na completo pode ser visualizado no <em>GitHub</em>.</p><pre><code class="language-javascript line-numbers">import { combineReducers } from 'redux'
+import { ADD_TASK, CLEAR_TASKS, TOGGLE_TASK, FILTER_TASKS } from './../actions/todoList'
+
+const initialState = {
+  tasks: [],
+  filters: {
+    status: null
+  }
+}
+
+const todoList = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_TASK:
+      return {
+        ...state,
+        tasks: [ ...state.tasks, action.task ]
+      }
+    default:
+      return state
+  }
+}
+
+const todoListReducer = combineReducers({
+  todoList
+})
+
+export default todoListReducer
+</code></pre><h3 id="redux-1">Redux </h3><h3 id="actions">Actions</h3><pre><code class="language-javascript line-numbers">export const ADD_TASK = 'ADD_TASK'
+
+export const addTask = task => {
+  return {
+    type: ADD_TASK,
+    task
+  }
+}
+</code></pre><h3 id="reducers">Reducers</h3><h3 id="components">Components</h3><pre><code class="language-javascript line-numbers">//app.jsx
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { ToDoListComponent } from './todoList'
+import store from './store'
+
+render(
+  &lt;Provider store={store}&gt;
+    &lt;ToDoListComponent /&gt;
+  &lt;/Provider&gt;,
+  document.getElementById('root')
+)
+
+//main.jsx
+import React from 'react'
+import { connect } from 'react-redux'
+import { addTask, toggleTask, clearTasks, filterTasks } from '../actions/todoList'
+import { getTasks } from '../selectors'
+
+const Home = () => {
+  const handleClear = () => clearTasks()
+    
+  // ...
+  return (
+    &lt;section&gt;
+    &lt;/section&gt;
+  )
+}
+
+const mapStateToProps = (state, _ownProps) => ({
+  tasks: getTasks(state)
+})
+
+const mapDispatchToProps = (dispatch, _ownProps) => ({
+  addTask: task => dispatch(addTask(task))
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home)
+</code></pre><h3 id="mobx-1">Mobx</h3><h3 id="store">Store</h3><pre><code class="language-javascript line-numbers">import { action, observable, computed } from 'mobx'
+
+class TasksStore {
+  @observable data = []
+
+  @observable filter = null
+
+  @action setFilter = filter => { this.filter = filter }
+
+  @action addTask (task) {
+    this.data.push(task)
+  }
+
+  getTasks (filter) {
+    return this.filter === null
+      ? this.data
+      : this.data.filter(x => x.done === filter)
+  }
+
+  @computed get tasks () {
+    return this.getTasks(this.filter)
+  }
+}
+
+export default TasksStore
+</code></pre><h3 id="component">Component</h3><pre><code class="language-javascript line-numbers">//app.jsx
+import React from 'react'
+import { render } from 'react-dom'
+import { configure } from 'mobx'
+import { ToDoListComponent } from './todoList'
+import { appStore } from './store'
+import DevTools from 'mobx-react-devtools'
+
+configure({ enforceActions: 'always' })
+
+render(
+  &lt;div&gt;
+    &lt;DevTools /&gt;
+    &lt;ToDoListComponent store={appStore} /&gt;,
+  &lt;/div&gt;,
+  document.getElementById('root')
+)
+
+//main.jsx
+import React from 'react'
+import ToDoListInput from './input'
+import ToDoListTasks from './tasks'
+import ToDoListFooter from './footer'
+
+const Home = props => {
+  const handleClear = () => props.store.tasks.clearTasks()
+  // ...
+
+  return (
+    &lt;section&gt;
+    &lt;/section&gt;
+  )
+}
+
+export default Home</code></pre><h2 id="conclus-o">Conclusão</h2><p>Neste exemplo podemos encontrar as convenções do <em>Redux</em> e uma lado verboso comparado ao <em>MobX</em>. Fica<strong> </strong>bem claro que cada biblioteca trabalha de maneira diferente, resumidamente o <em>MobX</em> apoia a reatividade e o <em>Redux</em> abraça a programação funcional utilizando fortemente a imutabilidade.</p><p>Na concepção de um projeto <em>React,</em> se há uma nível de experiência da equipe em projetos com Vue ou Angular, penso que o <em>MobX</em> se encaixa melhor na minha opinião.</p><p>As convenções <em>Redux </em>ajudam os desenvolvedores a não reinventar a roda<em>,</em> é muito comum encontrar a combinação <em>React + Redux</em>, já que há uma forte comunidade, entretanto é possível encontrar projetos onde <em>Redux</em> não deveria estar, por este motivo peço que comparem qual abordagem facilitaria manutenção e tornaria o código limpo.</p><iframe src="https://giphy.com/embed/smcZqsDujyjiU" width="429" height="480" frameborder="0" class="giphy-embed" allowfullscreen></iframe><p>Código Fonte</p><p><a href="https://github.com/williampsena/todolist-parcel-react-redux">https://github.com/williampsena/todolist-parcel-react-redux</a></p><p><a href="https://github.com/williampsena/todolist-parcel-react-mobx">https://github.com/williampsena/todolist-parcel-react-mobx</a></p>]]></content:encoded></item><item><title><![CDATA[Dicas de otimização de arquivos assets para seus jogos.]]></title><description><![CDATA[A redução de arquivos bundles é o melhor caminho para facilitar a instalação de seus jogos ou apps. OptiPNG e ffmpeg são ótimas ferramentas para redução.]]></description><link>https://www.coisadeprogramador.com.br/dicas-de-otimizacao-arquivos-assets-jogos/</link><guid isPermaLink="false">5c4e43e9804ceb290f04029d</guid><category><![CDATA[linux]]></category><dc:creator><![CDATA[William Sena]]></dc:creator><pubDate>Tue, 05 Feb 2019 00:38:45 GMT</pubDate><media:content url="https://www.coisadeprogramador.com.br/content/images/2019/02/gift-1420830_1920.jpg" medium="image"/><content:encoded><![CDATA[<img src="https://www.coisadeprogramador.com.br/content/images/2019/02/gift-1420830_1920.jpg" alt="Dicas de otimização de arquivos assets para seus jogos."><p>É comum ter uma certa dependência de <em>assets </em>como imagens ou sons, em jogos ou até mesmo em aplicações web e apps.</p><p>O tamanho dos <em>assets</em> prejudicam na entrega de conteúdo da aplicação, impactando a performance. Lembrando que no Brasil não há grande cobertura de 4G em alguns pontos podemos até nomear de 0,5G.</p><p>Por isso é muito importante cuidar desse garoto mimado que é o nosso bundle, sempre quer mais e mais conteúdo. Ele adora quando você baixa aquela biblioteca de sons ou imagens e usa 10% ou menos.</p><iframe src="https://giphy.com/embed/TXQxgZP2qopMs" width="480" height="272" frameborder="0" class="giphy-embed" allowfullscreen></iframe><p><a href="https://giphy.com/gifs/pizza-krush-groove-TXQxgZP2qopMs">via GIPHY</a></p><p></p><p>Com as dicas abaixo é possível reduzir o seu bundle com ferramentas <em>Open Source.</em></p><h2 id="1-reduzindo-o-audio">1- Reduzindo o audio</h2><p>O ffmpeg dispensa comentários, além de converter vídeos, é possível converter o áudio aplicando configurações e codecs.</p><h3 id="como-instalar">Como instalar?</h3><p>Para ubuntu e derivados:</p><pre><code>sudo apt install ffmpeg
 </code></pre>
 <p>Exemplo de conversão.</p><pre><code>ffmpeg -i &lt;origem&gt;.mp3 -acodec libmp3lame -ac 2 -ab 64k -ar 44100 &lt;destino&gt;.mp3
 </code></pre>
@@ -1030,252 +1168,4 @@ ghost               &lt;none&gt;              066a22d980f4        10 days ago   
 <h2 id="ataprxima">Até a próxima</h2>
 <p>Pronto mais fácil que compilar o <code>Kernel do Linux</code>;</p>
 <p><img src="https://www.coisadeprogramador.com.br/content/images/2017/02/nerd-funny-1.gif" alt="Criando seu primeiro Docker Container"></p>
-]]></content:encoded></item><item><title><![CDATA[Introdução ao sistema operacional Unix - Comandos básicos]]></title><description><![CDATA[Este guia aborda os comandos básicos unix/linux, os comandos básicos envolvem man, ls, cat, more, cd, pwd, chmod, chown, rm, mv, rmdir, mkdir, touch e df]]></description><link>https://www.coisadeprogramador.com.br/introducao-ao-sistema-operacional-unix-comandos-basicos/</link><guid isPermaLink="false">5b8c7e5dda9c6d2cb5b3d9fb</guid><dc:creator><![CDATA[William Sena]]></dc:creator><pubDate>Sun, 18 Sep 2016 01:58:41 GMT</pubDate><media:content url="https://www.coisadeprogramador.com.br/content/images/2016/09/comandos-unix-thumb-3.png" medium="image"/><content:encoded><![CDATA[<h2 id="introduo">Introdução</h2>
-<img src="https://www.coisadeprogramador.com.br/content/images/2016/09/comandos-unix-thumb-3.png" alt="Introdução ao sistema operacional Unix - Comandos básicos"><p><img src="https://www.coisadeprogramador.com.br/content/images/2016/09/comandos-unix-thumb-4.png" alt="Introdução ao sistema operacional Unix - Comandos básicos"></p>
-<p>Este guia aborda os comandos básicos do <strong>unix</strong> e também serve de auxilio para o <strong>linux</strong>. Se hover a necessidade de publicar uma aplicação em um servidor remoto <em>non-windows</em>, espero que este conteúdo ajude!</p>
-<h2 id="comandos">Comandos</h2>
-<h3 id="man">man</h3>
-<p>Mostra um manual de utilização do comando.</p>
-<blockquote>
-<p><strong>sintaxe:</strong> man &lt;arquivo&gt;</p>
-</blockquote>
-<ul>
-<li><code>man ls</code> - exibe o manual de comandos do <code>ls</code>;</li>
-</ul>
-<p>Para navegar utilize as setas e para sair do manual é só digitar <code>q</code>;</p>
-<h3 id="ls">ls</h3>
-<p>Lista o conteúdo de um diretório.</p>
-<blockquote>
-<p><strong>sintaxe:</strong> ls [opções] &lt;arquivo&gt;</p>
-</blockquote>
-<ul>
-<li><code>ls *.txt</code> - lista todos os arquivos texto;</li>
-<li><code>ls *backup*</code> - lista todos os arquivos que contenham no nome ou extensão backup;</li>
-<li><code>ls -t</code> - lista os arquivos ordenados por data de modificação crescente;</li>
-<li><code>ls -tr</code> - lista os arquivos ordenados por data de modificação decrescente (reverse);</li>
-<li><code>ls -l</code> - lista as permissões dos arquivos no diretório atual;</li>
-<li><code>ls *.txt | more</code> - Caso você tenha muitos arquivos no diretório, para paginar o conteúdo basta adicionar o <code>| more</code> após o comando;</li>
-</ul>
-<h3 id="cd">cd</h3>
-<p>Muda do diretório atual para o diretório de destino.</p>
-<blockquote>
-<p><strong>sintaxe:</strong> cd &lt;destino&gt;</p>
-</blockquote>
-<ul>
-<li><code>cd foo</code> - muda para o diretório <em>foo</em>;</li>
-<li><code>cd /foo/1/</code> - muda para o diretório <em>1</em> do diretório <em>foo</em>.</li>
-</ul>
-<p>Abreviações de diretório:</p>
-<ul>
-<li><code>..</code> - muda para o diretório acima;</li>
-<li><code>...</code> ou  <code>..\..\</code> - muda para dois diretórios acima,  <em>a quantidade de pontos(-1) indica o nível de diretórios acima</em>;</li>
-<li><code>~/</code> - muda para o diretório home;</li>
-</ul>
-<h2 id="pwd">pwd</h2>
-<p>Mostra o nome do diretório atual.</p>
-<h3 id="cat">cat</h3>
-<p>Exibe o conteúdo de um arquivo ou mais na saída padrão (output).</p>
-<blockquote>
-<p><strong>sintaxe:</strong> cat &lt;arquivo&gt;</p>
-</blockquote>
-<ul>
-<li><code>cat foo.txt</code> - exibe o conteúdo do arquivo foo.txt;</li>
-<li><code>cat *.txt</code> - exibe o conteúdo de todos os arquivos texto;</li>
-<li><code>cat *.txt &gt; all.txt</code> - combina todos os arquivos texto e um arquivo único arquivo chamado <em>all.txt</em>;</li>
-<li><code>cat *.foo &gt;&gt; all.txt</code> - combina todos os arquivos da extensão <em>.foo</em> e acrescenta no final do arquivo chamado <em>all.txt</em>;</li>
-</ul>
-<h3 id="more">more</h3>
-<p>Pagina o conteúdo de saída, que pode ser um arquivo ou resultado de uma execução de script por página.</p>
-<blockquote>
-<p><strong>sintaxe:</strong> [comando] | more</p>
-</blockquote>
-<ul>
-<li><code>ls *.txt | more</code> - Lista todos os arquivos *.txt por página;</li>
-<li><code>cat foo.txt | more</code> - Exibe o resultado de um arquivo por página;</li>
-</ul>
-<h3 id="touch">touch</h3>
-<p>Cria um arquivo novo caso ou atualiza a data de modificação do arquivo.</p>
-<blockquote>
-<p><strong>sintaxe:</strong> touch [opcoes] | &lt;arquivo&gt;</p>
-</blockquote>
-<ul>
-<li><code>touch foo.txt</code> - Cria um arquivo foo.txt ou atualiza a data caso exista;</li>
-<li><code>touch -c foo.txt</code> - Atualiza a data do arquivo foo.txt, caso exista;</li>
-</ul>
-<h3 id="cp">cp</h3>
-<p>Copia um ou mais arquivos.</p>
-<blockquote>
-<p><strong>sintaxe:</strong> cp [opcoes] &lt;origem&gt; &lt;destino&gt;</p>
-</blockquote>
-<ul>
-<li><code>cp foo.txt foo.md</code> - copia o arquivo <em>foo.txt</em> para o destino definido;</li>
-<li><code>cp foo.txt /tmp</code> - copia o arquivo <em>foo.txt</em> para o diretório temporário <code>/tmp</code>;</li>
-<li><code>cp -R /foo /tmp</code> - copia um diretório e todos os conteúdos recursivamente;</li>
-</ul>
-<h3 id="rm">rm</h3>
-<p>Remove um arquivo ou vários.</p>
-<p><strong>ATENÇÃO, cuidado com este comando, veja abaixo a trágica história que pode acontecer ao utilizar este comando de maneira errada <a href="http://revistagalileu.globo.com/Tecnologia/noticia/2016/03/um-programador-quase-acabou-com-internet-ao-apagar-algumas-linhas-de-codigo.html">veja a notícia</a></strong></p>
-<blockquote>
-<p><strong>sintaxe:</strong> rm [opcoes] &lt;arquivo&gt; &lt;destino&gt;</p>
-</blockquote>
-<ul>
-<li><code>rm foo.txt</code> - remove o arquivo <em>foo.txt</em>;</li>
-<li><code>rm *.txt</code> - remove todos os arquivos texto com extensão <em>.txt</em>;</li>
-<li><code>rm -rf /tmp</code> - remove todos os arquivos do diretório temporário, no modo força bruta, não serão exibidas mensagens como: <em>Tem certeza que o senhor deseja apagar este arquivo tão importante?</em></li>
-</ul>
-<h3 id="mv">mv</h3>
-<p>O comando <code>mv</code> é utilizado para mover arquivos ou diretórios e também para renomeá-los, <em>como assim?</em>, se você mover um arquivo para o mesmo diretório com o nome diferente o que irá acontecer?</p>
-<p><img src="https://www.coisadeprogramador.com.br/content/images/2016/09/okay.gif" alt="Introdução ao sistema operacional Unix - Comandos básicos"></p>
-<blockquote>
-<p><strong>sintaxe:</strong> mv &lt;origem&gt; &lt;destino&gt;</p>
-</blockquote>
-<ul>
-<li><code>mv foo.txt /tmp</code> - move o arquivo <em>foo.txt</em> para o diretório temporário;</li>
-<li><code>mv foo.* /tmp</code> - move todos os arquivos com o nome <em>foo</em> para o diretório temporário;</li>
-<li><code>mv foo.txt foo.md</code> - renomeia o arquivo <em>foo.txt</em> para <em>foo.md</em>;</li>
-<li><code>mv ~/foo /tmp/</code> - move o diretório <em>foo</em> para o diretório temporário;</li>
-</ul>
-<h3 id="mkdir">mkdir</h3>
-<p>Cria diretórios.</p>
-<blockquote>
-<p><strong>sintaxe:</strong> mkdir &lt;diretorio&gt;;</p>
-</blockquote>
-<ul>
-<li><code>mkdir foo_temp</code> - cria o diretório <em>foo_temp</em> no diretório atual;</li>
-<li><code>mkdir /tmp/foo/1</code>- Cria o subdiretório <em>1</em> para o diretório <em>foo</em>;</li>
-</ul>
-<h3 id="rmdir">rmdir</h3>
-<p>Remove um diretório vazio.</p>
-<blockquote>
-<p><strong>sintaxe:</strong> rmdir &lt;diretorio&gt;;</p>
-</blockquote>
-<ul>
-<li><code>rmdir ~/foo</code> - remove o diretório <em>foo</em>, caso esteja vazio;</li>
-</ul>
-<h3 id="chown">chown</h3>
-<p>Altera o usuário dono do diretório ou arquivo.</p>
-<blockquote>
-<p><strong>sintaxe:</strong> chown &lt;diretorio&gt;;</p>
-</blockquote>
-<ul>
-<li><code>chown will ~/foo</code> - define que o usuário will é dono do diretório <em>foo</em>;</li>
-<li><code>chown -R will ~/foo</code> - define que o usuário will é dono do diretório <em>foo</em> recursivamente, ou seja, todas os diretórios e arquivos abaixo;</li>
-</ul>
-<h3 id="chmod">chmod</h3>
-<p>Altera as permissões dos usuários no diretório ou arquivo.</p>
-<p>Como foi explicado no comando <code>ls -l</code> verifica as permissões de um diretório ou arquivo.</p>
-<blockquote>
-<p><strong>sintaxe:</strong> chmod &lt;opcoes&gt; &lt;permissoes&gt; &lt;diretorio&gt;;</p>
-</blockquote>
-<p>A opção <code>-R</code> define que as permissões serão aplicadas recursivamente.</p>
-<p>As permissões são definidas por três números, o primeiro define as permissões do usuário, a segunda do grupo e a terceira dos outros usuários fora do grupo;</p>
-<p>Existem duas formas de utilização do comando.</p>
-<p><strong>Forma de utilização (1)</strong></p>
-<p><code>chmod u=rwx,g=rx,o=r foo.txt</code></p>
-<ul>
-<li>
-<ol>
-<li>Define que o usuário pode ler, gravar e executar;</li>
-</ol>
-</li>
-<li>
-<ol start="2">
-<li>Define que o grupo pode ler e executar;</li>
-</ol>
-</li>
-<li>
-<ol start="3">
-<li>Define que os outros usuários podem ler o arquivo;</li>
-</ol>
-</li>
-</ul>
-<p><strong>Forma de utilização (2)</strong></p>
-<p><code>chmod 754 foo.txt</code></p>
-<p>Este comando tem o mesmo efeito da primeira forma de utilização, os números variam do 0 ao 9.</p>
-<table>
- <thead>
-    <th>Valor</th>
-    <th>Descrição</th>
- </thead>
- <tbody>
-    <tr>
-      <td>0</td>
-      <td>Nenhuma permissão</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>Execução</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Escrita</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Leitura</td>
-    </tr>
- </tbody>
-</table>
-<p>Ok e de onde vem este número 7, vamos aos cálculos?</p>
-<p><img src="https://www.coisadeprogramador.com.br/content/images/2016/09/math_count.gif" alt="Introdução ao sistema operacional Unix - Comandos básicos"></p>
-<p><code>4 + 2 + 1 = 7 = rwx</code></p>
-<p><code>4 + 1 = 5 = rw</code></p>
-<p><code>4 = 4 = r</code></p>
-<p>Outras utilizações:</p>
-<ul>
-<li>
-<p><code>chmod +x foo.txt</code> - atribui a permissão de execução para o arquivo foo.txt;</p>
-</li>
-<li>
-<p><code>chmod -R 777 /foo</code> - atribui as permissões totais para os usuários, grupos e outros usuários recursivamente;</p>
-</li>
-</ul>
-<h3 id="find">find</h3>
-<p>Procura arquivos pelo nome e também possibilita a busca pelo conteúdo do arquivo.</p>
-<blockquote>
-<p><strong>sintaxe:</strong> find &lt;diretorio&gt; [opcoes] &lt;conteudo&gt;;</p>
-</blockquote>
-<ul>
-<li><code>find -name foo.*</code> - procura um arquivo com o nome <em>foo</em> independente da extensão, a opção <em>-name</em> indica que a busca será pelo nome do arquivo;</li>
-<li><code>find /tmp -name foo.txt</code> - procura um arquivo com o nome <em>foo.txt</em> no diretório <em>/tmp</em>;</li>
-<li><code>find -name '*.txt' | xargs grep &quot;hello&quot;</code> - procura um arquivo texto com o conteúdo <em>hello</em> em qualquer parte do arquivo;</li>
-</ul>
-<h3 id="df">df</h3>
-<p>Mostra o espaço livre e ocupado de cada partição.</p>
-<blockquote>
-<p><strong>sintaxe:</strong> df [opcoes]</p>
-</blockquote>
-<ul>
-<li><code>df -a</code> - mostra o espaço livre/ocupado em blocos;</li>
-<li><code>df -k</code> - mostra o espaço livre/ocupado em KiloBytes (KB);</li>
-<li><code>df -m</code> - mostra o espaço livre/ocupado em MegaBytes (MB);</li>
-<li><code>df -h</code> - mostra o espaço livre/ocupado em MB, KB, GB;</li>
-<li><code>df -l</code> - lista somente sistema de arquivos locais;</li>
-<li><code>df -T</code> - lista o tipo de sistema de arquivos de cada partição (ext4, vfat, ...)</li>
-</ul>
-<h3 id="vi">vi</h3>
-<p>Edita um arquivo.</p>
-<blockquote>
-<p><strong>sintaxe:</strong> vi &lt;arquivo&gt;</p>
-</blockquote>
-<p>O <code>vi</code> é o editor disponível na maioria dos sistemas Unix, não aprofundaremos as técnicas de edição deste editor pois é um assunto extenso;</p>
-<ul>
-<li><code>vi foo.txt</code> - abre o arquivo foo.txt;</li>
-</ul>
-<p>Comandos do <code>vi</code>, ao pressionar a tecla <code>ESC</code>, digitar os comandos abaixo;</p>
-<ul>
-<li><code>:w</code> - grava as alterações do arquivo;</li>
-<li><code>:q</code> - sai da edição do arquivo;</li>
-<li><code>:q!</code> - sai da edição do arquivo sem gravar as alterações de forma forçada;</li>
-<li><code>:wq</code> - sai e grava as alterações;</li>
-</ul>
-<p>Para conhecer os comandos de edição no <code>vi</code> recomendo ler o manual utilizando <code>man vi</code>;</p>
-<h2 id="concluso">Conclusão</h2>
-<p>Foram abordados exemplos de utilização dos comandos e os parâmetros mais utilizados, informações detalhadas podem ser encontradas no manual de cada comando, até a próxima.</p>
-<p><img src="https://www.coisadeprogramador.com.br/content/images/2016/09/see_ya_bob_esponja.gif" alt="Introdução ao sistema operacional Unix - Comandos básicos"></p>
-<h2 id="referncias">Referências</h2>
-<ul>
-<li><a href="https://www.cenapad.unicamp.br/servicos/treinamentos/tutorial_unix/unix_tutor-10.html">UNICAMP - Introdução ao sistema operacional unix</a></li>
-<li><a href="http://www.computerhope.com/unix/uchmod.htm">Linux and Unix chmod command</a></li>
-</ul>
 ]]></content:encoded></item></channel></rss>
